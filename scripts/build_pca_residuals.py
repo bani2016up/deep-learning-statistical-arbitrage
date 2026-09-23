@@ -5,7 +5,7 @@ import json
 
 import pandas as pd
 
-from dlsa_baseline.config import DataConfig, ROOT
+from dlsa_baseline.config import ROOT, DataConfig
 from dlsa_baseline.data.pca_residuals import rolling_pca_residuals, save_residual_dataset
 from dlsa_baseline.data.returns import compute_returns
 

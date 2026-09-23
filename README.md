@@ -6,15 +6,19 @@ not a scientific reproduction.
 
 ## Setup
 
-Python 3.11 is recommended; 3.10-3.12 are supported. PyTorch will use CUDA, Apple MPS, or CPU
-in that order.
+The project requires Python 3.13 or newer and uses
+[`uv`](https://docs.astral.sh/uv/) exclusively for Python installation, dependency locking,
+environment management, and command execution. PyTorch uses CUDA, Apple MPS, or CPU in that
+order.
 
 ```bash
-python3.11 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e '.[dev]'
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv python install 3.13
+uv sync --frozen
 ```
+
+`uv sync --frozen` creates and manages the local environment from the committed `uv.lock`.
+Do not create or activate a virtual environment manually.
 
 Optionally restore the official reference repository used by
 `docs/OFFICIAL_CODE_MAP.md`:
@@ -26,29 +30,32 @@ git clone --depth 1 https://github.com/gregzanotti/dlsa-public.git references/dl
 It is not required to run this baseline and is intentionally excluded from Git because it
 is large, independently versioned, and covered by its own non-commercial license.
 
-On a CUDA machine, install the appropriate PyTorch 2.x wheel from
-<https://pytorch.org/get-started/locally/> before `pip install -e '.[dev]'` if the default
-wheel is not CUDA-enabled.
+On a CUDA machine, verify the selected wheel with
+`uv run python -c "import torch; print(torch.cuda.is_available())"`. If a platform needs a
+custom PyTorch index, follow the uv-specific PyTorch instructions at
+<https://docs.astral.sh/uv/guides/integration/pytorch/> and regenerate `uv.lock`.
 
 ## End-to-End Commands
 
 Run from this directory:
 
 ```bash
-python scripts/download_sample_data.py
-python scripts/build_pca_residuals.py
-pytest
-python scripts/run_smoke_test.py
-python scripts/train_baseline.py
-python scripts/evaluate_baseline.py
+uv run python scripts/download_sample_data.py
+uv run python scripts/build_pca_residuals.py
+uv run pytest
+uv run python scripts/run_smoke_test.py
+uv run python scripts/train_baseline.py
+uv run python scripts/evaluate_baseline.py
 ```
 
 Useful development variants:
 
 ```bash
-python scripts/download_sample_data.py --force --limit 20
-python scripts/build_pca_residuals.py --factors 5
-python scripts/train_baseline.py --model raw_ffn --epochs 10 --device cpu
+uv run python scripts/download_sample_data.py --force --limit 20
+uv run python scripts/build_pca_residuals.py --factors 5
+uv run python scripts/train_baseline.py --model raw_ffn --epochs 10 --device cpu
+uv run ruff check src scripts tests
+uv run ruff format --check src scripts tests
 ```
 
 Downloads are cached at `data/raw/adjusted_prices.parquet`. Repeated normal runs do not

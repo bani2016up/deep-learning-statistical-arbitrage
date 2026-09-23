@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 
-from dlsa_baseline.config import DataConfig, ROOT, SAMPLE_TICKERS
+from dlsa_baseline.config import ROOT, SAMPLE_TICKERS, DataConfig
 from dlsa_baseline.data.download import download_adjusted_prices
 
 

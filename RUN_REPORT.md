@@ -20,9 +20,10 @@ chronological train/validation/test, metrics, plots, and automated tests.
 
 ## 3. Environment
 
-macOS 26.5.1 on Apple arm64, 16 GiB RAM, Python 3.12.0, and PyTorch 2.5.1. No NVIDIA GPU,
-`nvidia-smi`, or CUDA was present. Apple MPS was available and selected; CPU fallback was
-tested. See `docs/ENVIRONMENT.md`.
+macOS 26.5.1 on Apple arm64 with 16 GiB RAM. The validated project environment is managed
+exclusively by uv 0.9.13 from the committed lock file and uses Python 3.13.15 and PyTorch
+2.14.0. No NVIDIA GPU, `nvidia-smi`, or CUDA was present. Apple MPS was available and
+selected; CPU fallback was tested. See `docs/ENVIRONMENT.md`.
 
 ## 4. Public Data
 
@@ -67,33 +68,29 @@ costs; one fixed seed; modern independent PyTorch implementation. See
 ## 7. Commands Executed
 
 ```bash
-git status --short --branch && git remote -v
-uname -a && sw_vers && python3 --version && command -v python3 && sysctl -n hw.memsize
-nvidia-smi
-python3 -c "...torch environment probe..."
+uv python install 3.13
+uv lock
+uv sync --frozen
 git clone --depth 1 https://github.com/gregzanotti/dlsa-public.git references/dlsa-public
-python3 -m pytest -q
-PYTHONPATH=src python3 scripts/run_smoke_test.py
-PYTHONPATH=src python3 scripts/download_sample_data.py
-PYTHONPATH=src python3 scripts/download_sample_data.py --force
-PYTHONPATH=src python3 scripts/build_pca_residuals.py
-PYTHONPATH=src python3 scripts/run_smoke_test.py
-PYTHONPATH=src python3 scripts/train_baseline.py --epochs 10
-PYTHONPATH=src python3 scripts/evaluate_baseline.py
-python3 -m compileall -q src scripts
-uvx ruff format src scripts tests
-uvx ruff check src scripts tests
-uvx ruff format --check src scripts tests
+uv run python -c "import platform, torch; ..."
+uv run ruff check src scripts tests
+uv run ruff format --check src scripts tests
+uv run pytest -q
+uv run python scripts/run_smoke_test.py
+uv run python scripts/download_sample_data.py
+uv run python scripts/build_pca_residuals.py
+uv run python scripts/train_baseline.py --epochs 10
+uv run python scripts/evaluate_baseline.py
 ```
 
 The first PCA build found and led to correction of an explicit-cache-schema bug. The same
-command then completed. Installed users do not need `PYTHONPATH=src`; README commands assume
-`pip install -e '.[dev]'`.
+command then completed. No manual environment activation, direct `pip`, or `PYTHONPATH` is
+required; every command is executed through uv from the locked environment.
 
 ## 8. Tests
 
-Final validation: `10 passed in 2.36s`; Ruff reported all checks passed and all 28 files
-formatted. Coverage includes return handling, PCA shape and future-mutation
+Python 3.13 lock-file validation: `10 passed in 5.51s`; Ruff reported all checks passed and
+all 28 files formatted. Coverage includes return handling, PCA shape and future-mutation
 no-lookahead, residual round-trip, exact window cutoff, CNN/Transformer/full-model shapes,
 finite forward/backward, Sharpe gradients, L1 normalization, return alignment, and a complete
 one-epoch integration train.
@@ -112,15 +109,15 @@ This deliberately easy process only verifies learnability.
 
 Public two-epoch smoke test produced Sharpe 0.05. The final fixed-seed ten-epoch engineering
 run used 1,489 train dates, 496 validation dates, and 498 test dates. Final average training
-batch objective was negative Sharpe `-0.0972`; best validation annualized Sharpe was `-0.3360`.
+batch objective was negative Sharpe `-0.0993`; best validation annualized Sharpe was `-0.3288`.
 The selected checkpoint's held-out period was 2024-01-08 through 2025-12-31:
 
 | Metric | Value |
 |---|---:|
-| Annualized mean | 0.01889 |
-| Annualized volatility | 0.03013 |
-| Annualized Sharpe | 0.6267 |
-| Average one-way L1 turnover | 0.7264 |
+| Annualized mean | 0.02258 |
+| Annualized volatility | 0.03331 |
+| Annualized Sharpe | 0.6778 |
+| Average one-way L1 turnover | 0.8167 |
 | Asset weight changes counted | 24,850 |
 
 No seeds were searched or cherry-picked. Negative validation performance is an important
@@ -128,8 +125,9 @@ warning against interpreting the positive test value.
 
 ## 10. Runtime
 
-Final ten-epoch public run: 12.06 seconds. PCA generation and download completed comfortably
-within the smoke workflow. Exact wall-clock timing was not instrumented for those two steps.
+Final Python 3.13 ten-epoch public run: 9.50 seconds. PCA generation and download completed
+comfortably within the smoke workflow. Exact wall-clock timing was not instrumented for those
+two steps.
 
 ## 11. Accelerator and Memory
 

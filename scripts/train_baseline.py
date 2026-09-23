@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
-from dlsa_baseline.config import DataConfig, ModelConfig, ROOT, TrainConfig
+from dlsa_baseline.config import ROOT, DataConfig, ModelConfig, TrainConfig
 from dlsa_baseline.data.pca_residuals import load_residual_dataset
 from dlsa_baseline.data.windows import build_cumulative_windows
 from dlsa_baseline.models import CNNTransformer, RawFFN
