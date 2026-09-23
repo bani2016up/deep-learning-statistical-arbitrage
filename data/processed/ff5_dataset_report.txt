@@ -1,0 +1,155 @@
+FF5 DAILY PANEL — PREPARATION AND VALIDATION REPORT
+==========================================================
+
+Scope
+-----
+Target dates: 1998-01-01 through 2016-12-31 (inclusive)
+Minimum merged observations per ticker: 60
+Purpose: clean inputs for later rolling FF5 regressions only; no regression, model, or backtest was run.
+
+Selected source files
+---------------------
+Stock archive: data/raw/quandl-wiki-prices-us-equites.zip
+Stock member:  WIKI_PRICES.csv
+Factor archive: data/raw/F-F_Research_Data_5_Factors_2x3_daily_CSV.zip
+Factor member:  F-F_Research_Data_5_Factors_2x3_daily.csv
+Stock candidates considered:
+  - data/raw/quandl-wiki-prices-us-equites.zip
+Factor candidates considered:
+  - data/raw/F-F_Research_Data_5_Factors_2x3_daily_CSV.zip
+
+Raw WIKI stock data
+-------------------
+Shape: (15,389,314, 14)
+Columns: ['ticker', 'date', 'open', 'high', 'low', 'close', 'volume', 'ex-dividend', 'split_ratio', 'adj_open', 'adj_high', 'adj_low', 'adj_close', 'adj_volume']
+Date range: 1962-01-02 through 2018-03-27
+Unique tickers: 3,199
+First five rows:
+ticker       date  open  high   low  close     volume  ex-dividend  split_ratio  adj_open  adj_high   adj_low  adj_close  adj_volume
+     A 1999-11-18 45.50 50.00 40.00  44.00 44739900.0          0.0          1.0 31.041951 34.112034 27.289627  30.018590  44739900.0
+     A 1999-11-19 42.94 43.00 39.81  40.38 10897100.0          0.0          1.0 29.295415 29.336350 27.160002  27.548879  10897100.0
+     A 1999-11-22 41.31 44.00 40.06  44.00  4705200.0          0.0          1.0 28.183363 30.018590 27.330562  30.018590   4705200.0
+     A 1999-11-23 42.50 43.63 40.25  40.25  4274400.0          0.0          1.0 28.995229 29.766161 27.460188  27.460188   4274400.0
+     A 1999-11-24 40.13 41.94 40.00  41.06  3464400.0          0.0          1.0 27.378319 28.613174 27.289627  28.012803   3464400.0
+
+Stock cleaning diagnostics
+--------------------------
+Invalid-date rows removed/broken-chain: 0
+Invalid/blank-ticker rows removed/broken-chain: 0
+Missing, non-finite, or non-positive adjusted prices removed/broken-chain: 1
+Duplicate ticker-date rows removed (keep last): 0
+Out-of-order source transitions: 0
+Valid same-ticker returns, all source dates: 15,386,113
+Valid stock returns in target dates before factor join: 11,411,645
+Tickers with target-date returns before factor join: 3,186
+Return rule: adj_close_t / adj_close_(t-1) - 1, using the immediately preceding raw observation of the same ticker.
+Invalid rows break the chain; prices and returns were not forward-filled, zero-filled, winsorized, or clipped.
+
+Raw Kenneth French daily FF5 data
+-----------------------------------
+Shape of dated records: (15,876, 7)
+Columns: ['Unnamed: 0', 'Mkt-RF', 'SMB', 'HML', 'RMW', 'CMA', 'RF']
+Date range: 1963-07-01 through 2026-07-31
+Rows containing -99.99/-999 special missing codes: 0
+Invalid factor rows removed: 0
+Factor rows in target sample: 4,781
+First five dated rows (source percent units):
+Unnamed: 0  Mkt-RF   SMB   HML   RMW   CMA   RF
+  19630701   -0.67  0.00 -0.33 -0.01  0.16 0.01
+  19630702    0.79 -0.26  0.26 -0.07 -0.20 0.01
+  19630703    0.63 -0.17 -0.10  0.18 -0.34 0.01
+  19630705    0.40  0.08 -0.27  0.09 -0.34 0.01
+  19630708   -0.63  0.04 -0.18 -0.29  0.14 0.01
+
+Percent-to-decimal verification
+-------------------------------
+Example source row (percent): {'mkt_rf': 0.22, 'smb': -0.1, 'hml': -0.46, 'rmw': 0.21, 'cma': -0.1, 'rf': 0.02}
+Same row after division by 100: {'mkt_rf': 0.0022, 'smb': -0.001, 'hml': -0.0046, 'rmw': 0.0021, 'cma': -0.001, 'rf': 0.0002}
+Maximum absolute conversion identity error: 0.000e+00
+
+Merge and 60-observation filter
+-------------------------------
+Stock-return rows before factor join: 11,411,645
+Stock tickers before factor join: 3,186
+Rows after inner date join, before ticker filter: 11,411,490
+Tickers after join, before ticker filter: 3,186
+Stock-return rows without a matching factor date: 155
+Tickers retained (>= 60): 3,182
+Tickers removed (< 60): 4
+Final rows: 11,411,282
+Final tickers: 3,182
+
+Final panel validation
+----------------------
+Column order: ['date', 'ticker', 'stock_return', 'excess_return', 'mkt_rf', 'smb', 'hml', 'rmw', 'cma', 'rf']
+Parquet schema:
+  column_name  column_type null  key default extra
+         date TIMESTAMP_NS  YES None    None  None
+       ticker      VARCHAR  YES None    None  None
+ stock_return       DOUBLE  YES None    None  None
+excess_return       DOUBLE  YES None    None  None
+       mkt_rf       DOUBLE  YES None    None  None
+          smb       DOUBLE  YES None    None  None
+          hml       DOUBLE  YES None    None  None
+          rmw       DOUBLE  YES None    None  None
+          cma       DOUBLE  YES None    None  None
+           rf       DOUBLE  YES None    None  None
+Date range: 1998-01-02 00:00:00 through 2016-12-30 00:00:00
+Duplicate ticker-date groups: 0
+Missing values by column: {'date': 0, 'ticker': 0, 'stock_return': 0, 'excess_return': 0, 'mkt_rf': 0, 'smb': 0, 'hml': 0, 'rmw': 0, 'cma': 0, 'rf': 0}
+Sorted by date, ticker: True (violations: 0)
+Max |excess_return - (stock_return - rf)|: 0.000e+00
+Observations per retained ticker:
+  min=61; median=4,452.5; mean=3,586.20; max=4,781
+Internal gaps relative to the FF5 trading-day calendar (between each ticker's first and last retained date):
+  missing ticker-days=2,472; tickers with >=1 gap=117; median per ticker=0.0; max=592
+  These gaps are reported only. They are not filled, and the corresponding tickers are not removed.
+First five final rows:
+      date ticker  stock_return  excess_return  mkt_rf    smb     hml    rmw    cma     rf
+1998-01-02    AAN      0.000000      -0.000200  0.0022 -0.001 -0.0046 0.0021 -0.001 0.0002
+1998-01-02   AAON     -0.008330      -0.008530  0.0022 -0.001 -0.0046 0.0021 -0.001 0.0002
+1998-01-02   AAPL      0.237624       0.237424  0.0022 -0.001 -0.0046 0.0021 -0.001 0.0002
+1998-01-02   ABAX      0.059429       0.059229  0.0022 -0.001 -0.0046 0.0021 -0.001 0.0002
+1998-01-02    ABC     -0.007554      -0.007754  0.0022 -0.001 -0.0046 0.0021 -0.001 0.0002
+
+Extreme-return review (reported, not removed)
+---------------------------------------------
+Rows with |stock_return| > 100%: 383
+Rows with |stock_return| > 500%: 42
+Twenty largest absolute daily returns:
+      date ticker  stock_return
+2015-11-09   HERO    283.000000
+2013-01-28   TSRE    155.750000
+2009-03-26   BAGR    103.800000
+2011-10-31   TXMD     99.000000
+2009-02-25   HTWR     80.081081
+2013-04-18    TAM     66.990654
+2000-01-03   CRRS     48.533641
+2004-11-18   WETF     36.500000
+2012-10-03   NETE     33.800000
+2016-10-24    MPO     30.807330
+2000-05-31   CRRS     28.999981
+1998-01-12     EE     23.000000
+2002-03-18    CQB     21.265625
+2010-05-24   BAGR     13.000000
+2006-04-05   CRRS     12.333333
+2011-04-18   BAGR     12.125000
+2002-08-30   ARWR     11.024320
+1998-04-23    MCF     10.750000
+2007-01-26   TWER     10.742424
+2000-03-06    CUI      9.000000
+
+Look-ahead and methodology notes
+--------------------------------
+- Returns use only the immediately preceding same-ticker observation.
+- No future observations are used for filling, scaling, normalization, filtering, or feature construction.
+- The 60-observation rule uses each ticker's full target-sample record count. It establishes regression feasibility; later rolling code must still use only observations strictly before date t to estimate beta_(i,t-1).
+- Occasional calendar gaps remain as gaps. No missing return is replaced with zero.
+- Extreme returns are retained. They require case-by-case review before any later error correction.
+- The factor archive is the currently downloaded Kenneth French vintage. Historical factor values can be revised, so exact paper-vintage replication may require an archived release from the paper's era.
+
+Outputs
+-------
+Primary Parquet: data/processed/ff5_daily_panel.parquet
+Optional CSV: data/processed/ff5_daily_panel.csv
+Report: data/processed/ff5_dataset_report.txt
