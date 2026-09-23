@@ -1,0 +1,171 @@
+# Run Report
+
+## 1. Work Completed
+
+Built and executed a clean data-to-portfolio baseline with cached public prices, simple daily
+returns, past-only rolling PCA, interchangeable residual serialization, leak-free cumulative
+windows, CNN-transformer and FFN policies, L1 portfolio construction, differentiable Sharpe,
+chronological train/validation/test, metrics, plots, and automated tests.
+
+## 2. References and Materials
+
+- Official `gregzanotti/dlsa-public` shallow clone at
+  `references/dlsa-public/`, commit `ea8cc2958943eb1fe914aa4fad6998994a678323`.
+- Paper HTML/public arXiv version 2106.04028v2 was consulted.
+- No third-party replication repository was cloned; search results were low-signal or
+  unlicensed, and the official code was sufficient.
+- The official clone contains compressed residual arrays, but licensed CRSP/Compustat source
+  data and required complete `Phi` mappings are unavailable. No external "Data for Code"
+  payload was downloaded.
+
+## 3. Environment
+
+macOS 26.5.1 on Apple arm64, 16 GiB RAM, Python 3.12.0, and PyTorch 2.5.1. No NVIDIA GPU,
+`nvidia-smi`, or CUDA was present. Apple MPS was available and selected; CPU fallback was
+tested. See `docs/ENVIRONMENT.md`.
+
+## 4. Public Data
+
+Yahoo Finance adjusted closes via `yfinance`, with implemented Stooq fallback, for 50 liquid
+US-listed stocks from 2015-01-02 through 2025-12-31. All 50 succeeded on the final run, with
+2,766 common trading days and no reported missing adjusted closes in the downloaded panel.
+The fixed current universe has survivorship bias.
+
+The resulting return panel had 2,765 dates. Rolling PCA produced 2,513 OOS residual dates by
+using 252 historical dates, five factors, and 60 dates for loadings.
+
+PCA diagnostics:
+
+| Diagnostic | Value |
+|---|---:|
+| Residual mean | 0.00003297 |
+| Residual standard deviation | 0.0129582 |
+| Mean five-factor explained variance | 0.58437 |
+| Raw mean absolute cross-sectional correlation | 0.37308 |
+| Residual mean absolute cross-sectional correlation | 0.04211 |
+
+## 5. Architecture
+
+The primary model has two causal kernel-size-2 convolutions, eight channels, instance
+normalization and a residual connection, one four-head Transformer encoder with a 16-unit
+internal FFN, dropout 0.25, and a scalar linear allocation head. There is no positional
+encoding, following the official implementation. A `[date, asset, 30]` cumulative residual
+tensor is flattened per asset for the shared policy, restored to `[date, asset]`, and L1
+normalized across assets.
+
+The raw FFN and a non-trainable reversal score are also implemented. Model tests execute both
+trainable architectures.
+
+## 6. Deviations From the Paper
+
+Free fixed universe rather than CRSP; no risk-free subtraction; no Compustat/IPCA or 46
+characteristics; provisional PCA; direct residual trading rather than stock-space `Phi`
+mapping; simple 60/20/20 chronological split rather than rolling 1,000/125 retraining; no
+costs; one fixed seed; modern independent PyTorch implementation. See
+`docs/LIMITATIONS.md`.
+
+## 7. Commands Executed
+
+```bash
+git status --short --branch && git remote -v
+uname -a && sw_vers && python3 --version && command -v python3 && sysctl -n hw.memsize
+nvidia-smi
+python3 -c "...torch environment probe..."
+git clone --depth 1 https://github.com/gregzanotti/dlsa-public.git references/dlsa-public
+python3 -m pytest -q
+PYTHONPATH=src python3 scripts/run_smoke_test.py
+PYTHONPATH=src python3 scripts/download_sample_data.py
+PYTHONPATH=src python3 scripts/download_sample_data.py --force
+PYTHONPATH=src python3 scripts/build_pca_residuals.py
+PYTHONPATH=src python3 scripts/run_smoke_test.py
+PYTHONPATH=src python3 scripts/train_baseline.py --epochs 10
+PYTHONPATH=src python3 scripts/evaluate_baseline.py
+python3 -m compileall -q src scripts
+uvx ruff format src scripts tests
+uvx ruff check src scripts tests
+uvx ruff format --check src scripts tests
+```
+
+The first PCA build found and led to correction of an explicit-cache-schema bug. The same
+command then completed. Installed users do not need `PYTHONPATH=src`; README commands assume
+`pip install -e '.[dev]'`.
+
+## 8. Tests
+
+Final validation: `10 passed in 2.36s`; Ruff reported all checks passed and all 28 files
+formatted. Coverage includes return handling, PCA shape and future-mutation
+no-lookahead, residual round-trip, exact window cutoff, CNN/Transformer/full-model shapes,
+finite forward/backward, Sharpe gradients, L1 normalization, return alignment, and a complete
+one-epoch integration train.
+
+## 9. Smoke Results
+
+Synthetic mean-reverting process, four epochs, held-out 66 observations:
+
+| Metric | Value |
+|---|---:|
+| Annualized mean | 2.0391 |
+| Annualized volatility | 0.0644 |
+| Annualized Sharpe | 31.66 |
+
+This deliberately easy process only verifies learnability.
+
+Public two-epoch smoke test produced Sharpe 0.05. The final fixed-seed ten-epoch engineering
+run used 1,489 train dates, 496 validation dates, and 498 test dates. Final average training
+batch objective was negative Sharpe `-0.0972`; best validation annualized Sharpe was `-0.3360`.
+The selected checkpoint's held-out period was 2024-01-08 through 2025-12-31:
+
+| Metric | Value |
+|---|---:|
+| Annualized mean | 0.01889 |
+| Annualized volatility | 0.03013 |
+| Annualized Sharpe | 0.6267 |
+| Average one-way L1 turnover | 0.7264 |
+| Asset weight changes counted | 24,850 |
+
+No seeds were searched or cherry-picked. Negative validation performance is an important
+warning against interpreting the positive test value.
+
+## 10. Runtime
+
+Final ten-epoch public run: 12.06 seconds. PCA generation and download completed comfortably
+within the smoke workflow. Exact wall-clock timing was not instrumented for those two steps.
+
+## 11. Accelerator and Memory
+
+Apple MPS was used. CUDA and RTX VRAM measurements were unavailable on this host. CUDA device
+selection, GPU-name printing, and peak allocated VRAM reporting are implemented for CUDA.
+
+## 12. Generated Artifacts
+
+Cached prices and quality JSON, daily returns, PCA residual NPZ, model checkpoint, prediction
+NPZ, test metrics JSON, `outputs/training_loss.png`, and
+`outputs/cumulative_test_return.png` were generated and read back where applicable.
+
+## 13. Known Problems
+
+The public source can transiently fail individual Yahoo requests; Stooq fallback and forced
+cache refresh are available. Validation performance was weak. The full official code cannot
+reproduce paper results without licensed inputs and stock-space mappings. No transaction
+costs or rolling retraining are implemented yet.
+
+## 14. Recommended Next Steps
+
+1. Replace `pca_residuals.npz` with the team's residual panel while preserving dates/tickers.
+2. Add and validate time-varying `Phi` matrices, then normalize in stock space.
+3. Implement rolling 1,000-day training and 125-day retraining behind the same trainer API.
+4. Add risk-free returns, transaction/borrow costs, and dynamic-universe masks.
+5. Run multiple predeclared seeds and report distributions, not a selected result.
+
+## WHAT DANIIL SHOULD READ FIRST
+
+1. `docs/BASELINE_DESIGN.md`
+2. `src/dlsa_baseline/data/pca_residuals.py`
+3. `src/dlsa_baseline/data/windows.py`
+4. `src/dlsa_baseline/models/cnn_transformer.py`
+5. `src/dlsa_baseline/models/cnn.py`
+6. `src/dlsa_baseline/training/objectives.py`
+7. `src/dlsa_baseline/training/trainer.py`
+8. `src/dlsa_baseline/training/evaluation.py`
+9. `scripts/train_baseline.py`
+10. `tests/test_data.py`
