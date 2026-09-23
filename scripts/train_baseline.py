@@ -74,6 +74,19 @@ def main() -> None:
         dates=np.asarray(result["test_dates"]).astype(str),
         tickers=windows.tickers,
     )
+    test_start = result["split"].validation_end
+    reversal_scores = -windows.windows[test_start:, :, -1]
+    reversal_weights = reversal_scores / np.maximum(
+        np.abs(reversal_scores).sum(axis=1, keepdims=True), 1e-8
+    )
+    reversal_returns = (reversal_weights * windows.targets[test_start:]).sum(axis=1)
+    np.savez_compressed(
+        ROOT / "outputs/reversal_predictions.npz",
+        returns=reversal_returns,
+        weights=reversal_weights,
+        dates=np.asarray(result["test_dates"]).astype(str),
+        tickers=windows.tickers,
+    )
     metrics_path = ROOT / "outputs/test_metrics.json"
     metrics_path.write_text(json.dumps(result["test_metrics"], indent=2))
     print(json.dumps(result["test_metrics"], indent=2))

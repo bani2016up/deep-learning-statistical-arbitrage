@@ -81,6 +81,7 @@ uv run python scripts/download_sample_data.py
 uv run python scripts/build_pca_residuals.py
 uv run python scripts/train_baseline.py --epochs 10
 uv run python scripts/evaluate_baseline.py
+uv run python scripts/analyze_run.py --benchmark reversal=outputs/reversal_predictions.npz
 ```
 
 The first PCA build found and led to correction of an explicit-cache-schema bug. The same
@@ -89,11 +90,13 @@ required; every command is executed through uv from the locked environment.
 
 ## 8. Tests
 
-Python 3.13 lock-file validation: `10 passed in 5.51s`; Ruff reported all checks passed and
-all 28 files formatted. Coverage includes return handling, PCA shape and future-mutation
+Python 3.13 lock-file validation: `14 passed`; Ruff reported all checks passed and all Python
+files formatted. Coverage includes return handling, PCA shape and future-mutation
 no-lookahead, residual round-trip, exact window cutoff, CNN/Transformer/full-model shapes,
 finite forward/backward, Sharpe gradients, L1 normalization, return alignment, and a complete
-one-epoch integration train.
+one-epoch integration train. Statistical tests cover HAC inference, block-bootstrap
+reproducibility, transaction costs, factor alpha, multiple-testing correction, CSCV/PBO, and
+complete report/plot generation.
 
 ## 9. Smoke Results
 
@@ -123,9 +126,19 @@ The selected checkpoint's held-out period was 2024-01-08 through 2025-12-31:
 No seeds were searched or cherry-picked. Negative validation performance is an important
 warning against interpreting the positive test value.
 
+The statistical analyzer classifies this run as **insufficient statistical evidence**. The
+HAC t-statistic for mean return is 1.05 (one-sided p-value 0.147), the 95% circular
+block-bootstrap Sharpe interval is `[-0.49, 1.78]`, PSR is 0.83, and Deflated Sharpe
+probability is 0.65 when the reversal benchmark is counted as a tried strategy. Estimated
+minimum track record is 1,483 trading days versus 498 observed. Break-even transaction cost
+is only 1.10 bps per unit turnover; at 10 bps the annualized net Sharpe is -5.47. The model's
+mean return exceeds reversal, but the paired HAC one-sided p-value is 0.171. PBO is 0.143 for
+the two supplied strategies, but this estimate is not reliable unless every tried strategy
+and configuration is included.
+
 ## 10. Runtime
 
-Final Python 3.13 ten-epoch public run: 9.50 seconds. PCA generation and download completed
+Final Python 3.13 ten-epoch public run: 9.79 seconds. PCA generation and download completed
 comfortably within the smoke workflow. Exact wall-clock timing was not instrumented for those
 two steps.
 
@@ -136,9 +149,11 @@ selection, GPU-name printing, and peak allocated VRAM reporting are implemented 
 
 ## 12. Generated Artifacts
 
-Cached prices and quality JSON, daily returns, PCA residual NPZ, model checkpoint, prediction
-NPZ, test metrics JSON, `outputs/training_loss.png`, and
-`outputs/cumulative_test_return.png` were generated and read back where applicable.
+Cached prices and quality JSON, daily returns, PCA residual NPZ, model checkpoint, model and
+reversal prediction NPZs, test metrics JSON, `outputs/training_loss.png`, and
+`outputs/cumulative_test_return.png` were generated and read back where applicable. The
+analyzer generated strict JSON and Markdown reports plus equity/drawdown, rolling Sharpe,
+monthly returns, return distribution, bootstrap Sharpe, and transaction-cost plots.
 
 ## 13. Known Problems
 

@@ -46,6 +46,8 @@ uv run pytest
 uv run python scripts/run_smoke_test.py
 uv run python scripts/train_baseline.py
 uv run python scripts/evaluate_baseline.py
+uv run python scripts/analyze_run.py \
+  --benchmark reversal=outputs/reversal_predictions.npz
 ```
 
 Useful development variants:
@@ -84,11 +86,14 @@ Data generation is separate from modeling. The interchangeable residual file sto
 - `outputs/cnn_transformer.pt`: selected model checkpoint
 - `outputs/test_predictions.npz`: held-out returns and weights
 - `outputs/test_metrics.json`: held-out annualized metrics
+- `outputs/reversal_predictions.npz`: aligned non-trainable reversal benchmark
 - `outputs/training_loss.png`: optimization trace
 - `outputs/cumulative_test_return.png`: held-out cumulative wealth
+- `outputs/analysis/`: statistical JSON/Markdown reports and diagnostic plots
 
 ## Reading Guide
 
 Read `docs/BASELINE_DESIGN.md` for the exact no-lookahead and tensor conventions,
 `docs/OFFICIAL_CODE_MAP.md` for the relationship to official code, `docs/LIMITATIONS.md`
-before interpreting any metric, and `RUN_REPORT.md` for the validated run on this host.
+before interpreting any metric, `docs/STATISTICAL_ANALYSIS.md` for inference methodology,
+and `RUN_REPORT.md` for the validated run on this host.
