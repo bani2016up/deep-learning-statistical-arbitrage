@@ -1,0 +1,13 @@
+[final 1/12] final__cnn_neutral_cw0__s0: sharpe=0.30 net_sharpe=-3.10 (0s)
+[final 2/12] final__cnn_neutral_cw0__s1: sharpe=0.39 net_sharpe=-2.95 (0s)
+[final 3/12] final__cnn_neutral_cw0__s2: sharpe=0.61 net_sharpe=-2.68 (0s)
+[final 4/12] final__cnn_neutral_cw0.25__s0: sharpe=0.40 net_sharpe=-2.25 (204s)
+[final 5/12] final__cnn_neutral_cw0.25__s1: sharpe=0.40 net_sharpe=-2.20 (222s)
+[final 6/12] final__cnn_neutral_cw0.25__s2: sharpe=0.49 net_sharpe=-2.18 (246s)
+[final 7/12] final__cnn_neutral_cw0.5__s0: sharpe=0.22 net_sharpe=-1.77 (234s)
+[final 8/12] final__cnn_neutral_cw0.5__s1: sharpe=0.14 net_sharpe=-1.44 (245s)
+[final 9/12] final__cnn_neutral_cw0.5__s2: sharpe=0.37 net_sharpe=-1.39 (249s)
+[final 10/12] final__cnn_neutral_cw1__s0: sharpe=-0.04 net_sharpe=-1.06 (0s)
+[final 11/12] final__cnn_neutral_cw1__s1: sharpe=0.07 net_sharpe=-0.95 (0s)
+[final 12/12] final__cnn_neutral_cw1__s2: sharpe=-0.16 net_sharpe=-1.23 (0s)
+Summary: /Users/vs_code/test/results/summary.csv

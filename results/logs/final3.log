@@ -1,0 +1,43 @@
+[final 1/24] final__cnn_neutral_cw0__s0: sharpe=0.30 net_sharpe=-3.10 (0s)
+[final 2/24] final__cnn_neutral_cw0__s1: sharpe=0.39 net_sharpe=-2.95 (0s)
+[final 3/24] final__cnn_neutral_cw0__s2: sharpe=0.61 net_sharpe=-2.68 (0s)
+[final 4/24] final__cnn_neutral_cw0.25__s0: sharpe=0.40 net_sharpe=-2.25 (0s)
+[final 5/24] final__cnn_neutral_cw0.25__s1: sharpe=0.40 net_sharpe=-2.20 (0s)
+[final 6/24] final__cnn_neutral_cw0.25__s2: sharpe=0.49 net_sharpe=-2.18 (0s)
+[final 7/24] final__cnn_neutral_cw0.5__s0: sharpe=0.22 net_sharpe=-1.77 (0s)
+[final 8/24] final__cnn_neutral_cw0.5__s1: sharpe=0.14 net_sharpe=-1.44 (0s)
+[final 9/24] final__cnn_neutral_cw0.5__s2: sharpe=0.37 net_sharpe=-1.39 (0s)
+[final 10/24] final__cnn_neutral_cw1__s0: sharpe=-0.04 net_sharpe=-1.06 (0s)
+[final 11/24] final__cnn_neutral_cw1__s1: sharpe=0.07 net_sharpe=-0.95 (0s)
+[final 12/24] final__cnn_neutral_cw1__s2: sharpe=-0.16 net_sharpe=-1.23 (0s)
+[final 13/24] final__cnn_neutral_cw0.5_k6__s0: sharpe=0.23 net_sharpe=-1.46 (146s)
+[final 14/24] final__cnn_neutral_cw0.5_k6__s1: sharpe=0.17 net_sharpe=-1.34 (146s)
+[final 15/24] final__cnn_neutral_cw0.5_k6__s2: sharpe=0.48 net_sharpe=-1.12 (146s)
+[final 16/24] final__cnn_neutral_cw0.5_k7__s0: sharpe=0.28 net_sharpe=-1.43 (147s)
+[final 17/24] final__cnn_neutral_cw0.5_k7__s1: sharpe=0.31 net_sharpe=-1.18 (146s)
+[final 18/24] final__cnn_neutral_cw0.5_k7__s2: sharpe=0.68 net_sharpe=-0.99 (146s)
+[final 19/24] final__cnn_neutral_cw0.5_k8__s0: sharpe=0.46 net_sharpe=-1.23 (0s)
+[final 20/24] final__cnn_neutral_cw0.5_k8__s1: sharpe=0.61 net_sharpe=-1.00 (0s)
+[final 21/24] final__cnn_neutral_cw0.5_k8__s2: sharpe=0.94 net_sharpe=-0.89 (0s)
+[final 22/24] final__cnn_neutral_cw0.5_k10__s0: sharpe=-0.01 net_sharpe=-1.68 (145s)
+[final 23/24] final__cnn_neutral_cw0.5_k10__s1: sharpe=0.05 net_sharpe=-1.48 (136s)
+[final 24/24] final__cnn_neutral_cw0.5_k10__s2: sharpe=-0.16 net_sharpe=-1.73 (98s)
+Summary: /Users/vs_code/test/results/summary.csv
+final__cnn_neutral_cw0.5_k6 B= 1: sharpe=+0.55 net=-1.24 turnover=0.52
+final__cnn_neutral_cw0.5_k6 B= 2: sharpe=+0.54 net=-0.79 turnover=0.36
+final__cnn_neutral_cw0.5_k6 B= 3: sharpe=+0.63 net=-0.48 turnover=0.29
+final__cnn_neutral_cw0.5_k6 B= 5: sharpe=+0.53 net=-0.36 turnover=0.21
+final__cnn_neutral_cw0.5_k6 B=10: sharpe=+0.45 net=-0.25 turnover=0.15
+final__cnn_neutral_cw0.5_k6 B=20: sharpe=+0.46 net=-0.11 turnover=0.10
+final__cnn_neutral_cw0.5_k7 B= 1: sharpe=+0.56 net=-1.33 turnover=0.49
+final__cnn_neutral_cw0.5_k7 B= 2: sharpe=+0.51 net=-0.97 turnover=0.37
+final__cnn_neutral_cw0.5_k7 B= 3: sharpe=+0.61 net=-0.63 turnover=0.30
+final__cnn_neutral_cw0.5_k7 B= 5: sharpe=+0.66 net=-0.38 turnover=0.23
+final__cnn_neutral_cw0.5_k7 B=10: sharpe=+0.48 net=-0.33 turnover=0.16
+final__cnn_neutral_cw0.5_k7 B=20: sharpe=+0.28 net=-0.37 turnover=0.11
+final__cnn_neutral_cw0.5_k10 B= 1: sharpe=+0.11 net=-1.97 turnover=0.55
+final__cnn_neutral_cw0.5_k10 B= 2: sharpe=-0.11 net=-1.69 turnover=0.40
+final__cnn_neutral_cw0.5_k10 B= 3: sharpe=-0.13 net=-1.47 turnover=0.32
+final__cnn_neutral_cw0.5_k10 B= 5: sharpe=-0.10 net=-1.19 turnover=0.24
+final__cnn_neutral_cw0.5_k10 B=10: sharpe=-0.39 net=-1.25 turnover=0.17
+final__cnn_neutral_cw0.5_k10 B=20: sharpe=-0.52 net=-1.21 turnover=0.12

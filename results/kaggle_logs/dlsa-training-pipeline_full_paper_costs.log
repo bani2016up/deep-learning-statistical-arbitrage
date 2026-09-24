@@ -1,0 +1,314 @@
+[{"stream_name":"stdout","time":0.99011795,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":0.990215308,"data":"ENVIRONMENT \u0026 HARDWARE VERIFICATION\n"}
+,{"stream_name":"stdout","time":0.99025799,"data":"Python version: 3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]\n"}
+,{"stream_name":"stdout","time":7.688470243,"data":"PyTorch version: 2.10.0+cu128\n"}
+,{"stream_name":"stdout","time":7.95132584,"data":"CUDA available: True\n"}
+,{"stream_name":"stdout","time":7.9794499949999995,"data":"GPU device count: 2\n"}
+,{"stream_name":"stdout","time":7.995802448,"data":"  [GPU 0]: Tesla T4 | Compute Capability: (7, 5) | Total VRAM: 14.6 GB\n"}
+,{"stream_name":"stdout","time":7.995836218,"data":"  [GPU 1]: Tesla T4 | Compute Capability: (7, 5) | Total VRAM: 14.6 GB\n"}
+,{"stream_name":"stdout","time":8.470608557,"data":"CUDA smoke test passed successfully.\n"}
+,{"stream_name":"stdout","time":8.470643931,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":8.470649159,"data":"STAGING CODEBASE\n"}
+,{"stream_name":"stdout","time":8.481711543,"data":"Found code source at: /kaggle/input/datasets/timtoktamysov/dlsa-code\n"}
+,{"stream_name":"stdout","time":8.659039255,"data":"Code staged to /kaggle/working/repo: ['GIT_COMMIT_AT_PUSH.txt', 'GIT_DIFF_AT_PUSH.patch', 'README.md', 'experiments', 'src']\n"}
+,{"stream_name":"stdout","time":8.666951144,"data":"WANDB_API_KEY loaded from secrets dataset.\n"}
+,{"stream_name":"stdout","time":8.669032288,"data":"Discovered residuals dataset at: /kaggle/input/datasets/timtoktamysov/dlsa-residuals\n"}
+,{"stream_name":"stdout","time":8.671662108,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":8.671679043,"data":"LAUNCHING SUITES: ['full_paper_costs']\n"}
+,{"stream_name":"stdout","time":8.671691802,"data":"Set 11h session deadline guard: Thu Sep 24 20:02:37 2026\n"}
+,{"stream_name":"stdout","time":8.672011668,"data":"Spawning Worker 0 (GPU 0): /usr/bin/python3 -u -m experiments.run_suite full_paper_costs --shard 0/2\n"}
+,{"stream_name":"stdout","time":8.672981832,"data":"Spawning Worker 1 (GPU 1): /usr/bin/python3 -u -m experiments.run_suite full_paper_costs --shard 1/2\n"}
+,{"stream_name":"stdout","time":8.673595186,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":8.673611622,"data":"MONITORING WORKERS...\n"}
+,{"stream_name":"stdout","time":8.673617376,"data":"[00:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":68.673891912,"data":"[01:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":128.674267244,"data":"[02:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":128.674474191,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 1 from 2003-02-10: oos_sharpe=+3.51 loss=-0.261\n"}
+,{"stream_name":"stdout","time":128.674513966,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 1 from 2003-02-10: oos_sharpe=+5.83 loss=-0.254\n"}
+,{"stream_name":"stdout","time":188.675008521,"data":"[03:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":188.675048593,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 1 from 2003-02-10: oos_sharpe=+3.51 loss=-0.261\n"}
+,{"stream_name":"stdout","time":188.675054229,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 1 from 2003-02-10: oos_sharpe=+5.83 loss=-0.254\n"}
+,{"stream_name":"stdout","time":248.675181633,"data":"[04:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":248.675366456,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 2 from 2003-08-08: oos_sharpe=+1.33 loss=-0.266\n"}
+,{"stream_name":"stdout","time":248.675431218,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 2 from 2003-08-08: oos_sharpe=+5.15 loss=-0.289\n"}
+,{"stream_name":"stdout","time":308.675959295,"data":"[05:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":308.676004391,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 2 from 2003-08-08: oos_sharpe=+1.33 loss=-0.266\n"}
+,{"stream_name":"stdout","time":308.676010576,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 3 from 2004-02-06: oos_sharpe=+2.17 loss=-0.246\n"}
+,{"stream_name":"stdout","time":368.67641657,"data":"[06:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":368.676468203,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 3 from 2004-02-06: oos_sharpe=+1.34 loss=-0.228\n"}
+,{"stream_name":"stdout","time":368.676474617,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 3 from 2004-02-06: oos_sharpe=+2.17 loss=-0.246\n"}
+,{"stream_name":"stdout","time":428.67663082,"data":"[07:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":428.676854867,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 4 from 2004-08-06: oos_sharpe=+4.76 loss=-0.113\n"}
+,{"stream_name":"stdout","time":428.676866446,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 4 from 2004-08-06: oos_sharpe=+3.98 loss=-0.136\n"}
+,{"stream_name":"stdout","time":488.677145899,"data":"[08:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":488.677327533,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 4 from 2004-08-06: oos_sharpe=+4.76 loss=-0.113\n"}
+,{"stream_name":"stdout","time":488.677419536,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 4 from 2004-08-06: oos_sharpe=+3.98 loss=-0.136\n"}
+,{"stream_name":"stdout","time":548.677757672,"data":"[09:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":548.677932997,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 5 from 2005-02-03: oos_sharpe=+1.09 loss=-0.091\n"}
+,{"stream_name":"stdout","time":548.678107709,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 5 from 2005-02-03: oos_sharpe=+2.25 loss=-0.116\n"}
+,{"stream_name":"stdout","time":608.67845365,"data":"[10:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":608.678498755,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 6 from 2005-08-03: oos_sharpe=+1.55 loss=-0.081\n"}
+,{"stream_name":"stdout","time":608.67850458,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 6 from 2005-08-03: oos_sharpe=+3.34 loss=-0.134\n"}
+,{"stream_name":"stdout","time":668.682435648,"data":"[11:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":668.682481672,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 6 from 2005-08-03: oos_sharpe=+1.55 loss=-0.081\n"}
+,{"stream_name":"stdout","time":668.682488626,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 6 from 2005-08-03: oos_sharpe=+3.34 loss=-0.134\n"}
+,{"stream_name":"stdout","time":728.681970826,"data":"[12:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":728.682179226,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 7 from 2006-02-01: oos_sharpe=-2.23 loss=-0.073\n"}
+,{"stream_name":"stdout","time":728.682202675,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 7 from 2006-02-01: oos_sharpe=-0.08 loss=-0.135\n"}
+,{"stream_name":"stdout","time":788.682701377,"data":"[13:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":788.682760255,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 8 from 2006-08-01: oos_sharpe=+3.06 loss=-0.034\n"}
+,{"stream_name":"stdout","time":788.68276713,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 8 from 2006-08-01: oos_sharpe=+1.29 loss=-0.069\n"}
+,{"stream_name":"stdout","time":848.682860862,"data":"[14:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":848.68308312,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 8 from 2006-08-01: oos_sharpe=+3.06 loss=-0.034\n"}
+,{"stream_name":"stdout","time":848.683111834,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 8 from 2006-08-01: oos_sharpe=+1.29 loss=-0.069\n"}
+,{"stream_name":"stdout","time":908.68343754,"data":"[15:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":908.683743028,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 9 from 2007-01-31: oos_sharpe=+0.94 loss=-0.046\n"}
+,{"stream_name":"stdout","time":908.683766865,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 9 from 2007-01-31: oos_sharpe=-2.35 loss=-0.040\n"}
+,{"stream_name":"stdout","time":968.683930627,"data":"[16:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":968.684119192,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 9 from 2007-01-31: oos_sharpe=+0.94 loss=-0.046\n"}
+,{"stream_name":"stdout","time":968.684166911,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 10 from 2007-07-31: oos_sharpe=+0.53 loss=0.056\n"}
+,{"stream_name":"stdout","time":1028.684597903,"data":"[17:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1028.684676002,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 10 from 2007-07-31: oos_sharpe=+0.78 loss=0.137\n"}
+,{"stream_name":"stdout","time":1028.684953402,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 10 from 2007-07-31: oos_sharpe=+0.53 loss=0.056\n"}
+,{"stream_name":"stdout","time":1088.685198267,"data":"[18:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1088.685471147,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 11 from 2008-01-29: oos_sharpe=-1.07 loss=-0.043\n"}
+,{"stream_name":"stdout","time":1088.685843239,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 11 from 2008-01-29: oos_sharpe=-0.23 loss=0.111\n"}
+,{"stream_name":"stdout","time":1148.686151413,"data":"[19:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1148.686348602,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 11 from 2008-01-29: oos_sharpe=-1.07 loss=-0.043\n"}
+,{"stream_name":"stdout","time":1148.686358562,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 11 from 2008-01-29: oos_sharpe=-0.23 loss=0.111\n"}
+,{"stream_name":"stdout","time":1208.686622593,"data":"[20:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1208.686801964,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 12 from 2008-07-28: oos_sharpe=+0.04 loss=-0.003\n"}
+,{"stream_name":"stdout","time":1208.686926462,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 12 from 2008-07-28: oos_sharpe=-1.46 loss=0.087\n"}
+,{"stream_name":"stdout","time":1268.687320194,"data":"[21:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1268.687573916,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 13 from 2009-01-26: oos_sharpe=+2.10 loss=-0.009\n"}
+,{"stream_name":"stdout","time":1268.687584072,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 13 from 2009-01-26: oos_sharpe=-2.18 loss=0.092\n"}
+,{"stream_name":"stdout","time":1328.688158347,"data":"[22:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1328.688251791,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 13 from 2009-01-26: oos_sharpe=+2.10 loss=-0.009\n"}
+,{"stream_name":"stdout","time":1328.688260764,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 13 from 2009-01-26: oos_sharpe=-2.18 loss=0.092\n"}
+,{"stream_name":"stdout","time":1388.688301259,"data":"[23:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1388.688906598,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 14 from 2009-07-24: oos_sharpe=+0.01 loss=0.047\n"}
+,{"stream_name":"stdout","time":1388.689303452,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 14 from 2009-07-24: oos_sharpe=+2.47 loss=0.037\n"}
+,{"stream_name":"stdout","time":1448.689810119,"data":"[24:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1448.689964505,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 14 from 2009-07-24: oos_sharpe=+0.01 loss=0.047\n"}
+,{"stream_name":"stdout","time":1448.690055479,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 15 from 2010-01-22: oos_sharpe=+1.81 loss=0.136\n"}
+,{"stream_name":"stdout","time":1508.690667746,"data":"[25:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1508.690754984,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 15 from 2010-01-22: oos_sharpe=+2.75 loss=0.073\n"}
+,{"stream_name":"stdout","time":1508.690761281,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 15 from 2010-01-22: oos_sharpe=+1.81 loss=0.136\n"}
+,{"stream_name":"stdout","time":1568.691192789,"data":"[26:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1568.691273206,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 16 from 2010-07-22: oos_sharpe=+0.45 loss=-0.061\n"}
+,{"stream_name":"stdout","time":1568.691281817,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 16 from 2010-07-22: oos_sharpe=+2.45 loss=-0.001\n"}
+,{"stream_name":"stdout","time":1628.691354713,"data":"[27:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1628.691541036,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 16 from 2010-07-22: oos_sharpe=+0.45 loss=-0.061\n"}
+,{"stream_name":"stdout","time":1628.691769953,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 17 from 2011-01-19: oos_sharpe=+0.52 loss=-0.012\n"}
+,{"stream_name":"stdout","time":1688.692161211,"data":"[28:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1688.692293488,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 17 from 2011-01-19: oos_sharpe=+1.56 loss=-0.032\n"}
+,{"stream_name":"stdout","time":1688.69251337,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 17 from 2011-01-19: oos_sharpe=+0.52 loss=-0.012\n"}
+,{"stream_name":"stdout","time":1748.69272674,"data":"[29:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1748.692857192,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 18 from 2011-07-19: oos_sharpe=-2.15 loss=-0.038\n"}
+,{"stream_name":"stdout","time":1748.692975391,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 18 from 2011-07-19: oos_sharpe=-1.50 loss=0.131\n"}
+,{"stream_name":"stdout","time":1808.693279959,"data":"[30:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1808.693471114,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 18 from 2011-07-19: oos_sharpe=-2.15 loss=-0.038\n"}
+,{"stream_name":"stdout","time":1808.693575309,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 18 from 2011-07-19: oos_sharpe=-1.50 loss=0.131\n"}
+,{"stream_name":"stdout","time":1868.693991685,"data":"[31:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1868.694279073,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 19 from 2012-01-17: oos_sharpe=+0.82 loss=0.082\n"}
+,{"stream_name":"stdout","time":1868.694292009,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 19 from 2012-01-17: oos_sharpe=-0.37 loss=0.143\n"}
+,{"stream_name":"stdout","time":1928.694704066,"data":"[32:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1928.695071349,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 20 from 2012-07-16: oos_sharpe=+3.99 loss=-0.015\n"}
+,{"stream_name":"stdout","time":1928.695201768,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 20 from 2012-07-16: oos_sharpe=-3.38 loss=0.113\n"}
+,{"stream_name":"stdout","time":1988.69560341,"data":"[33:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1988.695877211,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 20 from 2012-07-16: oos_sharpe=+3.99 loss=-0.015\n"}
+,{"stream_name":"stdout","time":1988.695886519,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 20 from 2012-07-16: oos_sharpe=-3.38 loss=0.113\n"}
+,{"stream_name":"stdout","time":2048.696427083,"data":"[34:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2048.696476896,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 21 from 2013-01-15: oos_sharpe=+1.08 loss=0.125\n"}
+,{"stream_name":"stdout","time":2048.696483382,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 21 from 2013-01-15: oos_sharpe=-0.88 loss=0.159\n"}
+,{"stream_name":"stdout","time":2108.69672283,"data":"[35:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2108.696759483,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 21 from 2013-01-15: oos_sharpe=+1.08 loss=0.125\n"}
+,{"stream_name":"stdout","time":2108.696765472,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 22 from 2013-07-16: oos_sharpe=+0.00 loss=0.138\n"}
+,{"stream_name":"stdout","time":2168.697172169,"data":"[36:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2168.697230946,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 22 from 2013-07-16: oos_sharpe=+1.25 loss=0.001\n"}
+,{"stream_name":"stdout","time":2168.697304524,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 22 from 2013-07-16: oos_sharpe=+0.00 loss=0.138\n"}
+,{"stream_name":"stdout","time":2228.697558078,"data":"[37:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2228.697800774,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 23 from 2014-01-13: oos_sharpe=+1.39 loss=-0.001\n"}
+,{"stream_name":"stdout","time":2228.697860371,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 23 from 2014-01-13: oos_sharpe=+0.87 loss=0.026\n"}
+,{"stream_name":"stdout","time":2288.698031093,"data":"[38:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2288.698386122,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 23 from 2014-01-13: oos_sharpe=+1.39 loss=-0.001\n"}
+,{"stream_name":"stdout","time":2288.698526168,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 23 from 2014-01-13: oos_sharpe=+0.87 loss=0.026\n"}
+,{"stream_name":"stdout","time":2348.698844946,"data":"[39:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2348.699052857,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 24 from 2014-07-14: oos_sharpe=-2.07 loss=0.007\n"}
+,{"stream_name":"stdout","time":2348.699062978,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 24 from 2014-07-14: oos_sharpe=-0.07 loss=-0.009\n"}
+,{"stream_name":"stdout","time":2408.699384946,"data":"[40:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2408.69963427,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 25 from 2015-01-09: oos_sharpe=-0.50 loss=0.085\n"}
+,{"stream_name":"stdout","time":2408.699716735,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 25 from 2015-01-09: oos_sharpe=-1.28 loss=0.177\n"}
+,{"stream_name":"stdout","time":2468.700010989,"data":"[41:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2468.7002505,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 25 from 2015-01-09: oos_sharpe=-0.50 loss=0.085\n"}
+,{"stream_name":"stdout","time":2468.700466275,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 25 from 2015-01-09: oos_sharpe=-1.28 loss=0.177\n"}
+,{"stream_name":"stdout","time":2528.700678447,"data":"[42:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2528.701084705,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 26 from 2015-07-10: oos_sharpe=+2.66 loss=0.061\n"}
+,{"stream_name":"stdout","time":2528.701270462,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 26 from 2015-07-10: oos_sharpe=+2.71 loss=0.150\n"}
+,{"stream_name":"stdout","time":2588.70152513,"data":"[43:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2588.701706412,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 27 from 2016-01-07: oos_sharpe=+1.16 loss=0.061\n"}
+,{"stream_name":"stdout","time":2588.701743441,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 27 from 2016-01-07: oos_sharpe=-0.55 loss=0.138\n"}
+,{"stream_name":"stdout","time":2648.702366252,"data":"[44:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2648.702421263,"data":"   Worker 0: [full_paper_costs__ff5__s0] block 27 from 2016-01-07: oos_sharpe=+1.16 loss=0.061\n"}
+,{"stream_name":"stdout","time":2648.702427554,"data":"   Worker 1: [full_paper_costs__pca5__s0] block 27 from 2016-01-07: oos_sharpe=-0.55 loss=0.138\n"}
+,{"stream_name":"stdout","time":2708.702522057,"data":"[45:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2708.702773213,"data":"   Worker 0: [full_paper_costs 1/2] full_paper_costs__ff5__s0: sharpe=0.85 net_sharpe=-0.05 (2671s)\n"}
+,{"stream_name":"stdout","time":2708.702989207,"data":"   Worker 1: [full_paper_costs 1/2] full_paper_costs__pca5__s0: sharpe=0.61 net_sharpe=-1.10 (2661s)\n"}
+,{"stream_name":"stdout","time":2768.703327116,"data":"[46:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2768.703600339,"data":"   Worker 0: [full_paper_costs 1/2] full_paper_costs__ff5__s0: sharpe=0.85 net_sharpe=-0.05 (2671s)\n"}
+,{"stream_name":"stdout","time":2768.703753204,"data":"   Worker 1: [full_paper_costs 1/2] full_paper_costs__pca5__s0: sharpe=0.61 net_sharpe=-1.10 (2661s)\n"}
+,{"stream_name":"stdout","time":2828.704334558,"data":"[47:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2828.704372791,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 1 from 2003-02-10: oos_sharpe=+3.22 loss=-0.245\n"}
+,{"stream_name":"stdout","time":2828.704378412,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 1 from 2003-02-10: oos_sharpe=+4.06 loss=-0.260\n"}
+,{"stream_name":"stdout","time":2888.704881508,"data":"[48:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2888.704931487,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 2 from 2003-08-08: oos_sharpe=+1.43 loss=-0.234\n"}
+,{"stream_name":"stdout","time":2888.704937756,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 2 from 2003-08-08: oos_sharpe=+5.18 loss=-0.257\n"}
+,{"stream_name":"stdout","time":2948.704993066,"data":"[49:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2948.705119134,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 2 from 2003-08-08: oos_sharpe=+1.43 loss=-0.234\n"}
+,{"stream_name":"stdout","time":2948.705193246,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 2 from 2003-08-08: oos_sharpe=+5.18 loss=-0.257\n"}
+,{"stream_name":"stdout","time":3008.705473204,"data":"[50:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3008.705770515,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 3 from 2004-02-06: oos_sharpe=+1.79 loss=-0.182\n"}
+,{"stream_name":"stdout","time":3008.705791601,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 3 from 2004-02-06: oos_sharpe=+1.64 loss=-0.234\n"}
+,{"stream_name":"stdout","time":3068.706305828,"data":"[51:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3068.706348159,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 4 from 2004-08-06: oos_sharpe=+6.10 loss=-0.148\n"}
+,{"stream_name":"stdout","time":3068.706354668,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 4 from 2004-08-06: oos_sharpe=+4.16 loss=-0.198\n"}
+,{"stream_name":"stdout","time":3128.706852037,"data":"[52:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3128.706900487,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 4 from 2004-08-06: oos_sharpe=+6.10 loss=-0.148\n"}
+,{"stream_name":"stdout","time":3128.706922673,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 4 from 2004-08-06: oos_sharpe=+4.16 loss=-0.198\n"}
+,{"stream_name":"stdout","time":3188.707049857,"data":"[53:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3188.70731434,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 5 from 2005-02-03: oos_sharpe=+1.50 loss=-0.102\n"}
+,{"stream_name":"stdout","time":3188.707336662,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 5 from 2005-02-03: oos_sharpe=+3.00 loss=-0.152\n"}
+,{"stream_name":"stdout","time":3248.707637523,"data":"[54:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3248.707700538,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 5 from 2005-02-03: oos_sharpe=+1.50 loss=-0.102\n"}
+,{"stream_name":"stdout","time":3248.707909466,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 6 from 2005-08-03: oos_sharpe=+2.27 loss=-0.097\n"}
+,{"stream_name":"stdout","time":3308.7084960399998,"data":"[55:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3308.708579331,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 6 from 2005-08-03: oos_sharpe=+1.43 loss=-0.082\n"}
+,{"stream_name":"stdout","time":3308.708584999,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 6 from 2005-08-03: oos_sharpe=+2.27 loss=-0.097\n"}
+,{"stream_name":"stdout","time":3368.709079269,"data":"[56:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3368.709126836,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 7 from 2006-02-01: oos_sharpe=-2.57 loss=-0.063\n"}
+,{"stream_name":"stdout","time":3368.709133655,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 7 from 2006-02-01: oos_sharpe=-1.27 loss=-0.091\n"}
+,{"stream_name":"stdout","time":3428.709282416,"data":"[57:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3428.709521086,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 7 from 2006-02-01: oos_sharpe=-2.57 loss=-0.063\n"}
+,{"stream_name":"stdout","time":3428.709546456,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 7 from 2006-02-01: oos_sharpe=-1.27 loss=-0.091\n"}
+,{"stream_name":"stdout","time":3488.710125098,"data":"[58:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3488.710208468,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 8 from 2006-08-01: oos_sharpe=+2.68 loss=-0.033\n"}
+,{"stream_name":"stdout","time":3488.710215151,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 8 from 2006-08-01: oos_sharpe=+0.53 loss=-0.066\n"}
+,{"stream_name":"stdout","time":3548.710462024,"data":"[59:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3548.711085515,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 9 from 2007-01-31: oos_sharpe=+0.79 loss=-0.042\n"}
+,{"stream_name":"stdout","time":3548.711473908,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 9 from 2007-01-31: oos_sharpe=-2.51 loss=-0.028\n"}
+,{"stream_name":"stdout","time":3608.711706959,"data":"[60:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3608.711813913,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 9 from 2007-01-31: oos_sharpe=+0.79 loss=-0.042\n"}
+,{"stream_name":"stdout","time":3608.711889804,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 9 from 2007-01-31: oos_sharpe=-2.51 loss=-0.028\n"}
+,{"stream_name":"stdout","time":3668.712555061,"data":"[61:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3668.712597971,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 10 from 2007-07-31: oos_sharpe=-0.84 loss=-0.024\n"}
+,{"stream_name":"stdout","time":3668.712603909,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 10 from 2007-07-31: oos_sharpe=-1.13 loss=0.085\n"}
+,{"stream_name":"stdout","time":3728.712726664,"data":"[62:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3728.71286564,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 10 from 2007-07-31: oos_sharpe=-0.84 loss=-0.024\n"}
+,{"stream_name":"stdout","time":3728.712946218,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 11 from 2008-01-29: oos_sharpe=+0.53 loss=0.024\n"}
+,{"stream_name":"stdout","time":3788.713269041,"data":"[63:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3788.71351888,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 11 from 2008-01-29: oos_sharpe=-0.93 loss=-0.037\n"}
+,{"stream_name":"stdout","time":3788.713542595,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 11 from 2008-01-29: oos_sharpe=+0.53 loss=0.024\n"}
+,{"stream_name":"stdout","time":3848.713768623,"data":"[64:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3848.713996945,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 12 from 2008-07-28: oos_sharpe=+2.39 loss=0.005\n"}
+,{"stream_name":"stdout","time":3848.7140174,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 12 from 2008-07-28: oos_sharpe=+2.53 loss=0.015\n"}
+,{"stream_name":"stdout","time":3908.714293978,"data":"[65:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3908.714522892,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 12 from 2008-07-28: oos_sharpe=+2.39 loss=0.005\n"}
+,{"stream_name":"stdout","time":3908.714702205,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 13 from 2009-01-26: oos_sharpe=-2.32 loss=0.061\n"}
+,{"stream_name":"stdout","time":3968.714813364,"data":"[66:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3968.715161202,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 13 from 2009-01-26: oos_sharpe=+0.41 loss=0.042\n"}
+,{"stream_name":"stdout","time":3968.715351976,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 13 from 2009-01-26: oos_sharpe=-2.32 loss=0.061\n"}
+,{"stream_name":"stdout","time":4028.715654631,"data":"[67:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4028.715918549,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 14 from 2009-07-24: oos_sharpe=+2.91 loss=-0.023\n"}
+,{"stream_name":"stdout","time":4028.715943347,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 14 from 2009-07-24: oos_sharpe=+2.95 loss=0.000\n"}
+,{"stream_name":"stdout","time":4088.716159249,"data":"[68:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4088.716315973,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 14 from 2009-07-24: oos_sharpe=+2.91 loss=-0.023\n"}
+,{"stream_name":"stdout","time":4088.716388827,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 14 from 2009-07-24: oos_sharpe=+2.95 loss=0.000\n"}
+,{"stream_name":"stdout","time":4148.716680684,"data":"[69:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4148.716873426,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 15 from 2010-01-22: oos_sharpe=+0.96 loss=-0.034\n"}
+,{"stream_name":"stdout","time":4148.717309055,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 15 from 2010-01-22: oos_sharpe=-1.91 loss=-0.013\n"}
+,{"stream_name":"stdout","time":4208.717735581,"data":"[70:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4208.717791996,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 16 from 2010-07-22: oos_sharpe=+0.80 loss=-0.016\n"}
+,{"stream_name":"stdout","time":4208.717802524,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 16 from 2010-07-22: oos_sharpe=+2.36 loss=0.004\n"}
+,{"stream_name":"stdout","time":4268.718054092,"data":"[71:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4268.7182815,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 16 from 2010-07-22: oos_sharpe=+0.80 loss=-0.016\n"}
+,{"stream_name":"stdout","time":4268.718325557,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 16 from 2010-07-22: oos_sharpe=+2.36 loss=0.004\n"}
+,{"stream_name":"stdout","time":4328.718503308,"data":"[72:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4328.718694766,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 17 from 2011-01-19: oos_sharpe=-1.27 loss=0.124\n"}
+,{"stream_name":"stdout","time":4328.718932813,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 17 from 2011-01-19: oos_sharpe=-0.82 loss=0.106\n"}
+,{"stream_name":"stdout","time":4388.71926122,"data":"[73:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4388.719581598,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 17 from 2011-01-19: oos_sharpe=-1.27 loss=0.124\n"}
+,{"stream_name":"stdout","time":4388.719594,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 18 from 2011-07-19: oos_sharpe=-1.41 loss=0.132\n"}
+,{"stream_name":"stdout","time":4448.71979821,"data":"[74:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4448.720044057,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 18 from 2011-07-19: oos_sharpe=-2.23 loss=-0.029\n"}
+,{"stream_name":"stdout","time":4448.720098048,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 18 from 2011-07-19: oos_sharpe=-1.41 loss=0.132\n"}
+,{"stream_name":"stdout","time":4508.720398716,"data":"[75:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4508.720626663,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 19 from 2012-01-17: oos_sharpe=-2.26 loss=-0.020\n"}
+,{"stream_name":"stdout","time":4508.720650411,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 19 from 2012-01-17: oos_sharpe=-0.65 loss=0.143\n"}
+,{"stream_name":"stdout","time":4568.720986446,"data":"[76:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4568.721078118,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 19 from 2012-01-17: oos_sharpe=-2.26 loss=-0.020\n"}
+,{"stream_name":"stdout","time":4568.721146617,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 20 from 2012-07-16: oos_sharpe=-3.62 loss=0.139\n"}
+,{"stream_name":"stdout","time":4628.721470349,"data":"[77:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4628.72168613,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 20 from 2012-07-16: oos_sharpe=+2.93 loss=0.012\n"}
+,{"stream_name":"stdout","time":4628.721694802,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 20 from 2012-07-16: oos_sharpe=-3.62 loss=0.139\n"}
+,{"stream_name":"stdout","time":4688.722318522,"data":"[78:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4688.722438294,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 21 from 2013-01-15: oos_sharpe=-1.06 loss=-0.035\n"}
+,{"stream_name":"stdout","time":4688.722446438,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 21 from 2013-01-15: oos_sharpe=-1.81 loss=0.138\n"}
+,{"stream_name":"stdout","time":4748.722500911,"data":"[79:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4748.722647018,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 21 from 2013-01-15: oos_sharpe=-1.06 loss=-0.035\n"}
+,{"stream_name":"stdout","time":4748.72294707,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 21 from 2013-01-15: oos_sharpe=-1.81 loss=0.138\n"}
+,{"stream_name":"stdout","time":4808.723355435,"data":"[80:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4808.723410112,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 22 from 2013-07-16: oos_sharpe=-1.14 loss=0.106\n"}
+,{"stream_name":"stdout","time":4808.723417072,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 22 from 2013-07-16: oos_sharpe=+1.34 loss=0.018\n"}
+,{"stream_name":"stdout","time":4868.723537823,"data":"[81:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4868.723728969,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 22 from 2013-07-16: oos_sharpe=-1.14 loss=0.106\n"}
+,{"stream_name":"stdout","time":4868.723898866,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 23 from 2014-01-13: oos_sharpe=-0.41 loss=0.136\n"}
+,{"stream_name":"stdout","time":4928.724519328,"data":"[82:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4928.724572835,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 23 from 2014-01-13: oos_sharpe=+1.11 loss=-0.009\n"}
+,{"stream_name":"stdout","time":4928.724579013,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 23 from 2014-01-13: oos_sharpe=-0.41 loss=0.136\n"}
+,{"stream_name":"stdout","time":4988.7246984720005,"data":"[83:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4988.72496741,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 24 from 2014-07-14: oos_sharpe=+0.10 loss=0.046\n"}
+,{"stream_name":"stdout","time":4988.725042616,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 24 from 2014-07-14: oos_sharpe=+0.40 loss=0.162\n"}
+,{"stream_name":"stdout","time":5048.725341559,"data":"[84:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5048.725545927,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 24 from 2014-07-14: oos_sharpe=+0.10 loss=0.046\n"}
+,{"stream_name":"stdout","time":5048.725568737,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 25 from 2015-01-09: oos_sharpe=+1.86 loss=0.005\n"}
+,{"stream_name":"stdout","time":5108.72579457,"data":"[85:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5108.725939683,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 25 from 2015-01-09: oos_sharpe=+0.60 loss=0.016\n"}
+,{"stream_name":"stdout","time":5108.726054667,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 25 from 2015-01-09: oos_sharpe=+1.86 loss=0.005\n"}
+,{"stream_name":"stdout","time":5168.726634898,"data":"[86:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5168.726691368,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 26 from 2015-07-10: oos_sharpe=-0.90 loss=0.069\n"}
+,{"stream_name":"stdout","time":5168.726697248,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 26 from 2015-07-10: oos_sharpe=+2.13 loss=0.155\n"}
+,{"stream_name":"stdout","time":5228.726939014,"data":"[87:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5228.727141337,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 26 from 2015-07-10: oos_sharpe=-0.90 loss=0.069\n"}
+,{"stream_name":"stdout","time":5228.727150963,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 26 from 2015-07-10: oos_sharpe=+2.13 loss=0.155\n"}
+,{"stream_name":"stdout","time":5288.727456849,"data":"[88:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5288.727602041,"data":"   Worker 0: [full_paper_costs__ff5__s1] block 27 from 2016-01-07: oos_sharpe=+1.18 loss=0.057\n"}
+,{"stream_name":"stdout","time":5288.727726679,"data":"   Worker 1: [full_paper_costs__pca5__s1] block 27 from 2016-01-07: oos_sharpe=-0.16 loss=0.141\n"}
+,{"stream_name":"stdout","time":5348.7282859,"data":"[89:00] Active workers: 0/2\n"}
+,{"stream_name":"stdout","time":5348.728465729,"data":"   Worker 0: [full_paper_costs 2/2] full_paper_costs__ff5__s1: sharpe=0.68 net_sharpe=-0.09 (2661s)\n"}
+,{"stream_name":"stdout","time":5348.72856242,"data":"   Worker 1: [full_paper_costs 2/2] full_paper_costs__pca5__s1: sharpe=0.53 net_sharpe=-0.87 (2651s)\n"}
+,{"stream_name":"stdout","time":5348.728576385,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":5348.728582844,"data":"ALL WORKERS FINISHED. CHECKING STATUS...\n"}
+,{"stream_name":"stdout","time":5348.728670435,"data":"Worker 0 exited with code: 0\n"}
+,{"stream_name":"stdout","time":5348.728676103,"data":"Worker 1 exited with code: 0\n"}
+,{"stream_name":"stdout","time":5348.728679741,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":5348.728683357,"data":"RUNNING POST-AGGREGATIONS...\n"}
+,{"stream_name":"stdout","time":5353.167594332,"data":"                          sharpe_total  sharpe_drift  sharpe_neutral  net_exposure\n"}
+,{"stream_name":"stdout","time":5353.167639704,"data":"suite            variant                                                          \n"}
+,{"stream_name":"stdout","time":5353.167643973,"data":"full_paper_costs ff5              0.76          0.42            0.04          0.59\n"}
+,{"stream_name":"stdout","time":5353.167664266,"data":"                 pca5             0.57          0.20            0.56          0.77\n"}
+,{"stream_name":"stdout","time":5356.52316855,"data":"Wrote /kaggle/working/results/report_tables.md\n"}
+,{"stream_name":"stdout","time":5357.069671054,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":5357.069709506,"data":"PACKAGING RESULTS ARTIFACTS...\n"}
+,{"stream_name":"stdout","time":5358.113800555,"data":"Created /kaggle/working/results.zip (24.33 MB)\n"}
+,{"stream_name":"stdout","time":5358.114129547,"data":"Exposed summary.csv in /kaggle/working/\n"}
+,{"stream_name":"stdout","time":5358.114439863,"data":"Exposed decomposition.csv in /kaggle/working/\n"}
+,{"stream_name":"stdout","time":5358.114684823,"data":"Exposed report_tables.md in /kaggle/working/\n"}
+,{"stream_name":"stdout","time":5358.114695449,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":5358.114700642,"data":"PIPELINE COMPLETE (success=True).\n"}
+,{"stream_name":"stderr","time":5360.984507159,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":5360.984592307,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":5361.29773075,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":5361.297770316,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":5362.046820414,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":5363.406073954,"data":"[NbConvertApp] Writing 322966 bytes to __results__.html\n"}
+]

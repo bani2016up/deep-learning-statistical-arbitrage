@@ -1,0 +1,20 @@
+{
+  "id": "timtoktamysov/dlsa-training-pipeline",
+  "title": "dlsa-training-pipeline",
+  "code_file": "run_pipeline.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "timtoktamysov/dlsa-code",
+    "timtoktamysov/dlsa-residuals",
+    "timtoktamysov/dlsa-secrets"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
