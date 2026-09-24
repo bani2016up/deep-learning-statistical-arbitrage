@@ -1,3 +1,5 @@
+import json
+
 import numpy as np
 import pandas as pd
 import pytest
@@ -5,6 +7,7 @@ import pytest
 from experiments.compare import (
     TEST_START,
     block_bootstrap_diff,
+    pairs,
     period_slice,
     residual_key,
     sharpe,
@@ -50,3 +53,20 @@ def test_residual_key_distinguishes_factor_models():
     assert residual_key({"n_factors": 5}) == "pca5"
     assert residual_key({"factor_model": "pca", "n_factors": 8}) == "pca8"
     assert residual_key({"factor_model": "ff5", "n_factors": 5}) == "ff5"
+
+
+def test_pairs_match_residuals_and_require_a_common_seed(tmp_path):
+    def run(name, config):
+        path = tmp_path / name
+        path.mkdir()
+        (path / "config.json").write_text(json.dumps(config))
+        (path / "metrics.json").write_text("{}")
+
+    run("full_paper__pca5__s0", {"n_factors": 5})
+    run("full_paper__ff5__s0", {"factor_model": "ff5", "n_factors": 5})
+    run("full_recipe__pca5_cw0.25__s0", {"n_factors": 5})
+    run("full_recipe__pca8_cw0.25__s0", {"n_factors": 8})
+    run("full_recipe__ff5_cw0.25__s2", {"factor_model": "ff5", "n_factors": 5})
+    assert pairs("full_paper", "full_recipe", tmp_path) == [
+        ("full_paper__pca5", "full_recipe__pca5_cw0.25")
+    ]

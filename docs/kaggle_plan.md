@@ -37,6 +37,7 @@ Timing: 4.4 s per epoch on Apple MPS (1,000 days × ~480 names), about 61 min pe
 | `full_smoke`  |    1 | 1 epoch, 1 block: pipeline check                                                          |
 | `full_probe`  |    3 | epochs 10 / 30 / 100 on the first 3 blocks (validation period only)                       |
 | `full_paper`  |    4 | paper replication: CNN+Transformer, Sharpe loss, unconstrained book, ff5 / pca5 × 2 seeds |
+| `full_paper_costs` | 4 | paper with costs: Sharpe net of full 5 bp + 1 bp, unconstrained book, ff5 / pca5 × 2 seeds |
 | `full_recipe` |   18 | dollar-neutral, cost-aware loss, cost weight 0.25 / 0.5 × ff5 / pca5 / pca8 × 3 seeds     |
 | `full_bench`  |    8 | Fourier+FFN, OU+Threshold, reversal (run locally on MPS, done)                            |
 
@@ -62,8 +63,9 @@ Model choice uses **validation = 2003-02 → 2005-12** only:
 ## Outputs
 
 `results/full_*` runs in the standard run format, and `docs/full_report.md`: a Table I
-comparison with the paper, the recipe against the replication, the drift decomposition,
-and validation → test (the Deflated Sharpe ratio is still open).
+comparison with the paper, three arms (paper, paper with costs, recipe) compared pairwise,
+the drift decomposition, validation → test and the Deflated Sharpe ratio.
 
-Status: done. Kaggle session of 2026-09-24 (8.1 h on 2×T4) finished `full_smoke`,
-`full_probe`, `full_paper` and `full_recipe`; results in `docs/full_report.md`.
+Status: **complete.** Kaggle session 1 of 2026-09-24 (8.1 h on 2×T4) ran `full_smoke`,
+`full_probe`, `full_paper` and `full_recipe`. Session 2 (1.5 h) ran `full_paper_costs`, the
+last planned run. Final results: `docs/full_report.md`. Logs: `results/kaggle_logs/`.

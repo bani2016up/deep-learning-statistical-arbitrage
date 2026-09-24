@@ -1,19 +1,23 @@
-"""Paired comparison on the full dataset: paper replication vs our recipe.
+"""Paired comparison of full-dataset suites: paper replication, paper with costs, our recipe.
 
-``full_paper`` (Sharpe loss, unconstrained book) and ``full_recipe`` (dollar-neutral book,
-cost-aware loss) share residuals, dates and seeds. For every paper group and each recipe group
-on the same residuals this ensembles the **common seeds** of both (so neither side gets more
-seeds), applies the same causal B-day smoothing, and compares daily returns per period:
+    full_paper        Sharpe loss, unconstrained book (paper Table I)
+    full_paper_costs  Sharpe net of the full 5 bp + 1 bp costs, unconstrained book (paper III.J)
+    full_recipe       Sharpe net of cost_weight × costs, dollar-neutral book (docs/final_model.md)
+
+All suites share residuals and dates. For a (base, other) pair of suites, every base group is
+matched with each other group on the same residuals. Both are ensembled over their **common
+seeds** (so neither side gets more seeds), smoothed with the same causal B-day average, and
+their daily returns are compared per period:
 
     full        : 2003-02 … 2016-12
     validation  : 2003-02 … 2005-12   (pre-registered selection span, docs/kaggle_plan.md)
     test        : 2006-01 … 2016-12   (reported, never tuned on)
 
-ΔSR = recipe − paper, with a 95% moving-block bootstrap interval on the paired days.
-Writes results/paper_vs_recipe.csv and results/paper_vs_recipe_yearly.csv.
+ΔSR = other − base, with a 95% moving-block bootstrap interval on the paired days.
+Writes results/full_comparison.csv and results/full_comparison_yearly.csv.
 
     uv run python -m experiments.compare
-    uv run python -m experiments.compare --days 1 5 10 --bootstrap 5000
+    uv run python -m experiments.compare --pairs full_paper:full_recipe --days 1 5 10
 """
 
 from __future__ import annotations
@@ -32,8 +36,11 @@ from experiments.postprocess import combine
 from experiments.run import RESULTS_DIR, evaluate
 from experiments.trainer import RunConfig
 
-PAPER_SUITE = "full_paper"
-RECIPE_SUITE = "full_recipe"
+DEFAULT_PAIRS = (
+    ("full_paper", "full_paper_costs"),
+    ("full_paper", "full_recipe"),
+    ("full_paper_costs", "full_recipe"),
+)
 TEST_START = pd.Timestamp("2006-01-01")
 PERIODS = ("full", "validation", "test")
 ANNUALIZATION = 252
@@ -45,21 +52,21 @@ def sharpe(returns: np.ndarray) -> float:
 
 
 def block_bootstrap_diff(
-    ours: np.ndarray,
-    theirs: np.ndarray,
+    other: np.ndarray,
+    base: np.ndarray,
     block: int = 21,
     draws: int = 2000,
     seed: int = 0,
 ) -> tuple[float, float, float]:
-    """Moving-block bootstrap of sharpe(ours) - sharpe(theirs) on paired days.
+    """Moving-block bootstrap of sharpe(other) - sharpe(base) on paired days.
 
     Returns the 2.5% and 97.5% quantiles and the share of draws with difference <= 0.
     """
     rng = np.random.default_rng(seed)
-    days = len(ours)
+    days = len(other)
     starts = rng.integers(0, days - block + 1, size=(draws, days // block + 1))
     index = (starts[:, :, None] + np.arange(block)).reshape(draws, -1)[:, :days]
-    diffs = np.array([sharpe(ours[i]) - sharpe(theirs[i]) for i in index])
+    diffs = np.array([sharpe(other[i]) - sharpe(base[i]) for i in index])
     low, high = np.percentile(diffs, [2.5, 97.5])
     return float(low), float(high), float((diffs <= 0).mean())
 
@@ -136,8 +143,8 @@ def side_metrics(frame: pd.DataFrame, weights: np.ndarray, prefix: str) -> dict:
     }
 
 
-def pairs(results_dir: Path) -> list[tuple[str, str]]:
-    """(paper group, recipe group) with the same residuals and at least one common seed."""
+def pairs(base_suite: str, other_suite: str, results_dir: Path) -> list[tuple[str, str]]:
+    """(base group, other group) with the same residuals and at least one common seed."""
 
     def groups(suite: str) -> dict[str, str]:
         found = {}
@@ -146,112 +153,121 @@ def pairs(results_dir: Path) -> list[tuple[str, str]]:
             found[group] = residual_key(json.loads(path.read_text()))
         return found
 
-    paper, recipe = groups(PAPER_SUITE), groups(RECIPE_SUITE)
+    base, other = groups(base_suite), groups(other_suite)
     return sorted(
-        (p, r)
-        for p, p_key in paper.items()
-        for r, r_key in recipe.items()
-        if p_key == r_key and seeds_of(p, results_dir) & seeds_of(r, results_dir)
+        (b, o)
+        for b, b_key in base.items()
+        for o, o_key in other.items()
+        if b_key == o_key and seeds_of(b, results_dir) & seeds_of(o, results_dir)
     )
 
 
 def compare(
+    suite_pairs: tuple[tuple[str, str], ...] = DEFAULT_PAIRS,
     days_list: tuple[int, ...] = (1, 5),
     draws: int = 2000,
     results_dir: Path = RESULTS_DIR,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     rows, yearly = [], []
     targets_cache: dict = {}
-    for paper, recipe in pairs(results_dir):
-        seeds = sorted(seeds_of(paper, results_dir) & seeds_of(recipe, results_dir))
-        for days in days_list:
-            paper_frame, paper_w = ensemble(paper, seeds, days, results_dir, targets_cache)
-            recipe_frame, recipe_w = ensemble(recipe, seeds, days, results_dir, targets_cache)
-            for period in PERIODS:
-                p = period_slice(paper_frame, period)
-                r = period_slice(recipe_frame, period)
-                p_w, r_w = paper_w[p.index], recipe_w[r.index]
-                gross = block_bootstrap_diff(
-                    r["return"].to_numpy(), p["return"].to_numpy(), draws=draws
-                )
-                net = block_bootstrap_diff(
-                    r["net_return"].to_numpy(), p["net_return"].to_numpy(), draws=draws
-                )
-                row = {
-                    "paper": paper,
-                    "recipe": recipe,
-                    "seeds": " ".join(map(str, seeds)),
-                    "smoothing_days": days,
-                    "period": period,
-                    "start": p.date.min().date(),
-                    "end": p.date.max().date(),
-                    **side_metrics(p, p_w, "paper"),
-                    **side_metrics(r, r_w, "recipe"),
-                    "corr_gross": float(np.corrcoef(p["return"], r["return"])[0, 1]),
-                }
-                row["delta_sharpe"] = row["recipe_sharpe"] - row["paper_sharpe"]
-                row["delta_sharpe_lo"], row["delta_sharpe_hi"], row["p_delta_le_0"] = gross
-                row["delta_net_sharpe"] = row["recipe_net_sharpe"] - row["paper_net_sharpe"]
-                (
-                    row["delta_net_sharpe_lo"],
-                    row["delta_net_sharpe_hi"],
-                    row["p_delta_net_le_0"],
-                ) = net
-                rows.append(row)
-            by_year = pd.DataFrame(
-                {
-                    "year": paper_frame.date.dt.year,
-                    "paper": paper_frame["return"],
-                    "recipe": recipe_frame["return"],
-                }
-            ).groupby("year")
-            for year, group in by_year:
-                yearly.append(
-                    {
-                        "paper": paper,
-                        "recipe": recipe,
+    for base_suite, other_suite in suite_pairs:
+        for base, other in pairs(base_suite, other_suite, results_dir):
+            seeds = sorted(seeds_of(base, results_dir) & seeds_of(other, results_dir))
+            for days in days_list:
+                base_frame, base_w = ensemble(base, seeds, days, results_dir, targets_cache)
+                other_frame, other_w = ensemble(other, seeds, days, results_dir, targets_cache)
+                for period in PERIODS:
+                    b = period_slice(base_frame, period)
+                    o = period_slice(other_frame, period)
+                    gross = block_bootstrap_diff(
+                        o["return"].to_numpy(), b["return"].to_numpy(), draws=draws
+                    )
+                    net = block_bootstrap_diff(
+                        o["net_return"].to_numpy(), b["net_return"].to_numpy(), draws=draws
+                    )
+                    row = {
+                        "base": base,
+                        "other": other,
+                        "seeds": " ".join(map(str, seeds)),
                         "smoothing_days": days,
-                        "year": year,
-                        "paper_sharpe": sharpe(group["paper"].to_numpy()),
-                        "recipe_sharpe": sharpe(group["recipe"].to_numpy()),
+                        "period": period,
+                        "start": b.date.min().date(),
+                        "end": b.date.max().date(),
+                        **side_metrics(b, base_w[b.index], "base"),
+                        **side_metrics(o, other_w[o.index], "other"),
+                        "corr_gross": float(np.corrcoef(b["return"], o["return"])[0, 1]),
                     }
-                )
+                    row["delta_sharpe"] = row["other_sharpe"] - row["base_sharpe"]
+                    row["delta_sharpe_lo"], row["delta_sharpe_hi"], row["p_delta_le_0"] = gross
+                    row["delta_net_sharpe"] = row["other_net_sharpe"] - row["base_net_sharpe"]
+                    (
+                        row["delta_net_sharpe_lo"],
+                        row["delta_net_sharpe_hi"],
+                        row["p_delta_net_le_0"],
+                    ) = net
+                    rows.append(row)
+                by_year = pd.DataFrame(
+                    {
+                        "year": base_frame.date.dt.year,
+                        "base": base_frame["return"],
+                        "other": other_frame["return"],
+                    }
+                ).groupby("year")
+                for year, group in by_year:
+                    yearly.append(
+                        {
+                            "base": base,
+                            "other": other,
+                            "smoothing_days": days,
+                            "year": year,
+                            "base_sharpe": sharpe(group["base"].to_numpy()),
+                            "other_sharpe": sharpe(group["other"].to_numpy()),
+                        }
+                    )
     return pd.DataFrame(rows), pd.DataFrame(yearly)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--pairs",
+        nargs="+",
+        default=[f"{b}:{o}" for b, o in DEFAULT_PAIRS],
+        help="base_suite:other_suite",
+    )
     parser.add_argument("--days", nargs="+", type=int, default=[1, 5])
     parser.add_argument("--bootstrap", type=int, default=2000)
     args = parser.parse_args()
-    frame, yearly = compare(tuple(args.days), args.bootstrap)
+    suite_pairs = tuple(tuple(pair.split(":", 1)) for pair in args.pairs)
+    frame, yearly = compare(suite_pairs, tuple(args.days), args.bootstrap)
     if frame.empty:
-        raise SystemExit(f"no {PAPER_SUITE}/{RECIPE_SUITE} pairs in {RESULTS_DIR}")
-    frame.to_csv(RESULTS_DIR / "paper_vs_recipe.csv", index=False)
-    yearly.to_csv(RESULTS_DIR / "paper_vs_recipe_yearly.csv", index=False)
+        raise SystemExit(f"no matching groups for {args.pairs} in {RESULTS_DIR}")
+    frame.to_csv(RESULTS_DIR / "full_comparison.csv", index=False)
+    yearly.to_csv(RESULTS_DIR / "full_comparison_yearly.csv", index=False)
     columns = [
-        "recipe",
+        "other",
         "smoothing_days",
         "period",
-        "paper_sharpe",
-        "recipe_sharpe",
+        "base_sharpe",
+        "other_sharpe",
         "delta_sharpe",
         "delta_sharpe_lo",
         "delta_sharpe_hi",
-        "paper_net_sharpe",
-        "recipe_net_sharpe",
+        "base_net_sharpe",
+        "other_net_sharpe",
         "delta_net_sharpe",
         "delta_net_sharpe_lo",
         "delta_net_sharpe_hi",
-        "paper_turnover",
-        "recipe_turnover",
+        "base_turnover",
+        "other_turnover",
+        "other_net_exposure",
         "corr_gross",
     ]
     with pd.option_context("display.width", 250, "display.max_columns", None):
-        for paper, group in frame.groupby("paper", sort=False):
-            print(f"\n{paper} (seeds {group.seeds.iloc[0]}) vs:")
+        for base, group in frame.groupby("base", sort=False):
+            print(f"\n{base} (seeds {group.seeds.iloc[0]}) vs:")
             print(group[columns].round(2).to_string(index=False))
-    print(f"\nWrote {RESULTS_DIR / 'paper_vs_recipe.csv'}")
+    print(f"\nWrote {RESULTS_DIR / 'full_comparison.csv'}")
 
 
 if __name__ == "__main__":

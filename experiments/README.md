@@ -29,7 +29,8 @@ uv run pytest experiments                               # tests
 | `select.py`                  | Selection (2020-02→2022-12) vs holdout (2023→2025), neutral-only, deduplicated → `results/selection.csv`                 |
 | `report_tables.py`           | All suite tables (mean ± seed sd) → `results/report_tables.md`                                                           |
 | `figures.py`                 | Curated report figures (drift vs signal, K sweep) → `results/figures/`                                                   |
-| `compare.py`                 | Full data: paper replication vs recipe on common seeds, same smoothing, paired bootstrap ΔSR → `results/paper_vs_recipe.csv` |
+| `compare.py`                 | Full data: paper / paper with costs / recipe pairwise on common seeds, same smoothing, paired bootstrap ΔSR → `results/full_comparison.csv` |
+| `deflated.py`                | Full data: Deflated and probabilistic Sharpe of every full-data trial on the test period → `results/deflated_sharpe_full.csv` |
 | `final_model.json`           | Final recipe (RunConfig + ensemble/smoothing + tuning grid + sample evidence); see `docs/final_model.md`                 |
 
 ## Output contract (`results/<suite>__<variant>__s<seed>/`)
@@ -48,7 +49,7 @@ net_sharpe, net_mean_return, ...` + `yearly_returns`
 `epochs`, `models`, `factors`, `neutral`, `objective`, `lookback`, `protocol`,
 `architecture`, `final` (`--list` shows run counts). Results and interpretation:
 `docs/experiment_report.md`. Full-dataset suites (`full_smoke`, `full_probe`, `full_paper`,
-`full_recipe`, `full_bench`): `docs/kaggle_plan.md` and `docs/full_report.md`. Full pipeline after the suites:
+`full_paper_costs`, `full_recipe`, `full_bench`): `docs/kaggle_plan.md` and `docs/full_report.md`. Full pipeline after the suites:
 
 ```bash
 uv run python -m experiments.postprocess --suite final

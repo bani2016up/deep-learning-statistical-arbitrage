@@ -122,7 +122,8 @@ Full dataset: `uv run python -m experiments.data_full` builds the universe (mont
 by trailing dollar volume) and FF5/PCA residuals under `data/full/`. The `full_*` suites
 train on them. `kaggle/` pushes the code and residuals to a private Kaggle GPU kernel
 (`./push_to_kaggle.sh`) and pulls results back (`python kaggle/kaggle_pull_output.py`).
-`uv run python -m experiments.compare` compares the paper replication with our recipe.
+`uv run python -m experiments.compare` compares the paper replication, the paper with costs
+and our recipe pairwise; `uv run python -m experiments.deflated` computes the Deflated Sharpe.
 
 `analysis/` builds comparison plots (`python -m analysis.compare_runs --results-dir results
 --output-dir results/comparison_plots`) and data checks for the full panel
@@ -136,5 +137,5 @@ Documents:
 - `docs/analysis_summary.md`: per-suite numbers with plot references
 - `docs/final_model.md`: the model recipe for the full dataset
 - `docs/kaggle_plan.md`: the full-dataset run plan
-- `docs/full_report.md`: full-dataset results, paper replication vs our recipe
+- `docs/full_report.md`: final full-dataset results: paper, paper with costs, our recipe
 - `docs/research_ideas.md`: possible extensions

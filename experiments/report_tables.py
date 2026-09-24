@@ -27,6 +27,7 @@ SUITE_ORDER = (
     "ensemble",
     "full_probe",
     "full_paper",
+    "full_paper_costs",
     "full_recipe",
     "full_bench",
 )

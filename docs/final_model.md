@@ -1,7 +1,8 @@
 # Final model recipe (for training on the full dataset)
 
 Status: **recipe fixed from the sample experiments and trained on the full dataset**
-(`full_recipe`). Full-data results against the paper replication: `docs/full_report.md`.
+(`full_recipe`). Final full-data results against the paper replication and the paper with
+costs: `docs/full_report.md` (on 2006–2016 no arm is profitable after 5 bp + 1 bp costs).
 Evidence: `docs/experiment_report.md`, `results/report_tables.md`, `results/selection.csv`.
 The sample is 49 Yahoo large caps, OOS 2020-02 → 2025-12, rolling 1000/125.
 
