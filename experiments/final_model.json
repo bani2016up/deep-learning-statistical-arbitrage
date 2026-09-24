@@ -1,0 +1,69 @@
+{
+  "description": "Final-model recipe chosen on the 49-stock sample; rationale in docs/final_model.md",
+  "run_config": {
+    "model": "cnn_transformer",
+    "n_factors": 5,
+    "lookback": 30,
+    "objective": "sharpe_costs",
+    "cost_weight": 0.5,
+    "turnover_bps": 5.0,
+    "short_bps": 1.0,
+    "neutralize": true,
+    "protocol": "rolling",
+    "train_window": 1000,
+    "test_start": 1000,
+    "retrain_every": 125,
+    "epochs": 30,
+    "batch_dates": 125,
+    "learning_rate": 0.001,
+    "dropout": 0.25,
+    "features": 8,
+    "attention_heads": 4,
+    "transformer_ff": 16
+  },
+  "seeds": [0, 1, 2],
+  "postprocess": {
+    "ensemble": "mean of seed weights",
+    "smoothing_days": 5
+  },
+  "tune_on_full_dataset": {
+    "n_factors": [5, 8],
+    "cost_weight": [0.25, 0.5],
+    "smoothing_days": [3, 5],
+    "epochs": [10, 30, 100]
+  },
+  "sample_evidence": {
+    "k5": {
+      "run": "results/ensemble__final-cnn_neutral_cw0.5_b5__ens",
+      "gross_sharpe": 0.51,
+      "net_sharpe": -0.51,
+      "selection_2020_2022": {
+        "gross_sharpe": 0.54,
+        "net_sharpe": -0.56
+      },
+      "holdout_2023_2025": {
+        "gross_sharpe": 0.48,
+        "net_sharpe": -0.46
+      },
+      "deflated_sharpe_probability": 0.22,
+      "break_even_cost_bps": 3.4
+    },
+    "k8": {
+      "run": "results/ensemble__final-cnn_neutral_cw0.5_k8_b5__ens",
+      "gross_sharpe": 1.19,
+      "net_sharpe": 0.09,
+      "hac_t": 2.86,
+      "selection_2020_2022": {
+        "gross_sharpe": 1.14,
+        "net_sharpe": 0.1
+      },
+      "holdout_2023_2025": {
+        "gross_sharpe": 1.25,
+        "net_sharpe": 0.07
+      },
+      "deflated_sharpe_probability": 0.69,
+      "break_even_cost_bps": 7.7,
+      "caveat": "K chosen post hoc; peak not plateau (K6 0.53, K7 0.66, K10 -0.10)"
+    }
+  }
+}

@@ -21,3 +21,23 @@ outputs/*
 !outputs/.gitkeep
 references/*
 !references/README.md
+
+# Full-dataset residuals (built locally by experiments.data_full)
+data/full/*
+!data/full/.gitkeep
+data/residuals/
+
+# Checkpoints and per-run arrays
+*.pt
+results/*/*/
+results/**/*.npz
+results/**/*.pt
+
+# Kaggle credentials, build artifacts and downloaded kernel output
+kaggle.json
+kaggle/bundle/
+kaggle_output/
+
+# Per-run folders (suite__variant__seed) are inputs to the analysis scripts; only
+# summaries, figures and logs are tracked.
+results/*__*/
