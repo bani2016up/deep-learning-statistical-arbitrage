@@ -66,6 +66,52 @@ Model choice uses **validation = 2003-02 → 2005-12** only:
 comparison with the paper, three arms (paper, paper with costs, recipe) compared pairwise,
 the drift decomposition, validation → test and the Deflated Sharpe ratio.
 
-Status: **complete.** Kaggle session 1 of 2026-09-24 (8.1 h on 2×T4) ran `full_smoke`,
-`full_probe`, `full_paper` and `full_recipe`. Session 2 (1.5 h) ran `full_paper_costs`, the
-last planned run. Final results: `docs/full_report.md`. Logs: `results/kaggle_logs/`.
+Status: Kaggle session 1 of 2026-09-24 (8.1 h on 2×T4) ran `full_smoke`, `full_probe`,
+`full_paper` and `full_recipe`. Session 2 (1.5 h) ran `full_paper_costs`. Results:
+`docs/full_report.md`. Logs: `results/kaggle_logs/`.
+
+## Session 3 (last): the authors' residuals (issue #2)
+
+The authors publish their out-of-sample residuals on CRSP (`gregzanotti/dlsa-public`,
+`residuals/`), including IPCA. `uv run python -m experiments.official` downloads the K=5
+panels and writes `data/full/residuals_official_{ipca5,pca5,ff5}.npz`:
+
+- cap filter > 0.01% of the market (in the data); eligible at t = observed on all 30 days
+  before t (the official `preprocess.py` rule);
+- median 863 eligible names per day (ours: ~480), first tradeable 1998-02-17;
+- rolling 1,000 / 125 as before, so OOS = 2002-02-08 → 2016-12-30, the paper's OOS span;
+- no Φ is published: books trade residuals, costs are on residual weights, as on our data.
+
+Check: our OU+Threshold on `official_ipca5` gives gross SR 0.62, the same as the OU of PR #1.
+
+| suite                  | runs | what                                                             |
+| ---------------------- | ---: | ---------------------------------------------------------------- |
+| `official_paper_costs` |    2 | paper with costs on IPCA5 (Table IX is IPCA-based), 2 seeds      |
+| `official_paper`       |    6 | paper Table I: CNN+Trans, Sharpe loss, unconstrained, IPCA5 / PCA5 / FF5 × 2 seeds |
+| `official_recipe`      |    2 | our recipe on IPCA5: dollar-neutral, cost weight 0.25, 2 seeds   |
+
+10 runs, about 75–80 min each on a T4 (1.8× the names): about 7 h on 2×T4, one session.
+This is the last run of the study; the results go into a separate section, and the WIKI
+results above stay as they are.
+
+**Readout, fixed before the run.** 2-seed ensembles, same periods as before
+(validation = 2002-02 → 2005-12, test = 2006-01 → 2016-12); nothing is selected on either.
+
+1. _Replication, gross:_ `official_paper` B=1, full OOS, vs Table I (IPCA 4.16, PCA 3.36,
+   FF 3.21) and vs our WIKI numbers. Reported, no threshold.
+2. _Why is our net negative? (main question):_ `official_paper_costs` IPCA5, **test net SR
+   at B=5**, with its PSR and net exposure:
+   - net SR ≥ 0.5 and PSR ≥ 0.95 → **the data explain it**: on the authors' universe and
+     residuals the with-costs strategy survives 2006–2016, so our negative net comes from
+     the WIKI universe / residuals;
+   - net SR ≤ 0.2 → **not the data**: even on the authors' data the net does not survive
+     2006–2016, consistent with alpha decay after costs;
+   - in between → inconclusive.
+   A book with |net exposure| > 0.5 counts as residual drift, not stat-arb, as before.
+   Full-OOS net (2002–2016) is reported next to Table IX (~1.1) for reference only, as the
+   paper measures turnover in stock space.
+3. _Our recipe vs the paper:_ `official_recipe` − `official_paper` on IPCA5, test net ΔSR at
+   B=5 with the paired bootstrap CI. Replicates the WIKI result (+0.50) if the CI is above 0.
+
+`experiments.compare` pairs the three suites; `experiments.deflated --family official`
+deflates them for their own trials (separate from the 84 WIKI trials).

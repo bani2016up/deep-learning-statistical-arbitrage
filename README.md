@@ -142,6 +142,8 @@ train on them. `kaggle/` pushes the code and residuals to a private Kaggle GPU k
 (`./push_to_kaggle.sh`) and pulls results back (`python kaggle/kaggle_pull_output.py`).
 `uv run python -m experiments.compare` compares the paper replication, the paper with costs
 and our recipe pairwise; `uv run python -m experiments.deflated` computes the Deflated Sharpe.
+`uv run python -m experiments.official` converts the authors' own CRSP residuals (including
+IPCA) for the `official_*` suites (`docs/kaggle_plan.md`, session 3).
 
 `analysis/` builds comparison plots (`python -m analysis.compare_runs --results-dir results
 --output-dir results/comparison_plots`) and data checks for the full panel

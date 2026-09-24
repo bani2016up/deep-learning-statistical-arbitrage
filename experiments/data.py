@@ -71,7 +71,12 @@ def targets_on_dates(n_factors: int, dates: np.ndarray) -> np.ndarray:
 
 
 def full_model_name(factor_model: str, n_factors: int) -> str:
-    return "ff5" if factor_model == "ff5" else f"pca{n_factors}"
+    """Residual file of a full-data run: ``ff5``, ``pca{K}`` or ``official_{family}{K}``."""
+    if factor_model == "ff5":
+        return "ff5"
+    if factor_model.startswith("official_"):  # authors' CRSP residuals, experiments.official
+        return f"{factor_model}{n_factors}"
+    return f"pca{n_factors}"
 
 
 def load_run_data(config: dict) -> object:

@@ -239,6 +239,36 @@ def full_bench() -> Iterator[RunConfig]:
     yield from _full_runs("full_bench", variants, seeds=(0,))
 
 
+# ---------------------------------------------------------------------------------------
+# The authors' own OOS residuals (CRSP, cap > 0.01% of market; experiments.official), K = 5.
+# One last Kaggle session (issue #2): does the negative net of full_* come from our data?
+# Same seeds (0, 1) for every arm, so experiments.compare pairs them on common seeds.
+# ---------------------------------------------------------------------------------------
+OFFICIAL_RESIDUALS = {
+    name: {"factor_model": f"official_{name[:-1]}", "n_factors": 5}
+    for name in ("ipca5", "pca5", "ff5")
+}
+
+
+def official_paper() -> Iterator[RunConfig]:
+    """Authors' residuals: paper Table I (CNN+Trans, Sharpe loss, unconstrained) on IPCA/PCA/FF."""
+    yield from _full_runs("official_paper", OFFICIAL_RESIDUALS, seeds=(0, 1))
+
+
+def official_paper_costs() -> Iterator[RunConfig]:
+    """Authors' residuals: paper with costs (Table IX is IPCA-based) on IPCA5."""
+    variants = {
+        "ipca5": {**OFFICIAL_RESIDUALS["ipca5"], "objective": "sharpe_costs", "cost_weight": 1.0}
+    }
+    yield from _full_runs("official_paper_costs", variants, seeds=(0, 1))
+
+
+def official_recipe() -> Iterator[RunConfig]:
+    """Authors' residuals: our recipe (dollar-neutral, cost weight 0.25) on IPCA5."""
+    variants = {"ipca5_cw0.25": {**OFFICIAL_RESIDUALS["ipca5"], **RECIPE, "cost_weight": 0.25}}
+    yield from _full_runs("official_recipe", variants, seeds=(0, 1))
+
+
 SUITES = {
     fn.__name__: fn
     for fn in (
@@ -257,5 +287,8 @@ SUITES = {
         full_paper_costs,
         full_recipe,
         full_bench,
+        official_paper,
+        official_paper_costs,
+        official_recipe,
     )
 }

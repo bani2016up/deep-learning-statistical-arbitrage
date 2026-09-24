@@ -23,8 +23,9 @@ DATA_SLUG = "dlsa-residuals"
 SECRETS_SLUG = "dlsa-secrets"
 PREV_RESULTS_SLUG = "dlsa-results-prev"
 
-# Earlier sessions ran full_smoke, full_probe, full_paper and full_recipe.
-DEFAULT_SUITES = ["full_paper_costs"]
+# Earlier sessions ran full_smoke, full_probe, full_paper, full_recipe and full_paper_costs.
+# Last session (issue #2): the authors' CRSP residuals, most important arm first.
+DEFAULT_SUITES = ["official_paper_costs", "official_paper", "official_recipe"]
 
 
 def _find_input_dir(slug: str) -> Path:

@@ -30,6 +30,9 @@ SUITE_ORDER = (
     "full_paper_costs",
     "full_recipe",
     "full_bench",
+    "official_paper",
+    "official_paper_costs",
+    "official_recipe",
 )
 COLUMNS = {
     "sharpe": "SR",

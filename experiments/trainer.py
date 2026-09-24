@@ -49,7 +49,7 @@ class RunConfig:
         1.0  # scales the cost penalty in the loss only; evaluation is unscaled
     )
     dataset: str = "yahoo"  # "yahoo" (49-stock sample) | "full" (team WIKI/FF5 panel)
-    factor_model: str = "pca"  # full dataset only: "pca" (uses n_factors) | "ff5"
+    factor_model: str = "pca"  # full dataset only: "pca" (uses n_factors) | "ff5" | "official_{ff,pca,ipca}"
     max_blocks: int = (
         0  # rolling only: train/test just the first N blocks (0 = all); probes
     )

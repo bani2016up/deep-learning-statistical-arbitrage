@@ -53,6 +53,7 @@ def test_residual_key_distinguishes_factor_models():
     assert residual_key({"n_factors": 5}) == "pca5"
     assert residual_key({"factor_model": "pca", "n_factors": 8}) == "pca8"
     assert residual_key({"factor_model": "ff5", "n_factors": 5}) == "ff5"
+    assert residual_key({"factor_model": "official_ipca", "n_factors": 5}) == "official_ipca5"
 
 
 def test_pairs_match_residuals_and_require_a_common_seed(tmp_path):

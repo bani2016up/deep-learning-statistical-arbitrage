@@ -3,13 +3,14 @@
     full_paper        Sharpe loss, unconstrained book (paper Table I)
     full_paper_costs  Sharpe net of the full 5 bp + 1 bp costs, unconstrained book (paper III.J)
     full_recipe       Sharpe net of cost_weight × costs, dollar-neutral book (docs/final_model.md)
+    official_*        the same three arms on the authors' CRSP residuals (experiments.official)
 
 All suites share residuals and dates. For a (base, other) pair of suites, every base group is
 matched with each other group on the same residuals. Both are ensembled over their **common
 seeds** (so neither side gets more seeds), smoothed with the same causal B-day average, and
 their daily returns are compared per period:
 
-    full        : 2003-02 … 2016-12
+    full        : 2003-02 … 2016-12   (official_*: from 2002-02)
     validation  : 2003-02 … 2005-12   (pre-registered selection span, docs/kaggle_plan.md)
     test        : 2006-01 … 2016-12   (reported, never tuned on)
 
@@ -31,7 +32,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from experiments.data import run_targets
+from experiments.data import full_model_name, run_targets
 from experiments.postprocess import combine
 from experiments.run import RESULTS_DIR, evaluate
 from experiments.trainer import RunConfig
@@ -40,6 +41,9 @@ DEFAULT_PAIRS = (
     ("full_paper", "full_paper_costs"),
     ("full_paper", "full_recipe"),
     ("full_paper_costs", "full_recipe"),
+    ("official_paper", "official_paper_costs"),
+    ("official_paper", "official_recipe"),
+    ("official_paper_costs", "official_recipe"),
 )
 TEST_START = pd.Timestamp("2006-01-01")
 PERIODS = ("full", "validation", "test")
@@ -88,9 +92,8 @@ def seeds_of(group: str, results_dir: Path) -> set[int]:
 
 
 def residual_key(config: dict) -> str:
-    """Residual family of a run: ``pca5``, ``pca8`` or ``ff5``."""
-    model = config.get("factor_model", "pca")
-    return f"pca{config['n_factors']}" if model == "pca" else model
+    """Residuals a run traded: ``pca5``, ``pca8``, ``ff5``, ``official_ipca5``, ..."""
+    return full_model_name(config.get("factor_model", "pca"), config["n_factors"])
 
 
 def ensemble(
