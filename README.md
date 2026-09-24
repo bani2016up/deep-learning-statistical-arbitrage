@@ -90,6 +90,8 @@ Data generation is separate from modeling. The interchangeable residual file sto
 - `outputs/training_loss.png`: optimization trace
 - `outputs/cumulative_test_return.png`: held-out cumulative wealth
 - `outputs/analysis/`: statistical JSON/Markdown reports and diagnostic plots
+- `results/`: experiment tables (`summary.csv`, `report_tables.md`, `decomposition.csv`,
+  `selection.csv`) and plots (`comparison_plots/`, `figures/`)
 
 ## Reading Guide
 
@@ -97,3 +99,42 @@ Read `docs/BASELINE_DESIGN.md` for the exact no-lookahead and tensor conventions
 `docs/OFFICIAL_CODE_MAP.md` for the relationship to official code, `docs/LIMITATIONS.md`
 before interpreting any metric, `docs/STATISTICAL_ANALYSIS.md` for inference methodology,
 and `RUN_REPORT.md` for the validated run on this host.
+
+## Experiments
+
+`experiments/` runs the paper's rolling protocol (1,000-day window, retrain every 125 days)
+on top of this package: the paper's benchmark models (Fourier+FFN, OU+FFN, OU+Threshold,
+reversal), mean-variance and cost-aware objectives, dollar-neutral books, seed ensembles and
+weight smoothing. It supports both the 50-stock sample and the full 1998–2016 panel
+(`data/processed/ff5_daily_panel.parquet`). Details: `experiments/README.md`.
+
+```bash
+uv run python -m experiments.run_suite --list
+uv run python -m experiments.run_suite models factors neutral final
+uv run python -m experiments.postprocess --suite final
+uv run python -m experiments.decompose
+uv run python -m experiments.select
+uv run python -m experiments.report_tables
+uv run pytest experiments
+```
+
+Full dataset: `uv run python -m experiments.data_full` builds the universe (monthly top 500
+by trailing dollar volume) and FF5/PCA residuals under `data/full/`. The `full_*` suites
+train on them. `kaggle/` pushes the code and residuals to a private Kaggle GPU kernel
+(`./push_to_kaggle.sh`) and pulls results back (`python kaggle/kaggle_pull_output.py`).
+`uv run python -m experiments.compare` compares the paper replication with our recipe.
+
+`analysis/` builds comparison plots (`python -m analysis.compare_runs --results-dir results
+--output-dir results/comparison_plots`) and data checks for the full panel
+(`python -m analysis.full_data_qa`).
+
+Documents:
+
+- `docs/paper_summary.md`: the paper, its protocol and headline numbers
+- `docs/baseline_overview.md`: this baseline and what `experiments/` adds
+- `docs/experiment_report.md`: results on the 50-stock sample
+- `docs/analysis_summary.md`: per-suite numbers with plot references
+- `docs/final_model.md`: the model recipe for the full dataset
+- `docs/kaggle_plan.md`: the full-dataset run plan
+- `docs/full_report.md`: full-dataset results, paper replication vs our recipe
+- `docs/research_ideas.md`: possible extensions

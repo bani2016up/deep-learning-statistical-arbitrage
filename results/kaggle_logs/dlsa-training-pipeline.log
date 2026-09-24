@@ -1,0 +1,1520 @@
+[{"stream_name":"stdout","time":1.078364253,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":1.079080975,"data":"ENVIRONMENT \u0026 HARDWARE VERIFICATION\n"}
+,{"stream_name":"stdout","time":1.079092896,"data":"Python version: 3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]\n"}
+,{"stream_name":"stdout","time":7.5171529249999995,"data":"PyTorch version: 2.10.0+cu128\n"}
+,{"stream_name":"stdout","time":7.7803489710000004,"data":"CUDA available: True\n"}
+,{"stream_name":"stdout","time":7.806712257,"data":"GPU device count: 2\n"}
+,{"stream_name":"stdout","time":7.822308344,"data":"  [GPU 0]: Tesla T4 | Compute Capability: (7, 5) | Total VRAM: 14.6 GB\n"}
+,{"stream_name":"stdout","time":7.822341739,"data":"  [GPU 1]: Tesla T4 | Compute Capability: (7, 5) | Total VRAM: 14.6 GB\n"}
+,{"stream_name":"stdout","time":8.279315225,"data":"CUDA smoke test passed successfully.\n"}
+,{"stream_name":"stdout","time":8.279359477,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":8.279363538,"data":"STAGING CODEBASE\n"}
+,{"stream_name":"stdout","time":8.34588862,"data":"Found code source at: /kaggle/input/datasets/timtoktamysov/dlsa-code\n"}
+,{"stream_name":"stdout","time":8.737440105,"data":"Code staged to /kaggle/working/repo: ['GIT_COMMIT_AT_PUSH.txt', 'GIT_DIFF_AT_PUSH.patch', 'README.md', 'experiments', 'src']\n"}
+,{"stream_name":"stdout","time":8.753286312,"data":"WANDB_API_KEY loaded from secrets dataset.\n"}
+,{"stream_name":"stdout","time":8.756011695,"data":"Discovered residuals dataset at: /kaggle/input/datasets/timtoktamysov/dlsa-residuals\n"}
+,{"stream_name":"stdout","time":8.759654402,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":8.759669167,"data":"LAUNCHING SUITES: ['full_smoke', 'full_probe', 'full_paper', 'full_recipe']\n"}
+,{"stream_name":"stdout","time":8.759673313,"data":"Set 11h session deadline guard: Thu Sep 24 10:52:40 2026\n"}
+,{"stream_name":"stdout","time":8.75993991,"data":"Spawning Worker 0 (GPU 0): /usr/bin/python3 -u -m experiments.run_suite full_smoke full_probe full_paper full_recipe --shard 0/2\n"}
+,{"stream_name":"stdout","time":8.760830968,"data":"Spawning Worker 1 (GPU 1): /usr/bin/python3 -u -m experiments.run_suite full_smoke full_probe full_paper full_recipe --shard 1/2\n"}
+,{"stream_name":"stdout","time":8.761441713,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":8.761457958,"data":"MONITORING WORKERS...\n"}
+,{"stream_name":"stdout","time":8.761462631,"data":"[00:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":68.761763222,"data":"[01:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":68.761958567,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0alddebn\n"}
+,{"stream_name":"stdout","time":68.762129839,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/a6girohu\n"}
+,{"stream_name":"stdout","time":128.762740533,"data":"[02:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":128.762810174,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":128.762818556,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/a6girohu\n"}
+,{"stream_name":"stdout","time":188.762930413,"data":"[03:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":188.763167164,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":188.763540262,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/a6girohu\n"}
+,{"stream_name":"stdout","time":248.763873601,"data":"[04:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":248.764165654,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":248.764233348,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/a6girohu\n"}
+,{"stream_name":"stdout","time":308.764347239,"data":"[05:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":308.764601364,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":308.764916794,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":368.765163655,"data":"[06:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":368.765370599,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":368.765596222,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":428.765872488,"data":"[07:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":428.766189129,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":428.766220117,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":488.766442188,"data":"[08:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":488.766790768,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":488.766803077,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":548.76700072,"data":"[09:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":548.767303311,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":548.767342434,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":608.767574343,"data":"[10:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":608.767855983,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":608.767973278,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":668.76857039,"data":"[11:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":668.768645756,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":668.768653551,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":728.768744624,"data":"[12:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":728.768913165,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":728.769167809,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":788.769458833,"data":"[13:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":788.769742277,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":788.770023205,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":848.770556967,"data":"[14:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":848.770628732,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":848.77063538,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":908.770694291,"data":"[15:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":908.770958746,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":908.771138328,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":968.771270077,"data":"[16:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":968.771491322,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r5ewknn7\n"}
+,{"stream_name":"stdout","time":968.771572145,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1028.77212831,"data":"[17:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1028.772169417,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1028.772250762,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1088.772462696,"data":"[18:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1088.772711824,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1088.772814648,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1148.773449487,"data":"[19:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1148.773487705,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1148.773610511,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1208.773726231,"data":"[20:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1208.774064162,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1208.774283145,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1268.774966057,"data":"[21:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1268.775058187,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1268.775069937,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1328.775128602,"data":"[22:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1328.775542935,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1328.775564337,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1388.775746502,"data":"[23:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1388.775991648,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1388.776133693,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1448.776478506,"data":"[24:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1448.776682746,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1448.776759479,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1508.777022505,"data":"[25:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1508.777278186,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1508.777432424,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1568.777945794,"data":"[26:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1568.777991391,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1568.778057345,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1628.778239271,"data":"[27:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1628.778509266,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1628.778607572,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1688.778832479,"data":"[28:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1688.779002763,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1688.779057043,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1748.779778246,"data":"[29:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1748.779824483,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1748.779830905,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1808.7799982,"data":"[30:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1808.780314242,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1808.780442134,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1868.780686417,"data":"[31:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1868.780944808,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1868.781088173,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1928.781724728,"data":"[32:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1928.781798467,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1928.781804384,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":1988.781911396,"data":"[33:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":1988.782197384,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":1988.782316161,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":2048.782596148,"data":"[34:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2048.782978351,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2048.783005533,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":2108.783146035,"data":"[35:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2108.783500449,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2108.783524461,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":2168.784080745,"data":"[36:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2168.78412556,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2168.78413252,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":2228.784258506,"data":"[37:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2228.784487674,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2228.78449989,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":2288.784769896,"data":"[38:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2288.784931569,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2288.784976241,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":2348.785424964,"data":"[39:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2348.785952333,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2348.785967138,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":2408.786200859,"data":"[40:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2408.786488256,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2408.786502766,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":2468.786751707,"data":"[41:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2468.787089406,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2468.787105436,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":2528.787372752,"data":"[42:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2528.787553306,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2528.78763553,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":2588.78784263,"data":"[43:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2588.788106406,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2588.788321358,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":2648.788529151,"data":"[44:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2648.788766756,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2648.788869958,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":2708.789507547,"data":"[45:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2708.789570873,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2708.789578069,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5\n"}
+,{"stream_name":"stdout","time":2768.789731741,"data":"[46:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2768.789973117,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2768.790094263,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":2828.790276488,"data":"[47:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2828.790466631,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2828.790579331,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":2888.790879464,"data":"[48:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2888.79110569,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2888.791181443,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":2948.791443594,"data":"[49:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":2948.791669746,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":2948.791734156,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3008.791945721,"data":"[50:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3008.792281597,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":3008.792307548,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3068.792458666,"data":"[51:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3068.792676865,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":3068.792765493,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3128.795262693,"data":"[52:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3128.795508843,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":3128.795555973,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3188.795747973,"data":"[53:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3188.795960155,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":3188.796009627,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3248.796600498,"data":"[54:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3248.796657213,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":3248.79666373,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3308.797027772,"data":"[55:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3308.797083236,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":3308.797165846,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3368.797364343,"data":"[56:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3368.797641513,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":3368.797735283,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3428.798052228,"data":"[57:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3428.798263435,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":3428.7984306,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3488.798736644,"data":"[58:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3488.798941059,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":3488.79913911,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3548.799695759,"data":"[59:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3548.799765049,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":3548.799771268,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3608.799873341,"data":"[60:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3608.800065654,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/3s7iraj5\n"}
+,{"stream_name":"stdout","time":3608.800135075,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3668.800919188,"data":"[61:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3668.800959145,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":3668.800969563,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3728.80108887,"data":"[62:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3728.801404389,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":3728.801610287,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3788.801876814,"data":"[63:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3788.802134219,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":3788.802328084,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3848.802986047,"data":"[64:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3848.803073921,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":3848.803084198,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3908.803579301,"data":"[65:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3908.803622131,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":3908.803628586,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":3968.803847231,"data":"[66:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":3968.804189841,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":3968.804426802,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4028.804779552,"data":"[67:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4028.805089169,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4028.805257593,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4088.805545251,"data":"[68:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4088.805876358,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4088.805903229,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4148.806145087,"data":"[69:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4148.80645511,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4148.806478673,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4208.807100944,"data":"[70:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4208.807162314,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4208.807183735,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4268.807299633,"data":"[71:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4268.807726712,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4268.807741027,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4328.807885441,"data":"[72:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4328.808128714,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4328.808355202,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4388.808560851,"data":"[73:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4388.808807845,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4388.808920571,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4448.809116945,"data":"[74:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4448.80936452,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4448.80945999,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4508.80966748,"data":"[75:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4508.810014476,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4508.810178682,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4568.810433979,"data":"[76:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4568.810658332,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4568.810762283,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4628.811092785,"data":"[77:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4628.811274003,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4628.811364775,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4688.811998659,"data":"[78:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4688.812057104,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4688.81206713,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4748.812140158,"data":"[79:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4748.812520108,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4748.812545686,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4808.812731446,"data":"[80:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4808.812928187,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4808.813046091,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4868.813369972,"data":"[81:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4868.813931137,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4868.813953297,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4928.814202873,"data":"[82:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4928.814440718,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4928.814553778,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":4988.814739908,"data":"[83:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":4988.814972568,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":4988.815082154,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":5048.815315338,"data":"[84:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5048.815546409,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5048.815620781,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":5108.815895948,"data":"[85:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5108.816179783,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5108.816274483,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":5168.816910525,"data":"[86:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5168.816997867,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5168.817004244,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":5228.817119845,"data":"[87:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5228.817505187,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5228.81773283,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l\n"}
+,{"stream_name":"stdout","time":5288.817970561,"data":"[88:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5288.818208311,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5288.818363044,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":5348.818552905,"data":"[89:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5348.818782155,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5348.818882548,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":5408.819495474,"data":"[90:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5408.819536163,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5408.819543029,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":5468.819677224,"data":"[91:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5468.819900227,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5468.820003417,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":5528.820255314,"data":"[92:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5528.82057583,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5528.820748832,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":5588.821449735,"data":"[93:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5588.82151555,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5588.821523707,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":5648.821607963,"data":"[94:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5648.82182051,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5648.821937308,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":5708.822184971,"data":"[95:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5708.822419286,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5708.822503159,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":5768.823295498,"data":"[96:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5768.823347923,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5768.823355571,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":5828.823547491,"data":"[97:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5828.823721395,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5828.823855113,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":5888.824568342,"data":"[98:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5888.824627017,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5888.824634025,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":5948.824733603,"data":"[99:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":5948.825016358,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":5948.825134867,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6008.825430454,"data":"[100:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6008.825747972,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":6008.825891282,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6068.826333611,"data":"[101:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6068.826992308,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":6068.827426691,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6128.827834199,"data":"[102:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6128.828143381,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":6128.828306875,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6188.829151304,"data":"[103:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6188.829211255,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/23l2lgm5\n"}
+,{"stream_name":"stdout","time":6188.829218704,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6248.829264473,"data":"[104:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6248.829598814,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":6248.829707668,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6308.829956914,"data":"[105:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6308.830255517,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":6308.830451926,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6368.830731206,"data":"[106:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6368.830932161,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":6368.831034299,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6428.831299269,"data":"[107:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6428.831560342,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":6428.831651713,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6488.832310608,"data":"[108:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6488.832385169,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":6488.832406139,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6548.832942952,"data":"[109:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6548.833004932,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":6548.833012807,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6608.833131238,"data":"[110:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6608.83333097,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":6608.833435868,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6668.833665413,"data":"[111:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6668.833974028,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":6668.834144908,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6728.834387687,"data":"[112:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6728.834721805,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":6728.834978024,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6788.835664143,"data":"[113:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6788.835738591,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":6788.835745461,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6848.835808108,"data":"[114:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6848.836018633,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":6848.836114603,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6908.836974073,"data":"[115:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6908.837048699,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":6908.837058408,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":6968.837137989,"data":"[116:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":6968.837446881,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":6968.837544405,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":7028.837874428,"data":"[117:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7028.838176986,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7028.838273426,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":7088.838552899,"data":"[118:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7088.838790799,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7088.838941188,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":7148.839697647,"data":"[119:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7148.839744082,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7148.839770128,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":7208.840197097,"data":"[120:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7208.84024123,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7208.840247967,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":7268.840399238,"data":"[121:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7268.840661065,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7268.840744104,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":7328.840992245,"data":"[122:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7328.841256968,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7328.841351255,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":7388.841965223,"data":"[123:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7388.842030253,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7388.842046906,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":7448.842162108,"data":"[124:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7448.842388181,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7448.842575919,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":7508.84282445,"data":"[125:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7508.843157586,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7508.843328614,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":7568.843940576,"data":"[126:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7568.843998042,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7568.844005206,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":7628.844255282,"data":"[127:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7628.84446894,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7628.844620815,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":7688.844841156,"data":"[128:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7688.845083651,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7688.845145139,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe\n"}
+,{"stream_name":"stdout","time":7748.845419239,"data":"[129:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7748.845585261,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7748.845755323,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":7808.845970913,"data":"[130:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7808.846258436,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7808.846479583,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":7868.847140592,"data":"[131:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7868.847184542,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7868.847192033,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":7928.847318923,"data":"[132:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7928.847640381,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7928.847772008,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":7988.848357023,"data":"[133:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":7988.848398381,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":7988.848405149,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8048.848979078,"data":"[134:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8048.849079239,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8048.849086008,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8108.849156919,"data":"[135:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8108.852216316,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8108.852236547,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8168.850186837,"data":"[136:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8168.850231543,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8168.850238957,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8228.850385246,"data":"[137:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8228.850788717,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8228.850812438,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8288.851165898,"data":"[138:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8288.851369793,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8288.851561679,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8348.851740278,"data":"[139:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8348.851965206,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8348.855207267,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8408.855399551,"data":"[140:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8408.855729905,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8408.855928244,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8468.856279204,"data":"[141:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8468.856507964,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8468.856650678,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8528.856938611,"data":"[142:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8528.857219893,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8528.857390682,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8588.857664371,"data":"[143:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8588.857970393,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8588.858085046,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8648.858876671,"data":"[144:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8648.858962576,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8648.858969824,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8708.859033962,"data":"[145:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8708.859305719,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8708.859460417,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8768.86019894,"data":"[146:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8768.860245195,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8768.86026834,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8828.860345349,"data":"[147:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8828.86069891,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/c2rprk7s\n"}
+,{"stream_name":"stdout","time":8828.860836587,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8888.861095303,"data":"[148:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8888.86142146,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":8888.861520956,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":8948.862298155,"data":"[149:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":8948.862370113,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":8948.862378441,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9008.862862387,"data":"[150:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9008.86294352,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9008.862951895,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9068.863574344,"data":"[151:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9068.863645074,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9068.863653759,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9128.863792628,"data":"[152:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9128.864011023,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9128.864206514,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9188.864499155,"data":"[153:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9188.864728333,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9188.864876023,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9248.86518728,"data":"[154:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9248.865470958,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9248.865660714,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9308.866577963,"data":"[155:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9308.866657029,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9308.866665803,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9368.866678082,"data":"[156:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9368.866945302,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9368.867160702,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9428.867794845,"data":"[157:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9428.867856429,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9428.867932474,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9488.868520093,"data":"[158:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9488.868565153,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9488.868571802,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9548.868718857,"data":"[159:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9548.868996743,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9548.869220887,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9608.86957293,"data":"[160:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9608.86989604,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9608.870127749,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9668.873303699,"data":"[161:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9668.873356009,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9668.873379225,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9728.871177969,"data":"[162:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9728.871492579,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9728.871666513,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9788.871913751,"data":"[163:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9788.872282186,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9788.872397094,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9848.872724186,"data":"[164:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9848.873264194,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9848.873482307,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9908.873774197,"data":"[165:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9908.874067394,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9908.874192614,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":9968.874572031,"data":"[166:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":9968.874756016,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":9968.874876103,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":10028.875159148,"data":"[167:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10028.875443353,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10028.875615934,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":10088.875877395,"data":"[168:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10088.87608503,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10088.876245509,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":10148.876548047,"data":"[169:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10148.876879314,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10148.876977969,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":10208.877747979,"data":"[170:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10208.877804056,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10208.877811248,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":10268.877972431,"data":"[171:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10268.878205906,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10268.878375113,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":10328.879011337,"data":"[172:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10328.879116107,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10328.879126383,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22\n"}
+,{"stream_name":"stdout","time":10388.881128317,"data":"[173:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10388.881172715,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10388.88118041,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":10448.880005484,"data":"[174:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10448.880502053,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10448.880530878,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":10508.880747174,"data":"[175:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10508.88095466,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10508.881110654,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":10568.881481836,"data":"[176:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10568.881693937,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10568.881873895,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":10628.882659909,"data":"[177:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10628.882705205,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10628.882711647,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":10688.883286768,"data":"[178:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10688.883354725,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10688.883372486,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":10748.884068577,"data":"[179:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10748.884120085,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10748.884126923,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":10808.884187109,"data":"[180:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10808.884414064,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10808.884622646,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":10868.884826044,"data":"[181:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10868.885159085,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10868.885273421,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":10928.88568007,"data":"[182:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10928.886388135,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10928.886823301,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":10988.887727849,"data":"[183:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":10988.887772566,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":10988.887778993,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11048.887940096,"data":"[184:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11048.888186328,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":11048.888333466,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11108.888553523,"data":"[185:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11108.88889456,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":11108.889065298,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11168.889313538,"data":"[186:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11168.889709051,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":11168.889733766,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11228.890121529,"data":"[187:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11228.890394264,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":11228.89078885,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11288.890977057,"data":"[188:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11288.891410334,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":11288.891439745,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11348.891620494,"data":"[189:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11348.892077053,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/ioqefpe8\n"}
+,{"stream_name":"stdout","time":11348.892122781,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11408.892358568,"data":"[190:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11408.892636346,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":11408.892758782,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11468.893033765,"data":"[191:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11468.89349181,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":11468.893517906,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11528.893693879,"data":"[192:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11528.89395753,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":11528.894110577,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11588.89426254,"data":"[193:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11588.894557779,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":11588.894717005,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11648.894968291,"data":"[194:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11648.895350621,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":11648.895545028,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11708.895800377,"data":"[195:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11708.89610381,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":11708.896383696,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11768.896738409,"data":"[196:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11768.897024937,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":11768.897153099,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11828.897394325,"data":"[197:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11828.897695203,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":11828.897818977,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11888.89849781,"data":"[198:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11888.8985561,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":11888.898566906,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":11948.899203486,"data":"[199:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":11948.899248813,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":11948.899255687,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12008.899471953,"data":"[200:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12008.899966515,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12008.900388534,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12068.900719175,"data":"[201:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12068.900959568,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12068.901153718,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12128.90138665,"data":"[202:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12128.901620417,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12128.901747575,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12188.902608476,"data":"[203:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12188.902674256,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12188.902699162,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12248.90269885,"data":"[204:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12248.903128972,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12248.903154882,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12308.903236669,"data":"[205:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12308.903582966,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12308.903850058,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12368.904111846,"data":"[206:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12368.904381354,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12368.90455012,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12428.904825503,"data":"[207:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12428.905132835,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12428.905433651,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12488.90581405,"data":"[208:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12488.906137045,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12488.906367878,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12548.906789891,"data":"[209:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12548.907030246,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12548.907355402,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12608.908329169,"data":"[210:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12608.908492894,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12608.90862597,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12668.908853169,"data":"[211:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12668.909126487,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12668.909307778,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12728.910069405,"data":"[212:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12728.910138138,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12728.910145478,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12788.910320138,"data":"[213:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12788.910584411,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12788.910709532,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug\n"}
+,{"stream_name":"stdout","time":12848.911084095,"data":"[214:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12848.911475059,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12848.911663431,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":12908.912385092,"data":"[215:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12908.912427474,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12908.912433944,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":12968.912953343,"data":"[216:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":12968.912994061,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":12968.913000296,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13028.913669469,"data":"[217:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13028.913709309,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13028.913716769,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13088.913917321,"data":"[218:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13088.914236358,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13088.914351608,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13148.914618549,"data":"[219:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13148.914912314,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13148.915065666,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13208.915356353,"data":"[220:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13208.915780838,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13208.915952788,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13268.916346846,"data":"[221:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13268.916709784,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13268.916933366,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13328.917288179,"data":"[222:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13328.917707962,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13328.917931838,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13388.918204452,"data":"[223:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13388.918467708,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13388.918666585,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13448.918897697,"data":"[224:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13448.919356866,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13448.91963645,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13508.919956167,"data":"[225:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13508.920257315,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13508.920406095,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13568.920669681,"data":"[226:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13568.920919265,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13568.921016883,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13628.921292785,"data":"[227:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13628.921554601,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13628.921691347,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13688.922352341,"data":"[228:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13688.922401333,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13688.922407833,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13748.92269062,"data":"[229:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13748.922997205,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13748.923184662,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13808.923462175,"data":"[230:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13808.923791532,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13808.923919243,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13868.924704788,"data":"[231:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13868.924788807,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/1bauq69t\n"}
+,{"stream_name":"stdout","time":13868.924795078,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13928.924922094,"data":"[232:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13928.925233097,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":13928.925439798,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":13988.926094196,"data":"[233:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":13988.926138901,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":13988.926146321,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14048.926301373,"data":"[234:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14048.926620913,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14048.926793987,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14108.927246475,"data":"[235:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14108.927421731,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14108.92751106,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14168.927814017,"data":"[236:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14168.928068594,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14168.928234188,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14228.928547429,"data":"[237:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14228.928843746,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14228.929071453,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14288.929274015,"data":"[238:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14288.929517348,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14288.929628061,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14348.929909984,"data":"[239:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14348.930360278,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14348.930601315,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14408.930936806,"data":"[240:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14408.931230328,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14408.931432791,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14468.931657254,"data":"[241:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14468.931954426,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14468.93214076,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14528.932805208,"data":"[242:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14528.932861732,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14528.932868368,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14588.933013827,"data":"[243:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14588.933354872,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14588.933465757,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14648.933722591,"data":"[244:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14648.933998008,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14648.934191496,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14708.93450452,"data":"[245:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14708.934776616,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14708.935002652,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14768.935189231,"data":"[246:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14768.935538643,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14768.935663621,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14828.935884801,"data":"[247:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14828.936193727,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14828.936392727,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14888.936731221,"data":"[248:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14888.937014763,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14888.937166868,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":14948.937523648,"data":"[249:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":14948.93773223,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":14948.937911669,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":15008.938141076,"data":"[250:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15008.938434822,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15008.938645217,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":15068.938834665,"data":"[251:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15068.939135633,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15068.939353764,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":15128.939544596,"data":"[252:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15128.939942165,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15128.939965916,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":15188.940760998,"data":"[253:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15188.940807092,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15188.940814591,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":15248.940894289,"data":"[254:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15248.941164398,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15248.941313508,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":15308.942116123,"data":"[255:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15308.942158666,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15308.942164898,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b\n"}
+,{"stream_name":"stdout","time":15368.942282501,"data":"[256:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15368.94274785,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15368.94277096,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":15428.94298607,"data":"[257:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15428.94333308,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15428.943466432,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":15488.943681109,"data":"[258:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15488.944014308,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15488.944154006,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":15548.944403901,"data":"[259:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15548.9446639,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15548.944831819,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":15608.945130765,"data":"[260:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15608.945343479,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15608.94562986,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":15668.945879319,"data":"[261:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15668.946194945,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15668.946367129,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":15728.946566805,"data":"[262:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15728.946896801,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15728.947089761,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":15788.947297205,"data":"[263:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15788.947641261,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15788.947757713,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":15848.948069264,"data":"[264:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15848.948412026,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15848.94855928,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":15908.948822444,"data":"[265:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15908.949194922,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15908.949474705,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":15968.949896119,"data":"[266:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":15968.950166878,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":15968.950277732,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16028.950583763,"data":"[267:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16028.950868511,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":16028.951084848,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16088.951293573,"data":"[268:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16088.951658826,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":16088.951824799,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16148.952163823,"data":"[269:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16148.952487088,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":16148.952654762,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16208.95289477,"data":"[270:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16208.953212128,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":16208.953348876,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16268.953678919,"data":"[271:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16268.953969426,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":16268.954144599,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16328.954370794,"data":"[272:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16328.954666925,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":16328.954798368,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16388.955643193,"data":"[273:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16388.955717048,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":16388.955724974,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16448.955873061,"data":"[274:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16448.956087292,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":16448.956390527,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16508.956636819,"data":"[275:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16508.956884664,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/gu78e9wr\n"}
+,{"stream_name":"stdout","time":16508.957066736,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16568.957307637,"data":"[276:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16568.957656762,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":16568.957856241,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16628.958502058,"data":"[277:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16628.95868246,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":16628.958945604,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16688.959893456,"data":"[278:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16688.959941314,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":16688.959948504,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16748.960154813,"data":"[279:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16748.960468488,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":16748.960692423,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16808.960986284,"data":"[280:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16808.961285242,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":16808.961512913,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16868.961770397,"data":"[281:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16868.962265134,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":16868.962420476,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16928.962762454,"data":"[282:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16928.963140769,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":16928.963286491,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":16988.964110426,"data":"[283:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":16988.964164306,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":16988.964170623,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17048.964410255,"data":"[284:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17048.964834035,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17048.965087506,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17108.965433615,"data":"[285:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17108.965689153,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17108.965854748,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17168.966212354,"data":"[286:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17168.966531116,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17168.966686978,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17228.96760584,"data":"[287:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17228.967650149,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17228.967656471,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17288.967762281,"data":"[288:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17288.968106733,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17288.968255809,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17348.968546421,"data":"[289:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17348.968878113,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17348.969014952,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17408.969322,"data":"[290:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17408.969655217,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17408.969839966,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17468.970163146,"data":"[291:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17468.970442787,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17468.970676881,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17528.971489031,"data":"[292:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17528.971543443,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17528.971550353,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17588.972230262,"data":"[293:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17588.972277602,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17588.97229673,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17648.972380471,"data":"[294:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17648.972788332,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17648.973101376,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17708.97379516,"data":"[295:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17708.973870932,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17708.973879182,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17768.974051081,"data":"[296:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17768.974567563,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17768.974580109,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17828.97481615,"data":"[297:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17828.97514774,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17828.975269152,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17888.975588987,"data":"[298:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17888.975908111,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17888.976190345,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49\n"}
+,{"stream_name":"stdout","time":17948.976441378,"data":"[299:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":17948.97682543,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":17948.977105886,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18008.977925987,"data":"[300:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18008.977991237,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18008.977998215,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18068.978118151,"data":"[301:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18068.978627361,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18068.97865428,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18128.978794247,"data":"[302:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18128.979162652,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18128.979321737,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18188.980222041,"data":"[303:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18188.980274748,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18188.980281807,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18248.980946314,"data":"[304:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18248.981011491,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18248.981019455,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18308.981125705,"data":"[305:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18308.981838401,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18308.981862199,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18368.982110545,"data":"[306:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18368.982574407,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18368.982800346,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18428.985135678,"data":"[307:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18428.985198987,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18428.985206734,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18488.985385705,"data":"[308:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18488.98593508,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18488.985953531,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18548.986135941,"data":"[309:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18548.986565845,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18548.986821142,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18608.987641179,"data":"[310:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18608.9876737,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18608.987690927,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18668.988534559,"data":"[311:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18668.988580284,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18668.988587333,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18728.988675401,"data":"[312:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18728.988937011,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18728.989197548,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18788.989568365,"data":"[313:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18788.989981451,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18788.990326914,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18848.991369812,"data":"[314:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18848.991589727,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18848.991841215,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18908.992079772,"data":"[315:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18908.992421215,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18908.992561402,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":18968.993294196,"data":"[316:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":18968.99333781,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/7jcfmzcx\n"}
+,{"stream_name":"stdout","time":18968.993344559,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19028.994165545,"data":"[317:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19028.994235126,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19028.99425591,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19088.994353777,"data":"[318:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19088.99465712,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19088.994785979,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19148.99521925,"data":"[319:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19148.995524112,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19148.995698461,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19208.996078824,"data":"[320:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19208.996351214,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19208.996552217,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19268.997473315,"data":"[321:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19268.997546493,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19268.997553572,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19328.998202742,"data":"[322:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19328.998260917,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19328.998269073,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19388.998353041,"data":"[323:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19388.998656905,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19388.998876834,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19448.999120334,"data":"[324:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19448.999438194,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19448.999599326,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19509.000257575,"data":"[325:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19509.000405956,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19509.000422146,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19569.000732122,"data":"[326:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19569.001197062,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19569.001439509,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19629.00172409,"data":"[327:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19629.002197695,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19629.002412604,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19689.003266245,"data":"[328:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19689.003313112,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19689.003856646,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19749.004463509,"data":"[329:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19749.004942383,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19749.005438482,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19809.005798788,"data":"[330:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19809.006208271,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19809.006383704,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19869.007295535,"data":"[331:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19869.007356593,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19869.007363324,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19929.00744714,"data":"[332:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19929.010118419,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19929.010311496,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":19989.00823474,"data":"[333:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":19989.008555037,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":19989.008754506,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":20049.008995861,"data":"[334:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20049.009463696,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20049.009744325,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":20109.010647584,"data":"[335:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20109.01070652,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20109.010713464,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":20169.010720906,"data":"[336:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20169.011115738,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20169.01125411,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":20229.012002912,"data":"[337:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20229.012060378,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20229.012068539,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":20289.012929305,"data":"[338:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20289.01298731,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20289.012994273,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":20349.013738099,"data":"[339:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20349.013781209,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20349.013788527,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq\n"}
+,{"stream_name":"stdout","time":20409.013919635,"data":"[340:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20409.014322312,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20409.014552157,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":20469.014930488,"data":"[341:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20469.015751756,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20469.015781704,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":20529.016087191,"data":"[342:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20529.016591177,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20529.016770397,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":20589.017632383,"data":"[343:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20589.017679992,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20589.017687492,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":20649.018491047,"data":"[344:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20649.018535943,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20649.018542748,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":20709.018692067,"data":"[345:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20709.01907236,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20709.019242291,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":20769.019614731,"data":"[346:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20769.019923679,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20769.020131566,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":20829.020834506,"data":"[347:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20829.020910114,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20829.020921515,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":20889.021148445,"data":"[348:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20889.021514893,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20889.02169383,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":20949.022639242,"data":"[349:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":20949.022684359,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":20949.022690968,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21009.022850503,"data":"[350:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21009.02331498,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":21009.023457709,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21069.024308316,"data":"[351:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21069.024352088,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":21069.024358948,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21129.024599893,"data":"[352:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21129.024964091,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":21129.025155596,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21189.02549829,"data":"[353:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21189.025890657,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":21189.026222511,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21249.026522752,"data":"[354:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21249.026801134,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":21249.02703002,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21309.027307377,"data":"[355:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21309.027671075,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":21309.027862323,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21369.028810817,"data":"[356:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21369.028876429,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":21369.028883689,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21429.029039944,"data":"[357:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21429.029309133,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":21429.029516335,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21489.029775355,"data":"[358:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21489.030132589,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/neocjiex\n"}
+,{"stream_name":"stdout","time":21489.030285816,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21549.030527278,"data":"[359:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21549.030902319,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":21549.031237303,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21609.031512406,"data":"[360:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21609.031846487,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":21609.032011736,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21669.03272039,"data":"[361:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21669.032838273,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":21669.032928827,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21729.033312112,"data":"[362:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21729.033657695,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":21729.033826928,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21789.034127446,"data":"[363:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21789.03448161,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":21789.034724799,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21849.035529291,"data":"[364:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21849.035570712,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":21849.035577398,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21909.035809732,"data":"[365:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21909.03608367,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":21909.036320863,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":21969.036525233,"data":"[366:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":21969.036822457,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":21969.037029681,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22029.037262349,"data":"[367:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22029.037645585,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22029.037796417,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22089.038629089,"data":"[368:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22089.038689633,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22089.038696816,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22149.038797559,"data":"[369:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22149.039171758,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22149.039348648,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22209.039611025,"data":"[370:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22209.039936024,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22209.040115818,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22269.04038969,"data":"[371:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22269.040829131,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22269.04105462,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22329.041896172,"data":"[372:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22329.041992543,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22329.042001311,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22389.042124169,"data":"[373:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22389.042533971,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22389.044222613,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22449.043716857,"data":"[374:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22449.043764456,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22449.043772629,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22509.043981236,"data":"[375:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22509.044309347,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22509.044609763,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22569.044837847,"data":"[376:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22569.045221827,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22569.045387559,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22629.04624139,"data":"[377:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22629.046663531,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22629.046818313,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22689.047229397,"data":"[378:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22689.047716261,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22689.047749503,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22749.047907037,"data":"[379:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22749.04830853,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22749.04848088,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22809.048744374,"data":"[380:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22809.049164466,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22809.049247858,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22869.049628497,"data":"[381:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22869.050540267,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22869.051129791,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk\n"}
+,{"stream_name":"stdout","time":22929.0516169,"data":"[382:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22929.05196874,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22929.052207321,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":22989.052474638,"data":"[383:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":22989.052886693,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":22989.052985635,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23049.053240135,"data":"[384:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23049.053647603,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23049.053891376,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23109.054114677,"data":"[385:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23109.054505935,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23109.05473412,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23169.055511009,"data":"[386:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23169.055592097,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23169.055598919,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23229.056377306,"data":"[387:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23229.05643045,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23229.056438283,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23289.057154469,"data":"[388:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23289.057209058,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23289.057215996,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23349.057384742,"data":"[389:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23349.057828107,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23349.058296672,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23409.058539198,"data":"[390:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23409.058885971,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23409.059222759,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23469.060114109,"data":"[391:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23469.060162063,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23469.060169551,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23529.060303587,"data":"[392:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23529.060599586,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23529.06076137,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23589.061709732,"data":"[393:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23589.061788409,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23589.061796634,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23649.061979289,"data":"[394:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23649.062424262,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23649.062586359,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23709.063483145,"data":"[395:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23709.063535301,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23709.063542313,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23769.064441718,"data":"[396:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23769.064495129,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23769.064501843,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23829.064598322,"data":"[397:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23829.065118445,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23829.06543282,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23889.065699654,"data":"[398:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23889.066069672,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23889.066325224,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":23949.067376362,"data":"[399:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":23949.067452769,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":23949.067460883,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24009.067506608,"data":"[400:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24009.068039313,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":24009.06827656,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24069.068579442,"data":"[401:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24069.068971064,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":24069.069136089,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24129.070122415,"data":"[402:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24129.070167971,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/nsvz1j4u\n"}
+,{"stream_name":"stdout","time":24129.070175359,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24189.070347274,"data":"[403:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24189.070732881,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24189.07095991,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24249.07128275,"data":"[404:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24249.071719117,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24249.072092457,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24309.072428686,"data":"[405:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24309.072739716,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24309.073777831,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24369.073183161,"data":"[406:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24369.073476568,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24369.073723415,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24429.073978019,"data":"[407:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24429.074429033,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24429.074675205,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24489.074934717,"data":"[408:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24489.075557245,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24489.075590108,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24549.075797812,"data":"[409:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24549.076170116,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24549.076388693,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24609.076580217,"data":"[410:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24609.076928987,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24609.077172707,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24669.077469636,"data":"[411:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24669.077876835,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24669.078079539,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24729.07829757,"data":"[412:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24729.078611849,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24729.078792367,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24789.079013651,"data":"[413:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24789.07939345,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24789.07956111,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24849.079786387,"data":"[414:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24849.08011857,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24849.080359933,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24909.081283451,"data":"[415:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24909.081393134,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24909.08140127,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":24969.082157882,"data":"[416:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":24969.082214516,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":24969.082222802,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":25029.082365705,"data":"[417:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25029.08293864,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25029.082972225,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":25089.08319131,"data":"[418:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25089.083563095,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25089.084009554,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":25149.084299669,"data":"[419:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25149.084766842,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25149.085210354,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":25209.08613272,"data":"[420:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25209.086197133,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25209.086205035,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":25269.086325412,"data":"[421:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25269.086740254,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25269.087084932,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":25329.087798412,"data":"[422:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25329.087871448,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25329.088030024,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":25389.088779238,"data":"[423:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25389.088870243,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25389.089048936,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":25449.089546029,"data":"[424:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25449.089598326,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25449.089621347,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx\n"}
+,{"stream_name":"stdout","time":25509.089682261,"data":"[425:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25509.0900353,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25509.090297127,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":25569.091337269,"data":"[426:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25569.091641002,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25569.091828916,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":25629.092733021,"data":"[427:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25629.09278137,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25629.092789232,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":25689.092974863,"data":"[428:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25689.093361377,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25689.093721177,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":25749.093958433,"data":"[429:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25749.094314412,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25749.094499448,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":25809.095452566,"data":"[430:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25809.095498282,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25809.095516552,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":25869.095575766,"data":"[431:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25869.096155414,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25869.096191454,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":25929.096305143,"data":"[432:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25929.096661395,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25929.0968531,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":25989.097226446,"data":"[433:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":25989.09766683,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":25989.097827079,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26049.098168248,"data":"[434:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26049.098701099,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":26049.098717627,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26109.099752886,"data":"[435:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26109.099808493,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":26109.099816519,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26169.09984749,"data":"[436:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26169.100410045,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":26169.100445044,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26229.100738336,"data":"[437:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26229.101005256,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":26229.101567048,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26289.10178848,"data":"[438:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26289.102125564,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":26289.102415727,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26349.102610158,"data":"[439:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26349.102951491,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":26349.103159958,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26409.103625699,"data":"[440:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26409.104837906,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":26409.105551021,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26469.106083454,"data":"[441:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26469.106430483,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":26469.106695108,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26529.10694587,"data":"[442:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26529.107406173,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":26529.107820117,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26589.108249696,"data":"[443:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26589.108716607,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":26589.108982697,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26649.109836604,"data":"[444:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26649.109882435,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/9cv89p2v\n"}
+,{"stream_name":"stdout","time":26649.10988964,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26709.110100664,"data":"[445:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26709.110432484,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":26709.110679992,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26769.111438073,"data":"[446:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26769.111486182,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":26769.111625963,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26829.112551509,"data":"[447:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26829.112597851,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":26829.112604899,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26889.113151253,"data":"[448:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26889.113406322,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":26889.11365216,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":26949.113886111,"data":"[449:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":26949.114304353,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":26949.114526387,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27009.114758017,"data":"[450:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27009.115324919,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27009.115613512,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27069.115865162,"data":"[451:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27069.116251402,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27069.116482177,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27129.116756787,"data":"[452:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27129.11715675,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27129.117409946,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27189.117605026,"data":"[453:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27189.117952355,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27189.118169243,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27249.118414064,"data":"[454:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27249.118765623,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27249.118981819,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27309.11985659,"data":"[455:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27309.119913113,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27309.119919879,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27369.120111017,"data":"[456:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27369.120468672,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27369.120624849,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27429.120967417,"data":"[457:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27429.121394543,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27429.121652324,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27489.122030144,"data":"[458:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27489.122425522,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27489.12265614,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27549.122996084,"data":"[459:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27549.123362818,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27549.123576619,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27609.123923762,"data":"[460:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27609.124322048,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27609.124584369,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27669.124961633,"data":"[461:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27669.125848358,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27669.126440812,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27729.126896241,"data":"[462:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27729.127300007,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27729.127545667,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27789.127791545,"data":"[463:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27789.128146505,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27789.12841593,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27849.128656738,"data":"[464:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27849.12898709,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27849.129179164,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27909.129843427,"data":"[465:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27909.129899005,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27909.130117283,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":27969.13038116,"data":"[466:00] Active workers: 2/2\n"}
+,{"stream_name":"stdout","time":27969.130735672,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":27969.131071717,"data":"   Worker 1: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg\n"}
+,{"stream_name":"stdout","time":28029.131452946,"data":"[467:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28029.131885397,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28029.132267413,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28089.132573395,"data":"[468:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28089.13279718,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28089.13303381,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28149.133291283,"data":"[469:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28149.133699188,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28149.133888984,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28209.134155788,"data":"[470:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28209.134550041,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28209.134799853,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28269.135031254,"data":"[471:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28269.135412276,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28269.13567991,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28329.135992686,"data":"[472:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28329.136449143,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28329.136721384,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28389.137018477,"data":"[473:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28389.137436669,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28389.137743129,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28449.137978115,"data":"[474:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28449.138361073,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28449.138655188,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28509.13890062,"data":"[475:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28509.139332832,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28509.139623498,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28569.139894706,"data":"[476:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28569.140367913,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28569.140670863,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28629.140919327,"data":"[477:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28629.14135909,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28629.141629394,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28689.141909535,"data":"[478:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28689.142358211,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28689.142666767,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28749.142891819,"data":"[479:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28749.143303389,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28749.143597036,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28809.143847514,"data":"[480:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28809.144352635,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28809.144391314,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28869.14474148,"data":"[481:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28869.14497376,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28869.145261202,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28929.145514666,"data":"[482:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28929.14587138,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28929.146096476,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":28989.146381738,"data":"[483:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":28989.146762962,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":28989.1469865,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":29049.147329233,"data":"[484:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":29049.147616087,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":29049.147891024,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":29109.148095527,"data":"[485:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":29109.148456691,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":29109.148747455,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":29169.149112319,"data":"[486:00] Active workers: 1/2\n"}
+,{"stream_name":"stdout","time":29169.149331624,"data":"   Worker 0: wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/478fricp\n"}
+,{"stream_name":"stdout","time":29169.149579003,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":29229.149973106,"data":"[487:00] Active workers: 0/2\n"}
+,{"stream_name":"stdout","time":29229.150458276,"data":"   Worker 0: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":29229.15074752,"data":"   Worker 1: Summary: /kaggle/working/results/summary.csv\n"}
+,{"stream_name":"stdout","time":29229.150760002,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":29229.150766226,"data":"ALL WORKERS FINISHED. CHECKING STATUS...\n"}
+,{"stream_name":"stdout","time":29229.150771642,"data":"Worker 0 exited with code: 0\n"}
+,{"stream_name":"stdout","time":29229.15077713,"data":"Worker 1 exited with code: 0\n"}
+,{"stream_name":"stdout","time":29229.150782792,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":29229.150789338,"data":"RUNNING POST-AGGREGATIONS...\n"}
+,{"stream_name":"stdout","time":29240.089533922,"data":"                         sharpe_total  sharpe_drift  sharpe_neutral  net_exposure\n"}
+,{"stream_name":"stdout","time":29240.089569398,"data":"suite       variant                                                              \n"}
+,{"stream_name":"stdout","time":29240.08957627,"data":"full_paper  ff5                  1.95          0.40            1.79          0.15\n"}
+,{"stream_name":"stdout","time":29240.089582173,"data":"            pca5                 2.66          0.23            2.66          0.06\n"}
+,{"stream_name":"stdout","time":29240.089597599,"data":"full_probe  pca5_e10             3.46         -0.61            3.46          0.00\n"}
+,{"stream_name":"stdout","time":29240.089602152,"data":"            pca5_e100            5.50          0.03            5.50          0.00\n"}
+,{"stream_name":"stdout","time":29240.089606479,"data":"            pca5_e30             4.18          0.93            4.18         -0.00\n"}
+,{"stream_name":"stdout","time":29240.089611274,"data":"full_recipe ff5_cw0.25           1.72          0.13            1.72          0.00\n"}
+,{"stream_name":"stdout","time":29240.089615898,"data":"            ff5_cw0.5            0.98         -0.28            0.98         -0.00\n"}
+,{"stream_name":"stdout","time":29240.089620264,"data":"            pca5_cw0.25          2.67          0.18            2.67          0.00\n"}
+,{"stream_name":"stdout","time":29240.089625034,"data":"            pca5_cw0.5           2.21          0.09            2.21         -0.00\n"}
+,{"stream_name":"stdout","time":29240.08962963,"data":"            pca8_cw0.25          2.63          0.18            2.63         -0.00\n"}
+,{"stream_name":"stdout","time":29240.089634081,"data":"            pca8_cw0.5           2.18          0.10            2.18         -0.00\n"}
+,{"stream_name":"stdout","time":29240.089638366,"data":"full_smoke  pca5                -0.44         -0.49           -0.44         -0.00\n"}
+,{"stream_name":"stdout","time":29243.581771131,"data":"Wrote /kaggle/working/results/report_tables.md\n"}
+,{"stream_name":"stdout","time":29244.038991791,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":29244.039031629,"data":"PACKAGING RESULTS ARTIFACTS...\n"}
+,{"stream_name":"stdout","time":29250.434554627,"data":"Created /kaggle/working/results.zip (137.70 MB)\n"}
+,{"stream_name":"stdout","time":29250.434900728,"data":"Exposed summary.csv in /kaggle/working/\n"}
+,{"stream_name":"stdout","time":29250.435206753,"data":"Exposed decomposition.csv in /kaggle/working/\n"}
+,{"stream_name":"stdout","time":29250.435496317,"data":"Exposed report_tables.md in /kaggle/working/\n"}
+,{"stream_name":"stdout","time":29250.435506853,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":29250.435512491,"data":"PIPELINE COMPLETE (success=True).\n"}
+,{"stream_name":"stderr","time":29253.43416357,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":29253.434235267,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":29253.747247446,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":29253.747280894,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":29254.457417361,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":29255.900574081,"data":"[NbConvertApp] Writing 322310 bytes to __results__.html\n"}
+]

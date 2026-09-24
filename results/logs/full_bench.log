@@ -1,0 +1,9 @@
+[full_bench 1/8] full_bench__ff5_fourier_ffn__s0: sharpe=0.94 net_sharpe=-1.48 (125s)
+[full_bench 2/8] full_bench__ff5_ou_threshold__s0: sharpe=0.15 net_sharpe=-2.94 (1s)
+[full_bench 3/8] full_bench__ff5_reversal__s0: sharpe=0.68 net_sharpe=-0.11 (1s)
+[full_bench 4/8] full_bench__ff5_fourier_ffn_neutral__s0: sharpe=0.37 net_sharpe=-2.08 (98s)
+[full_bench 5/8] full_bench__pca5_fourier_ffn__s0: sharpe=1.32 net_sharpe=-2.44 (95s)
+[full_bench 6/8] full_bench__pca5_ou_threshold__s0: sharpe=0.62 net_sharpe=-3.04 (1s)
+[full_bench 7/8] full_bench__pca5_reversal__s0: sharpe=0.83 net_sharpe=-0.14 (1s)
+[full_bench 8/8] full_bench__pca5_fourier_ffn_neutral__s0: sharpe=0.97 net_sharpe=-2.82 (116s)
+Summary: /Users/vs_code/test/results/summary.csv

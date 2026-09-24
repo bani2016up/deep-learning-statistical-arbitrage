@@ -1,0 +1,22 @@
+[final 1/15] final__cnn_neutral_cw0__s0: sharpe=0.30 net_sharpe=-3.10 (0s)
+[final 2/15] final__cnn_neutral_cw0__s1: sharpe=0.39 net_sharpe=-2.95 (0s)
+[final 3/15] final__cnn_neutral_cw0__s2: sharpe=0.61 net_sharpe=-2.68 (0s)
+[final 4/15] final__cnn_neutral_cw0.25__s0: sharpe=0.40 net_sharpe=-2.25 (0s)
+[final 5/15] final__cnn_neutral_cw0.25__s1: sharpe=0.40 net_sharpe=-2.20 (0s)
+[final 6/15] final__cnn_neutral_cw0.25__s2: sharpe=0.49 net_sharpe=-2.18 (0s)
+[final 7/15] final__cnn_neutral_cw0.5__s0: sharpe=0.22 net_sharpe=-1.77 (0s)
+[final 8/15] final__cnn_neutral_cw0.5__s1: sharpe=0.14 net_sharpe=-1.44 (0s)
+[final 9/15] final__cnn_neutral_cw0.5__s2: sharpe=0.37 net_sharpe=-1.39 (0s)
+[final 10/15] final__cnn_neutral_cw1__s0: sharpe=-0.04 net_sharpe=-1.06 (0s)
+[final 11/15] final__cnn_neutral_cw1__s1: sharpe=0.07 net_sharpe=-0.95 (0s)
+[final 12/15] final__cnn_neutral_cw1__s2: sharpe=-0.16 net_sharpe=-1.23 (0s)
+[final 13/15] final__cnn_neutral_cw0.5_k8__s0: sharpe=0.46 net_sharpe=-1.23 (159s)
+[final 14/15] final__cnn_neutral_cw0.5_k8__s1: sharpe=0.61 net_sharpe=-1.00 (151s)
+[final 15/15] final__cnn_neutral_cw0.5_k8__s2: sharpe=0.94 net_sharpe=-0.89 (145s)
+Summary: /Users/vs_code/test/results/summary.csv
+final__cnn_neutral_cw0.5_k8 B= 1: sharpe=+1.01 net=-0.87 turnover=0.47
+final__cnn_neutral_cw0.5_k8 B= 2: sharpe=+0.98 net=-0.52 turnover=0.36
+final__cnn_neutral_cw0.5_k8 B= 3: sharpe=+1.04 net=-0.25 turnover=0.30
+final__cnn_neutral_cw0.5_k8 B= 5: sharpe=+1.19 net=+0.09 turnover=0.24
+final__cnn_neutral_cw0.5_k8 B=10: sharpe=+0.96 net=+0.09 turnover=0.17
+final__cnn_neutral_cw0.5_k8 B=20: sharpe=+0.63 net=-0.06 turnover=0.12

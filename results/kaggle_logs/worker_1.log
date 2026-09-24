@@ -1,0 +1,399 @@
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: timur-toktamysov (timur-toktamysov-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run a6girohu
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /kaggle/working/repo/wandb/run-20260923_235248-a6girohu
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run full_probe__pca5_e30__s0
+wandb: ⭐️ View project at https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/a6girohu
+wandb: updating run metadata
+wandb: uploading history steps 2-2, summary
+wandb: 
+wandb: Run history:
+wandb:            block ▁▅█
+wandb: block_oos_sharpe █▁▁
+wandb:       train_loss ▄▁█
+wandb: 
+wandb: Run summary:
+wandb: active_days_fraction 1
+wandb:                block 2
+wandb:     block_oos_sharpe 3.95284
+wandb:          block_start 2004-02-06
+wandb:  break_even_cost_bps 3.73751
+wandb:                 cagr 0.09804
+wandb:               calmar 7.80482
+wandb:              cvar_95 0.0024
+wandb:  effective_positions 311.0422
+wandb:             end_date 2004-08-05
+wandb:                  +24 ...
+wandb: 
+wandb: 🚀 View run full_probe__pca5_e30__s0 at: https://wandb.ai/timur-toktamysov-/dlsa-full/runs/a6girohu
+wandb: ⭐️ View project at: https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260923_235248-a6girohu/logs
+[full_probe 1/1] full_probe__pca5_e30__s0: sharpe=4.18 net_sharpe=-1.97 (275s)
+wandb: setting up run chvu0ov5
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /kaggle/working/repo/wandb/run-20260923_235720-chvu0ov5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run full_paper__pca5__s0
+wandb: ⭐️ View project at https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:            block ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb: block_oos_sharpe ▇▇▅▅▅▆▆▇▃▃█▆▅▄▅▅▄▆▅▆▁▅▄▁▆▁▃▂
+wandb:       train_loss ▂▁▁▃▃▂▂▄▄▅▅▅▄▅▅▆▅▅▅▅▅▆▅▆▇▆█▆
+wandb: 
+wandb: Run summary:
+wandb: active_days_fraction 1
+wandb:                block 27
+wandb:     block_oos_sharpe -0.4849
+wandb:          block_start 2016-07-07
+wandb:  break_even_cost_bps 2.11065
+wandb:                 cagr 0.05995
+wandb:               calmar 1.89765
+wandb:              cvar_95 0.00286
+wandb:  effective_positions 289.67889
+wandb:             end_date 2016-12-30
+wandb:                  +24 ...
+wandb: 
+wandb: 🚀 View run full_paper__pca5__s0 at: https://wandb.ai/timur-toktamysov-/dlsa-full/runs/chvu0ov5
+wandb: ⭐️ View project at: https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260923_235720-chvu0ov5/logs
+[full_paper 1/2] full_paper__pca5__s0: sharpe=2.59 net_sharpe=-4.07 (2479s)
+wandb: setting up run 32mhd14l
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /kaggle/working/repo/wandb/run-20260924_003839-32mhd14l
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run full_paper__pca5__s1
+wandb: ⭐️ View project at https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l
+wandb: updating run metadata
+wandb: uploading history steps 27-27, summary
+wandb: 
+wandb: Run history:
+wandb:            block ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb: block_oos_sharpe ▇█▆▇▆▆▆▆▅▅█▇▄▅▅▆▆▆▄▅▃▄▆▂▆▁▃▄
+wandb:       train_loss ▁▁▁▁▂▄▂▃▄▃▅▄▅▄▄▅▇▆▆▅▆▅▅▅▆▆█▇
+wandb: 
+wandb: Run summary:
+wandb: active_days_fraction 1
+wandb:                block 27
+wandb:     block_oos_sharpe 0.85232
+wandb:          block_start 2016-07-07
+wandb:  break_even_cost_bps 2.22648
+wandb:                 cagr 0.06064
+wandb:               calmar 1.85974
+wandb:              cvar_95 0.00263
+wandb:  effective_positions 288.71542
+wandb:             end_date 2016-12-30
+wandb:                  +24 ...
+wandb: 
+wandb: 🚀 View run full_paper__pca5__s1 at: https://wandb.ai/timur-toktamysov-/dlsa-full/runs/32mhd14l
+wandb: ⭐️ View project at: https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260924_003839-32mhd14l/logs
+[full_paper 2/2] full_paper__pca5__s1: sharpe=2.73 net_sharpe=-3.95 (2479s)
+wandb: setting up run b9x6phhe
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /kaggle/working/repo/wandb/run-20260924_011958-b9x6phhe
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run full_recipe__pca5_cw0.5__s0
+wandb: ⭐️ View project at https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe
+wandb: updating run metadata
+wandb: uploading history steps 27-27, summary
+wandb: 
+wandb: Run history:
+wandb:            block ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb: block_oos_sharpe █▇▇▆▅█▇▅▅▄▄█▄▃▅▇▄▆▆▂▂▂▄▂▁▄▂▄
+wandb:       train_loss ▁▁▂▃▄▃▃▄▅▆▇▅▅▅▅▅▄▅▅▇▅█▆▆███▆
+wandb: 
+wandb: Run summary:
+wandb: active_days_fraction 1
+wandb:                block 27
+wandb:     block_oos_sharpe 1.91914
+wandb:          block_start 2016-07-07
+wandb:  break_even_cost_bps 2.88522
+wandb:                 cagr 0.05567
+wandb:               calmar 1.70403
+wandb:              cvar_95 0.00308
+wandb:  effective_positions 322.09066
+wandb:             end_date 2016-12-30
+wandb:                  +24 ...
+wandb: 
+wandb: 🚀 View run full_recipe__pca5_cw0.5__s0 at: https://wandb.ai/timur-toktamysov-/dlsa-full/runs/b9x6phhe
+wandb: ⭐️ View project at: https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260924_011958-b9x6phhe/logs
+[full_recipe 1/9] full_recipe__pca5_cw0.5__s0: sharpe=2.19 net_sharpe=-2.12 (2486s)
+wandb: setting up run 0f51om22
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /kaggle/working/repo/wandb/run-20260924_020124-0f51om22
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run full_recipe__ff5_cw0.25__s0
+wandb: ⭐️ View project at https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22
+wandb: updating run metadata
+wandb: uploading history steps 27-27, summary
+wandb: 
+wandb: Run history:
+wandb:            block ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb: block_oos_sharpe ▇▅▃█▄▃▆▅▃▁▁▇▅▃▄▅▅▂▅▆▄▇▆▂▃▄▂▅
+wandb:       train_loss ▁▁▂▄▄▃▃▆▄▇▇▆▇▆▆▆▆▆▆▅▅▇▆██▆█▇
+wandb: 
+wandb: Run summary:
+wandb: active_days_fraction 1
+wandb:                block 27
+wandb:     block_oos_sharpe 2.37039
+wandb:          block_start 2016-07-07
+wandb:  break_even_cost_bps 1.80623
+wandb:                 cagr 0.04157
+wandb:               calmar 0.68916
+wandb:              cvar_95 0.00374
+wandb:  effective_positions 283.71029
+wandb:             end_date 2016-12-30
+wandb:                  +24 ...
+wandb: 
+wandb: 🚀 View run full_recipe__ff5_cw0.25__s0 at: https://wandb.ai/timur-toktamysov-/dlsa-full/runs/0f51om22
+wandb: ⭐️ View project at: https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260924_020124-0f51om22/logs
+[full_recipe 2/9] full_recipe__ff5_cw0.25__s0: sharpe=1.50 net_sharpe=-3.10 (2606s)
+wandb: setting up run f3p2tjug
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /kaggle/working/repo/wandb/run-20260924_024450-f3p2tjug
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run full_recipe__pca8_cw0.25__s0
+wandb: ⭐️ View project at https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug
+wandb: updating run metadata
+wandb: uploading history steps 27-27, summary
+wandb: 
+wandb: Run history:
+wandb:            block ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb: block_oos_sharpe ▆▅▄▆▅▆▆▆▃▄█▆▆▅▅▆▅▆▆▆▃▅▆▃▁▁▄▃
+wandb:       train_loss ▁▁▂▃▄▃▃▄▄▄▅▄▅▄▄▄▄▅▄▄▄▅▅▅█▅▆▅
+wandb: 
+wandb: Run summary:
+wandb: active_days_fraction 1
+wandb:                block 27
+wandb:     block_oos_sharpe 0.31531
+wandb:          block_start 2016-07-07
+wandb:  break_even_cost_bps 2.53624
+wandb:                 cagr 0.05952
+wandb:               calmar 1.12347
+wandb:              cvar_95 0.00284
+wandb:  effective_positions 308.19316
+wandb:             end_date 2016-12-30
+wandb:                  +24 ...
+wandb: 
+wandb: 🚀 View run full_recipe__pca8_cw0.25__s0 at: https://wandb.ai/timur-toktamysov-/dlsa-full/runs/f3p2tjug
+wandb: ⭐️ View project at: https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260924_024450-f3p2tjug/logs
+[full_recipe 3/9] full_recipe__pca8_cw0.25__s0: sharpe=2.55 net_sharpe=-3.04 (2487s)
+wandb: setting up run vx5g8x7b
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /kaggle/working/repo/wandb/run-20260924_032617-vx5g8x7b
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run full_recipe__pca5_cw0.5__s1
+wandb: ⭐️ View project at https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b
+wandb: updating run metadata
+wandb: uploading history steps 27-27, summary
+wandb: 
+wandb: Run history:
+wandb:            block ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb: block_oos_sharpe ▇▇▆▇▆▇▇█▄▅▇▇▃▆▅▇▃▃▃▄▃▄▂▃▅▁▃▁
+wandb:       train_loss ▁▁▂▂▃▄▄▅▅▅▅▅▅▄▅▅▇▇▇▅▅▆██▆▇█▇
+wandb: 
+wandb: Run summary:
+wandb: active_days_fraction 1
+wandb:                block 27
+wandb:     block_oos_sharpe -1.86447
+wandb:          block_start 2016-07-07
+wandb:  break_even_cost_bps 2.86773
+wandb:                 cagr 0.05112
+wandb:               calmar 0.91894
+wandb:              cvar_95 0.00341
+wandb:  effective_positions 318.72721
+wandb:             end_date 2016-12-30
+wandb:                  +24 ...
+wandb: 
+wandb: 🚀 View run full_recipe__pca5_cw0.5__s1 at: https://wandb.ai/timur-toktamysov-/dlsa-full/runs/vx5g8x7b
+wandb: ⭐️ View project at: https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260924_032617-vx5g8x7b/logs
+[full_recipe 4/9] full_recipe__pca5_cw0.5__s1: sharpe=1.86 net_sharpe=-1.86 (2487s)
+wandb: setting up run iemtkd49
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /kaggle/working/repo/wandb/run-20260924_040744-iemtkd49
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run full_recipe__ff5_cw0.25__s1
+wandb: ⭐️ View project at https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49
+wandb: updating run metadata
+wandb: uploading history steps 27-27, summary
+wandb: 
+wandb: Run history:
+wandb:            block ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb: block_oos_sharpe ▅▅▃█▅▄▅▄▄▅▅▇▃▃▄▅▂▃▄▄▂▄▆▅▅▄▁▄
+wandb:       train_loss ▁▁▂▂▃▃▄▅▆▄▅▅▅▅▄▅███▅▅▆▅▅▆▆▇▅
+wandb: 
+wandb: Run summary:
+wandb: active_days_fraction 1
+wandb:                block 27
+wandb:     block_oos_sharpe 2.05409
+wandb:          block_start 2016-07-07
+wandb:  break_even_cost_bps 2.41695
+wandb:                 cagr 0.05279
+wandb:               calmar 1.33842
+wandb:              cvar_95 0.00339
+wandb:  effective_positions 301.37685
+wandb:             end_date 2016-12-30
+wandb:                  +24 ...
+wandb: 
+wandb: 🚀 View run full_recipe__ff5_cw0.25__s1 at: https://wandb.ai/timur-toktamysov-/dlsa-full/runs/iemtkd49
+wandb: ⭐️ View project at: https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260924_040744-iemtkd49/logs
+[full_recipe 5/9] full_recipe__ff5_cw0.25__s1: sharpe=1.93 net_sharpe=-2.53 (2604s)
+wandb: setting up run r70ohxhq
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /kaggle/working/repo/wandb/run-20260924_045108-r70ohxhq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run full_recipe__pca8_cw0.25__s1
+wandb: ⭐️ View project at https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq
+wandb: updating run metadata
+wandb: uploading history steps 27-27, summary
+wandb: 
+wandb: Run history:
+wandb:            block ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb: block_oos_sharpe ▆▆▆█▆▆▆▇▅▅█▆▄▆▅▆▄▅▅▄▄▄▇▂▆▁▄▄
+wandb:       train_loss ▁▁▂▂▄▅▄▅▆▅▆▅▅▅▅▆▇▆▆▆▆▇▆▇█▇█▆
+wandb: 
+wandb: Run summary:
+wandb: active_days_fraction 1
+wandb:                block 27
+wandb:     block_oos_sharpe 1.11126
+wandb:          block_start 2016-07-07
+wandb:  break_even_cost_bps 2.7832
+wandb:                 cagr 0.06187
+wandb:               calmar 1.50475
+wandb:              cvar_95 0.00278
+wandb:  effective_positions 306.18239
+wandb:             end_date 2016-12-30
+wandb:                  +24 ...
+wandb: 
+wandb: 🚀 View run full_recipe__pca8_cw0.25__s1 at: https://wandb.ai/timur-toktamysov-/dlsa-full/runs/r70ohxhq
+wandb: ⭐️ View project at: https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260924_045108-r70ohxhq/logs
+[full_recipe 6/9] full_recipe__pca8_cw0.25__s1: sharpe=2.62 net_sharpe=-2.64 (2489s)
+wandb: setting up run xwx5u5tk
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /kaggle/working/repo/wandb/run-20260924_053237-xwx5u5tk
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run full_recipe__pca5_cw0.5__s2
+wandb: ⭐️ View project at https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk
+wandb: updating run metadata
+wandb: 
+wandb: Run history:
+wandb:            block ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb: block_oos_sharpe ▇▇▇█▇▆█▇▆▅▇▇▅▅▅▇▃▆▆▆▃▂▂▃▅▄▄▁
+wandb:       train_loss ▁▁▂▂▃▃▄▄▆▅▅▅▅▅▅▅▇▅▅▆▆██▆▆█▆█
+wandb: 
+wandb: Run summary:
+wandb: active_days_fraction 1
+wandb:                block 27
+wandb:     block_oos_sharpe -2.05756
+wandb:          block_start 2016-07-07
+wandb:  break_even_cost_bps 3.54351
+wandb:                 cagr 0.06652
+wandb:               calmar 2.09985
+wandb:              cvar_95 0.00303
+wandb:  effective_positions 332.06902
+wandb:             end_date 2016-12-30
+wandb:                  +24 ...
+wandb: 
+wandb: 🚀 View run full_recipe__pca5_cw0.5__s2 at: https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xwx5u5tk
+wandb: ⭐️ View project at: https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260924_053237-xwx5u5tk/logs
+[full_recipe 7/9] full_recipe__pca5_cw0.5__s2: sharpe=2.59 net_sharpe=-1.57 (2487s)
+wandb: setting up run xbmotsjx
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /kaggle/working/repo/wandb/run-20260924_061404-xbmotsjx
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run full_recipe__ff5_cw0.25__s2
+wandb: ⭐️ View project at https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx
+wandb: updating run metadata
+wandb: uploading history steps 27-27, summary
+wandb: 
+wandb: Run history:
+wandb:            block ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb: block_oos_sharpe ▅▅▅█▅▁▅▅▃▅▄▅▅▂▃▄▄▁▄▃▁▄▅▄▄▃▂▂
+wandb:       train_loss ▁▁▂▃▂▂▃▄▆▆▇▆▆▆▇▆▇▅▇▆▇▇▆▆▇▆▆█
+wandb: 
+wandb: Run summary:
+wandb: active_days_fraction 1
+wandb:                block 27
+wandb:     block_oos_sharpe 0.46812
+wandb:          block_start 2016-07-07
+wandb:  break_even_cost_bps 2.14219
+wandb:                 cagr 0.04909
+wandb:               calmar 1.53648
+wandb:              cvar_95 0.00365
+wandb:  effective_positions 295.24652
+wandb:             end_date 2016-12-30
+wandb:                  +24 ...
+wandb: 
+wandb: 🚀 View run full_recipe__ff5_cw0.25__s2 at: https://wandb.ai/timur-toktamysov-/dlsa-full/runs/xbmotsjx
+wandb: ⭐️ View project at: https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260924_061404-xbmotsjx/logs
+[full_recipe 8/9] full_recipe__ff5_cw0.25__s2: sharpe=1.75 net_sharpe=-2.78 (2603s)
+wandb: setting up run rey747fg
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /kaggle/working/repo/wandb/run-20260924_065728-rey747fg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run full_recipe__pca8_cw0.25__s2
+wandb: ⭐️ View project at https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: 🚀 View run at https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:            block ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb: block_oos_sharpe ▆▆▆██▆▇█▄▅▇▆▆▅▅▇▄▇▆▆▃▃▅▂▆▁▄▃
+wandb:       train_loss ▁▁▂▃▃▃▄▄▆▅▆▆▆▅▅▆▆▅▅▆▇▇▇▇█▆▇█
+wandb: 
+wandb: Run summary:
+wandb: active_days_fraction 1
+wandb:                block 27
+wandb:     block_oos_sharpe 0.81486
+wandb:          block_start 2016-07-07
+wandb:  break_even_cost_bps 2.92687
+wandb:                 cagr 0.06455
+wandb:               calmar 1.59838
+wandb:              cvar_95 0.00284
+wandb:  effective_positions 307.94038
+wandb:             end_date 2016-12-30
+wandb:                  +24 ...
+wandb: 
+wandb: 🚀 View run full_recipe__pca8_cw0.25__s2 at: https://wandb.ai/timur-toktamysov-/dlsa-full/runs/rey747fg
+wandb: ⭐️ View project at: https://wandb.ai/timur-toktamysov-/dlsa-full
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260924_065728-rey747fg/logs
+[full_recipe 9/9] full_recipe__pca8_cw0.25__s2: sharpe=2.73 net_sharpe=-2.49 (2487s)
+Summary: /kaggle/working/results/summary.csv

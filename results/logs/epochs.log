@@ -1,0 +1,10 @@
+[epochs 1/9] epochs__e10__s0: sharpe=-0.28 net_sharpe=-2.73 (64s)
+[epochs 2/9] epochs__e10__s1: sharpe=-0.07 net_sharpe=-2.69 (73s)
+[epochs 3/9] epochs__e10__s2: sharpe=0.22 net_sharpe=-2.20 (73s)
+[epochs 4/9] epochs__e30__s0: sharpe=0.63 net_sharpe=-2.35 (201s)
+[epochs 5/9] epochs__e30__s1: sharpe=0.31 net_sharpe=-2.60 (261s)
+[epochs 6/9] epochs__e30__s2: sharpe=0.52 net_sharpe=-2.45 (221s)
+[epochs 7/9] epochs__e100__s0: sharpe=0.64 net_sharpe=-2.77 (1311s)
+[epochs 8/9] epochs__e100__s1: sharpe=0.16 net_sharpe=-3.10 (1078s)
+[epochs 9/9] epochs__e100__s2: sharpe=0.30 net_sharpe=-2.94 (677s)
+Summary: /Users/vs_code/test/results/summary.csv
