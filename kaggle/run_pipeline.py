@@ -23,7 +23,8 @@ DATA_SLUG = "dlsa-residuals"
 SECRETS_SLUG = "dlsa-secrets"
 PREV_RESULTS_SLUG = "dlsa-results-prev"
 
-DEFAULT_SUITES = ["full_smoke", "full_probe", "full_paper", "full_recipe"]
+# Earlier sessions ran full_smoke, full_probe, full_paper and full_recipe.
+DEFAULT_SUITES = ["full_paper_costs"]
 
 
 def _find_input_dir(slug: str) -> Path:

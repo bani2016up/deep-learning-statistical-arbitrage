@@ -206,6 +206,15 @@ def full_paper() -> Iterator[RunConfig]:
     yield from _full_runs("full_paper", variants, seeds=(0, 1))
 
 
+def full_paper_costs() -> Iterator[RunConfig]:
+    """Full data: paper with costs (Sharpe net of full 5bp+1bp costs, unconstrained) on ff5 / pca5."""
+    variants = {
+        name: {**FULL_RESIDUALS[name], "objective": "sharpe_costs", "cost_weight": 1.0}
+        for name in ("ff5", "pca5")
+    }
+    yield from _full_runs("full_paper_costs", variants, seeds=(0, 1))
+
+
 def full_recipe() -> Iterator[RunConfig]:
     """Full data: our recipe (dollar-neutral, cost-aware loss) cw ∈ {0.25, 0.5} × ff5/pca5/pca8."""
     variants = {
@@ -245,6 +254,7 @@ SUITES = {
         full_smoke,
         full_probe,
         full_paper,
+        full_paper_costs,
         full_recipe,
         full_bench,
     )
