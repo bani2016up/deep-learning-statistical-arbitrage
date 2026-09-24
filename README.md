@@ -157,5 +157,6 @@ Documents:
 - `docs/analysis_summary.md`: per-suite numbers with plot references
 - `docs/final_model.md`: the model recipe for the full dataset
 - `docs/kaggle_plan.md`: the full-dataset run plan
-- `docs/full_report.md`: final full-dataset results: paper, paper with costs, our recipe
+- `docs/full_report.md`: final full-dataset results: paper, paper with costs, our recipe,
+  on our universe and on the authors' residuals
 - `docs/research_ideas.md`: possible extensions

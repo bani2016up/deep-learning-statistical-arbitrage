@@ -1,15 +1,18 @@
 # Full-dataset results: paper replication, paper with costs, our recipe
 
 Status: **final.** All planned full-data runs are done. This is the concluding report.
+Sections 1–5 are on our WIKI universe; section 6 repeats the three arms on the authors' own
+CRSP residuals.
 
 Data and protocol: `docs/kaggle_plan.md`. Top 500 US stocks by dollar volume, OOS
 2003-02-10 → 2016-12-30 (3,499 days). Rolling 1,000-day window, retrained every 125 days,
 30 epochs. Trained on Kaggle T4s (`full_paper`, `full_paper_costs`, `full_recipe`,
-`full_probe`) and locally (`full_bench`).
+`full_probe`, `official_*`) and locally (`full_bench`).
 
 Numbers: `results/report_tables.md`, `results/full_comparison.csv` (paired comparisons),
 `results/full_comparison_yearly.csv`, `results/decomposition.csv`,
-`results/selection_full.csv`, `results/deflated_sharpe_full.csv`.
+`results/selection_full.csv`, `results/deflated_sharpe_full.csv`,
+`results/deflated_sharpe_official.csv`.
 
 Validation = 2003-02 → 2005-12 (pre-registered selection span), test = 2006-01 → 2016-12.
 Net = after 5 bp × turnover + 1 bp × short leg, the paper's cost model.
@@ -45,6 +48,12 @@ Net = after 5 bp × turnover + 1 bp × short leg, the paper's cost model.
   falls; the paper's is 0.3–0.5 SR by 2015–2016. The full-cost loss then finds no cheap alpha and
   settles on a drift book. Our universe and residuals carry less and faster-decaying alpha
   than the paper's CRSP/IPCA setup (section 5).
+- **On the authors' residuals (section 6)** the gross result matches the paper (IPCA5 3.53
+  vs 4.16). Paper with costs on IPCA5 is net positive on the test period: SR +0.59 at B=5,
+  PSR 0.98. It holds a 0.86 net-long book, so by the pre-registered rule it does not count as
+  stat-arb. Most of its return is the dollar-neutral part, which covers all costs on its own
+  (not pre-registered). Our recipe again beats the paper net (+0.86 [+0.61, +1.10] at B=5)
+  but stays below zero (−0.18).
 
 ## 1. Table I: replication
 
@@ -253,11 +262,153 @@ change the net conclusion, which already fails without deflation.
 4. **Costs.** None of the three arms is profitable at 5 bp + 1 bp on 2006–2016. The paper's
    net SR ~1 is reproduced only in 2003–2005, while the alpha is strong.
 
-The paper's with-costs result is IPCA-based, on CRSP data and stock-space turnover. We
-cannot separate these differences (universe, residual model, turnover measurement) from
-alpha decay in our universe: that would need CRSP and IPCA, outside this study. The
-research is complete: no further runs are planned.
+The paper's with-costs result is IPCA-based, on CRSP data and stock-space turnover. Section 6
+repeats the three arms on the authors' published CRSP residuals, including IPCA. Stock-space
+turnover stays out of reach: `Phi` is not published.
 
 `full_probe` (epochs 10 / 30 / 100, first 3 blocks only, 1 seed) gave SR 3.46 / 4.18 / 5.50.
 More epochs look better on validation, but all main suites used 30 epochs, and no 100-epoch
 full run exists.
+
+## 6. The authors' residuals
+
+Data: `docs/kaggle_plan.md`, session 3. The authors' out-of-sample K=5 residuals on CRSP
+(IPCA, PCA, FF) from `gregzanotti/dlsa-public`, converted by `experiments.official`: median
+863 eligible names per day, OOS 2002-02-08 → 2016-12-30 (3,751 days). Network, protocol,
+seeds (0, 1), smoothing and cost model are the same as in sections 1–5. Validation =
+2002-02 → 2005-12, test = 2006-01 → 2016-12. The readout was fixed in `docs/kaggle_plan.md`
+before the run, and nothing is selected on either period. One Kaggle session, 7.1 h on 2×T4.
+
+| Arm              | Suite                  | Residuals          | Book           |
+| ---------------- | ---------------------- | ------------------ | -------------- |
+| Paper            | `official_paper`       | IPCA5, PCA5, FF5   | unconstrained  |
+| Paper with costs | `official_paper_costs` | IPCA5              | unconstrained  |
+| Ours (cw 0.25)   | `official_recipe`      | IPCA5              | dollar-neutral |
+
+### Table I on the authors' residuals
+
+Gross annualized SR over the full OOS span. CNN+Transformer = mean of 2 seeds (2-seed
+ensemble in brackets).
+
+| Model, data                                              |         FF5 |        PCA5 |       IPCA5 |
+| -------------------------------------------------------- | ----------: | ----------: | ----------: |
+| CNN+Transformer, authors' residuals                      | 2.61 [2.82] | 4.68 [4.85] | 3.35 [3.53] |
+| CNN+Transformer, WIKI (section 1)                        | 1.95 [2.12] | 2.66 [2.84] |           – |
+| CNN+Transformer, paper                                   |        3.21 |        3.36 |        4.16 |
+| OU+Threshold, authors' residuals (`docs/OU_BASELINE.md`) |        0.34 |        0.93 |        0.64 |
+| OU+Threshold, paper                                      |        0.38 |        0.73 |        0.97 |
+
+- FF5 and IPCA5 are 12–20% below the paper, PCA5 is about 40% above it. On WIKI the gap
+  was 15–35% below.
+- PCA5 ranks above IPCA5, as for OU+Threshold on the same residuals. Without `Phi` our
+  daily return is `w'eps / ||w||_1` instead of the paper's `w'eps / ||Phi'w||_1`, so daily
+  leverage differs from the paper's (`docs/OU_BASELINE.md`).
+- PCA5 drifts net long on the test period (net exposure 0.51 at B=1, 0.75 at B=5). IPCA5
+  stays near neutral (0.01).
+
+### Three arms on IPCA5, test period 2006–2016
+
+| B   | Arm              | Gross SR | Net SR | Turnover | Net exposure |
+| --: | ---------------- | -------: | -----: | -------: | -----------: |
+|   1 | paper            |     2.67 |  −3.83 |     1.05 |         0.01 |
+|     | paper with costs |     1.17 |  +0.54 |     0.16 |         0.84 |
+|     | ours (cw 0.25)   |     2.39 |  −1.40 |     0.82 |         0.00 |
+|   5 | paper            |     1.67 |  −1.04 |     0.43 |         0.01 |
+|     | paper with costs |     0.93 |  +0.59 |     0.08 |         0.86 |
+|     | ours (cw 0.25)   |     1.54 |  −0.18 |     0.35 |         0.00 |
+|  20 | paper            |     1.04 |  −0.56 |     0.20 |        −0.01 |
+|     | paper with costs |     0.63 |  +0.45 |     0.03 |         0.89 |
+|     | ours (cw 0.25)   |     0.97 |  −0.12 |     0.17 |         0.00 |
+
+Paper on PCA5 / FF5, test: gross 3.59 / 1.99, net −4.78 / −4.73 at B=1; gross 2.16 / 1.00,
+net −1.22 / −1.60 at B=5.
+
+### Paired differences, IPCA5, test period
+
+| Pair (other − base)      |   B |       ΔSR gross [95% CI] |         ΔSR net [95% CI] |
+| ------------------------ | --: | -----------------------: | -----------------------: |
+| ours − paper             |   1 |     −0.28 [−0.61, +0.03] | **+2.43 [+2.08, +2.77]** |
+|                          |   5 |     −0.13 [−0.39, +0.12] | **+0.86 [+0.61, +1.10]** |
+|                          |  20 |     −0.07 [−0.41, +0.24] | **+0.44 [+0.13, +0.70]** |
+| paper with costs − paper |   1 | **−1.50 [−2.13, −0.89]** | **+4.37 [+3.65, +5.15]** |
+|                          |   5 | **−0.74 [−1.28, −0.16]** | **+1.63 [+1.02, +2.36]** |
+|                          |  20 |     −0.41 [−0.96, +0.21] | **+1.01 [+0.44, +1.65]** |
+| ours − paper with costs  |   1 | **+1.22 [+0.72, +1.73]** | **−1.93 [−2.61, −1.35]** |
+|                          |   5 | **+0.61 [+0.08, +1.10]** | **−0.77 [−1.42, −0.23]** |
+|                          |  20 |     +0.34 [−0.19, +0.81] | **−0.58 [−1.17, −0.11]** |
+
+Daily gross returns of ours and the paper correlate at 0.85–0.91. Paper with costs
+correlates with the paper at 0.45–0.55 (0.18 on WIKI PCA5).
+
+### Validation 2002–2005, IPCA5
+
+|   B | Paper gross / net | Paper with costs gross / net | Ours (cw 0.25) gross / net |
+| --: | ----------------: | ---------------------------: | -------------------------: |
+|   1 |      5.62 / +0.31 |                 4.89 / +1.99 |               5.60 / +1.05 |
+|   5 |      3.29 / +0.64 |                 2.51 / +1.31 |               3.24 / +1.08 |
+|  20 |      2.05 / +0.18 |                 1.85 / +1.32 |               2.12 / +0.91 |
+
+All three arms are net positive in these years. On WIKI our recipe was net negative at every B.
+
+### Gross SR by year, IPCA5, B=1
+
+| Year             | 2002 | 2003 | 2004 | 2005 | 2006 | 2007 | 2008 | 2009 | 2010 | 2011 | 2012 | 2013 |  2014 |  2015 | 2016 |
+| ---------------- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----: | ----: | ---: |
+| Paper            | 5.59 | 7.05 | 5.61 | 5.38 | 5.98 | 3.01 | 2.09 | 3.67 | 4.03 | 2.70 | 2.89 | 2.55 |  2.01 |  0.68 | 1.80 |
+| Paper with costs | 5.91 | 6.72 | 4.45 | 3.03 | 3.88 | 1.21 | 0.81 | 3.27 | 1.36 | 0.74 | 2.26 | 2.53 | −0.25 | −0.37 | 2.30 |
+| Ours             | 5.88 | 6.98 | 5.59 | 5.22 | 5.91 | 2.71 | 2.49 | 3.87 | 3.56 | 1.63 | 2.82 | 2.48 |  1.31 |  0.74 | 1.38 |
+
+The alpha decays here too, but more slowly than on WIKI: the paper's gross SR is still 2–4
+over 2009–2014 (WIKI PCA5: 0.8–3.7).
+
+### Where the with-costs return comes from
+
+Paper with costs, IPCA5, test period, split as in section 3 (`experiments/decompose.py`).
+Annualized means; costs = 5 bp × turnover + 1 bp × short leg. The last column charges all
+costs to the dollar-neutral part.
+
+|   B | Gross | Drift | Neutral | Costs | Net SR | Short leg | Neutral net of all costs, SR (PSR) |
+| --: | ----: | ----: | ------: | ----: | -----: | --------: | ---------------------------------: |
+|   1 |  4.1% |  0.6% |    3.5% |  2.2% |  +0.54 |      0.08 |                      +0.46 (0.94) |
+|   5 |  3.1% |  0.6% |    2.6% |  1.1% |  +0.59 |      0.07 |                      +0.52 (0.96) |
+|  20 |  1.9% |  0.6% |    1.4% |  0.6% |  +0.45 |      0.06 |                      +0.34 (0.88) |
+
+- The book is 0.84–0.89 net long, but the long tilt adds only 0.6% a year. Most of the
+  return is the dollar-neutral part (neutral gross SR 0.94 at B=5).
+- The short leg is 6–8% of the book. At 1 bp a day on the short leg, a dollar-neutral book
+  (short leg 0.5) pays 1.3% a year in borrow alone, more than all costs of this book at B=5.
+  The long tilt is how the full-cost loss avoids that charge.
+- On WIKI the same arm had no gross signal left on the test period (−0.05 at B=5, PCA5).
+  Here it keeps 0.93.
+
+This split was not part of the pre-registered readout.
+
+### Pre-registered readout
+
+1. **Replication, gross.** See the Table I comparison above: the paper's level is reached on
+   its own residuals.
+2. **Why is our net negative?** Paper with costs, IPCA5, test, B=5: net SR +0.59, PSR 0.977.
+   Both thresholds (≥ 0.5, ≥ 0.95) are met, but net exposure is 0.86 > 0.5, so by the rule
+   the book counts as residual drift and the "data explain it" outcome does not apply as
+   written. The verdict is **inconclusive**. The split above points towards the data: the
+   neutral part alone covers the costs, which no arm does on WIKI. Deflated for the 40
+   `official_*` trials, the net DSR is 0: the net Sharpe spread across trials is wide (down
+   to −4.8 for cost-blind books), so the expected maximum under no skill is 4.26.
+   For reference, the full-OOS net SR of this arm is +0.89 / +0.78 / +0.69 at B = 1 / 5 / 20
+   (paper, Table IX: ~1.1 with stock-space turnover).
+3. **Our recipe vs the paper.** Test net ΔSR at B=5: +0.86 [+0.61, +1.10]. The CI is above
+   0, so the WIKI result (+0.50) replicates. The recipe itself is net negative on the test
+   period (−0.18 at B=5, −0.12 at B=20; PSR 0.28 at B=5).
+
+### Conclusion on the authors' residuals
+
+1. The gross CNN+Transformer result reproduces at the paper's level on its own residuals.
+2. A cost-aware loss on an unconstrained book is net positive on 2006–2016 here, and not on
+   WIKI. Most of that return is dollar-neutral, but the book is net long, so it fails the
+   pre-registered stat-arb filter.
+3. Our dollar-neutral recipe keeps the paper's gross signal and beats the paper net, as on
+   WIKI. It trades 4.5× more than paper with costs (0.35 vs 0.08 at B=5) and pays borrow on
+   a 0.5 short leg, and it stays below zero net on the test period.
+4. The negative net of every arm on WIKI is partly a property of the WIKI universe and
+   residuals: the same cost-aware loss keeps a gross signal that survives costs on the
+   authors' data. Alpha decay after 2006 is visible on both datasets.

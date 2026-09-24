@@ -67,8 +67,9 @@ comparison with the paper, three arms (paper, paper with costs, recipe) compared
 the drift decomposition, validation → test and the Deflated Sharpe ratio.
 
 Status: Kaggle session 1 of 2026-09-24 (8.1 h on 2×T4) ran `full_smoke`, `full_probe`,
-`full_paper` and `full_recipe`. Session 2 (1.5 h) ran `full_paper_costs`. Results:
-`docs/full_report.md`. Logs: `results/kaggle_logs/`.
+`full_paper` and `full_recipe`. Session 2 (1.5 h) ran `full_paper_costs`. Session 3
+(7.1 h) ran the `official_*` suites below. Results: `docs/full_report.md` (section 6 for
+session 3). Logs: `results/kaggle_logs/`.
 
 ## Session 3 (last): the authors' residuals (issue #2)
 
@@ -115,3 +116,5 @@ results above stay as they are.
 
 `experiments.compare` pairs the three suites; `experiments.deflated --family official`
 deflates them for their own trials (separate from the 84 WIKI trials).
+
+Status: done (session 3, 7.1 h on 2×T4). Readout: `docs/full_report.md`, section 6.
