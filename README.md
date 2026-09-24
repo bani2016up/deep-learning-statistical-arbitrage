@@ -4,6 +4,11 @@ A small, modern PyTorch research workspace inspired by Guijarro-Ordonez, Pelger,
 Zanotti's *Deep Learning Statistical Arbitrage*. This is a leak-free engineering baseline,
 not a scientific reproduction.
 
+## Results
+
+Full-dataset results: `docs/full_report.md`. A summary with the training dashboards of the
+full-data runs: [W&B report](https://wandb.ai/timur-toktamysov-/dlsa-full/reports/Deep-Learning-Statistical-Arbitrage:-Empirical-Replication-&-Friction-Robustness--VmlldzoxODAwMTYxMQ==?accessToken=v0xedw3dgeauzvfai8496nkj9sg982suh3ks21ox4946bkgkua1b45xgoi9tywt2).
+
 ## Setup
 
 The project requires Python 3.13 or newer and uses
