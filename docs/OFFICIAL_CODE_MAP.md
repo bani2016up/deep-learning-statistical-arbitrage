@@ -33,6 +33,9 @@ to `data/reference/`.
 | Training loop | `train_test.py:train` | `training/trainer.py:train_model` |
 | Rolling 1000/125 experiment | `train_test.py:test` | Not yet reproduced; chronological split is in `training/trainer.py` |
 | Performance reporting | `train_test.py:get_returns` | `training/evaluation.py:metrics` |
+| Official residual files | `residuals/*/*.npy.gz` | `data/official_residuals.py:load_official_residuals` |
+| OU signal | `preprocess.py:preprocess_ou` | `models/ou.py:ou_signal` |
+| OU+Threshold allocation | Not in official code (only OU+FFN) | `models/ou.py:threshold_positions`, `training/ou_backtest.py:backtest_ou` |
 
 ## Architecture Findings
 
