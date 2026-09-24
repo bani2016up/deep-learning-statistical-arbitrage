@@ -28,3 +28,14 @@ def test_models_backward() -> None:
             parameter.grad is None or torch.isfinite(parameter.grad).all()
             for parameter in model.parameters()
         )
+
+
+def test_transformer_chunks_large_batches_without_changing_the_output(monkeypatch):
+    from dlsa_baseline.models import transformer
+
+    torch.manual_seed(0)
+    model = TemporalTransformer(dropout=0.0).eval()
+    x = torch.randn(10, 30, 8)
+    whole = model(x)
+    monkeypatch.setattr(transformer, "MAX_SEQUENCES", 3)
+    assert torch.allclose(model(x), whole, atol=1e-6)
