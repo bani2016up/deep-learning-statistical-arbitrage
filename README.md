@@ -77,6 +77,22 @@ Data generation is separate from modeling. The interchangeable residual file sto
 `[date, asset]` matrix and explicit dates/tickers; see `ResidualDataset` in
 `src/dlsa_baseline/data/pca_residuals.py`.
 
+## OU+Threshold Baseline
+
+The parametric OU+Threshold benchmark of the paper (Table I), plus Avellaneda-Lee variants,
+runs on the official precomputed residuals (clone `dlsa-public` into `references/` as above).
+No GPU is needed; the full experiment set takes about three minutes on CPU.
+
+```bash
+uv run python scripts/run_ou_baseline.py --family IPCA --factors 5
+uv run python scripts/analyze_run.py --predictions outputs/ou/ou_paper_ipca5_predictions.npz \
+  --output-dir outputs/ou/analysis_ipca5
+uv run python scripts/ou_experiments.py all
+uv run python scripts/ou_synthetic.py
+```
+
+Results, the replication of Table I, and the theory are in `docs/OU_BASELINE.md`.
+
 ## Outputs
 
 - `data/raw/adjusted_prices.parquet`: long-form date/ticker/adjusted-price cache
@@ -90,13 +106,15 @@ Data generation is separate from modeling. The interchangeable residual file sto
 - `outputs/training_loss.png`: optimization trace
 - `outputs/cumulative_test_return.png`: held-out cumulative wealth
 - `outputs/analysis/`: statistical JSON/Markdown reports and diagnostic plots
+- `outputs/ou/`: OU predictions, daily series, experiment tables, and plots
 - `results/`: experiment tables (`summary.csv`, `report_tables.md`, `decomposition.csv`,
   `selection.csv`) and plots (`comparison_plots/`, `figures/`)
 
 ## Reading Guide
 
 Read `docs/BASELINE_DESIGN.md` for the exact no-lookahead and tensor conventions,
-`docs/OFFICIAL_CODE_MAP.md` for the relationship to official code, `docs/LIMITATIONS.md`
+`docs/OFFICIAL_CODE_MAP.md` for the relationship to official code, `docs/OU_BASELINE.md`
+for the parametric OU benchmark, `docs/LIMITATIONS.md`
 before interpreting any metric, `docs/STATISTICAL_ANALYSIS.md` for inference methodology,
 and `RUN_REPORT.md` for the validated run on this host.
 
