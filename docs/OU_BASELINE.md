@@ -89,6 +89,23 @@ mean daily return; about 870 assets pass the window filter and about 155 are hel
    short-term reversal factor, so hedging it removes exactly the mean reversion the rule
    trades in residual space, while the paper's `Phi` normalization weights days differently.
 
+## Cross-check with the experiment harness
+
+`experiments/models.py:OUThreshold` (the rolling harness, `docs/full_report.md`) is an
+independent torch implementation of the same rule. On identical windows the two agree
+exactly (15,639 of 15,639 IPCA-5 asset-days; pinned by `experiments/test_ou_equivalence.py`),
+so the numbers below differ only through the data:
+
+| OU+Threshold, SR | FF5 | PCA5 | IPCA5 |
+|---|---|---|---|
+| Paper (CRSP, 2002-2016) | 0.38 | 0.73 | 0.97 |
+| Official residuals, this document (2002-2016) | 0.34 | 0.93 | 0.64 |
+| Harness, WIKI top-500 own residuals (2003-02 to 2016) | 0.15 | 0.62 | - |
+| Harness, 50-stock sample (2020-2025) | - | -0.26 | - |
+
+Both reproductions bracket the paper, turnover is about 1 per day in both, and both show the
+alpha decaying after the mid-2000s.
+
 ## Threshold sensitivity (K = 5)
 
 ![grid](figures/ou/ou_grid_sr_k5.png)
