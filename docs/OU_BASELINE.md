@@ -82,6 +82,8 @@ mean daily return; about 870 assets pass the window filter and about 155 are hel
    `w^R = Phi' w^eps / ||Phi' w^eps||_1`, its return is `w^eps' eps_t / ||Phi' w^eps||_1`; ours is
    `w^eps' eps_t / ||w^eps||_1`. The sign of every day's PnL is identical, only the day's
    leverage differs. `Phi` is not published, so the paper's exact figures cannot be matched.
+   A rebuilt approximate `Phi` for PCA-5 leaves the SR unchanged (see "Look-ahead in the
+   published PCA residuals" below).
 3. *The PCA/IPCA swap at K = 5 is within noise.* SR(IPCA5) - SR(PCA5) = -0.29 with a
    20-day block-bootstrap standard error of 0.28; the paper's gap is 0.24. It is driven by
    2008-2009 (see below): excluding those two years gives IPCA 0.60 > PCA 0.51 > FF 0.40,
@@ -89,6 +91,62 @@ mean daily return; about 870 assets pass the window filter and about 155 are hel
 4. *FF K = 8 (0.04 vs 1.16) is the one large miss.* Hypothesis, not verified: FF8 contains a
    short-term reversal factor, so hedging it removes exactly the mean reversion the rule
    trades in residual space, while the paper's `Phi` normalization weights days differently.
+
+## Look-ahead in the published PCA residuals, and the `Phi` check
+
+**How the PCA files were built.** The shipped `AvPCA_OOSresiduals_*` files can only come from
+`factor_models/pca.py:OOSRollingWindowPermnosVectorized` (the loop variant saves that name only
+for K = 20). Its correlation window `[t-251, t]` and its 60-day loading regression both include
+day `t`, and the residual is the last-row OLS residual. We verified this on the data: for every
+day and every K, the published residual equals `R_t - h_t' R[t-59 : t]` with one 60-vector `h_t`
+shared by all assets, to 3e-15. Out-of-sample windows `[t-60, t-1]` miss by 1e-5 to 2e-2. FF
+(`[t-60, t-1]`) and IPCA (`Gamma` from earlier months, betas from month `t-1` characteristics)
+are out of sample.
+
+**Rebuilding `Phi` from the published files.** The return panel is recovered from the K = 0 files
+(PCA0 is a subset of FF0 and IPCA0 and they agree exactly), plus about 246k returns solved
+exactly from the `h_t` identity across all six K. About 480k returns that feed only the
+correlation window appear in no file (assets outside the cap filter earlier in the window), so
+they are imputed. The rebuilt residuals match the published ones at a median daily correlation of
+0.9995, but `Phi` itself is only approximate: imputation choices move it by several percent. An
+exact `Phi` needs the authors' CRSP input (`DailyReturns-RFadjusted-old.npz`).
+
+**Size of the look-ahead.** Both PCA-5 variants on the same reconstructed panel, OU+Threshold,
+2002-2016:
+
+| PCA-5 residuals | SR | mu | sigma | 2002-07 | 2008-09 | 2010-16 |
+|---|---|---|---|---|---|---|
+| Published | 0.93 | 2.4% | 2.6% | 0.92 | 2.74 | 0.09 |
+| Rebuilt, authors' recipe (day `t` in window) | 1.11 | 2.9% | 2.6% | 1.25 | 2.71 | 0.25 |
+| Rebuilt, out of sample (`[t-252, t-1]`, `[t-60, t-1]`) | 0.94 | 2.8% | 3.0% | 1.13 | 2.39 | 0.12 |
+
+- **Direction.** Across four reconstructions (two imputation schemes, two ranks, and a clean
+  sub-universe without imputation), in-sample minus out-of-sample SR is +0.13 to +0.22, each
+  about 1 block-bootstrap SE, with the same sign every time.
+- **Mechanism.** In-sample residuals are about 10% less volatile (std 0.0174 vs 0.0192), because
+  the fit absorbs part of day `t`'s noise. There is no artificial mean reversion: lag-1
+  autocorrelation is -0.019 in both panels.
+- **Reading.** The published PCA OU benchmark is probably optimistic by about 0.15 SR; an honest
+  one would be roughly 0.75-0.80, near the paper's 0.73. Reconstruction noise is of the same size
+  (our rebuilt in-sample panel scores 0.18 above the published file), so only the direction is
+  firm.
+
+**OU in stock space through the rebuilt `Phi`.** The stock-space return is `r_t * c_t` with
+`c_t = ||w||_1 / ||Phi' w||_1`:
+
+| PCA-5 OU+Threshold | SR | mu | sigma |
+|---|---|---|---|
+| Residual space (this document) | 0.93 | 2.4% | 2.6% |
+| Stock space, `Phi` from the authors' recipe | 0.94 | 2.1% | 2.2% |
+| Stock space, out-of-sample `Phi` | 0.93 | 2.1% | 2.2% |
+| Paper, Table I | 0.73 | | |
+
+`c_t` averages 0.85 (1%-99%: 0.72-0.94) and is uncorrelated with the day's return (0.007), so it
+scales mean and volatility alike. Two independent reconstructions of `Phi` agree on `c_t` to
+0.36% (median). **The missing `Phi` does not explain the 0.93 vs 0.73 gap**; the look-ahead is
+the more plausible, but unproven, candidate.
+
+The reconstruction is research code outside this repository; the results above are its output.
 
 ## Cross-check with the experiment harness
 

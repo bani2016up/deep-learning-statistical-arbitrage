@@ -392,13 +392,21 @@ the window. Correlation is used rather than covariance so high-volatility names 
 - **Consequence.** With hat matrix $h_{ts}=F_t'(F'F)^{-1}F_s$ over the 60-day window,
   $$\hat\epsilon_t=(1-h_{tt})u_t-\sum_{s<t}h_{ts}u_s .$$
   - $|u_t|$ is shrunk by $1-h_{tt}$, where $h_{tt}\approx K/60$ on average.
-  - $\hat\epsilon_t$ loads mechanically, with weights $-h_{ts}$, on the window's past residuals.
-    This can create **artificial short-horizon mean reversion**, which is exactly what the signal
-    models trade.
   - $\Phi_t$ is not known at $t-1$, contrary to p. 22.
-- **Scope.** If these files are the ones behind Table I, this affects the PCA rows of every model,
-  including our OU replication. The **magnitude is being quantified**. We do *not* claim it
-  explains our PCA5 0.93 vs the paper's 0.73.
+- **Measured effect** [ours, `OU_BASELINE.md`, "Look-ahead in the published PCA residuals"]. We
+  rebuilt PCA-5 residuals both ways on the same reconstructed return panel.
+  - In-sample residuals are about 10% smaller (std 0.0174 vs 0.0192): the fit absorbs part of
+    day *t*'s noise.
+  - There is **no artificial mean reversion**: lag-1 autocorrelation is −0.019 in both panels,
+    and the correlation with the previous five residuals is also the same. The $-h_{ts}u_s$ terms
+    are small and average out.
+  - OU+Threshold SR is higher on the in-sample panel by +0.13 to +0.22 across four
+    reconstructions (each about 1 bootstrap SE; same sign every time). The gain comes from lower
+    volatility, not a higher mean. An honest PCA-5 OU benchmark would be roughly 0.75-0.80,
+    close to the paper's 0.73, but reconstruction noise is of the same size.
+- **Scope.** If these files are the ones behind Table I, the PCA rows of every model are mildly
+  optimistic. The team's CNN+Transformer on the same files is 40% above the paper on PCA5
+  (`full_report.md` section 6); the look-ahead is a candidate but unproven explanation.
 - **FF and IPCA are clean.** FF residuals are out of sample ($[t-60,t-1]$). IPCA uses loadings from
   month-$(t-1)$ characteristics.
 
@@ -438,8 +446,9 @@ the window. Correlation is used rather than covariance so high-volatility names 
 **Likely examiner questions**
 
 - *Are the PCA residuals out of sample?* In the paper's description, yes (p. 22). In the shipped
-  files, no: day *t* is in the estimation window, and the magnitude is being quantified. FF and IPCA
-  residuals are out of sample.
+  files, no: day *t* is in the estimation window. On OU it adds about +0.15 SR (about 1 SE), via
+  smaller residual volatility, not artificial mean reversion. FF and IPCA residuals are out of
+  sample.
 - *Why do FF and PCA give similar Sharpe?* They explain a similar amount of co-movement, but they
   are different factors with different means (p. 25).
 - *Why yearly IPCA but daily PCA?* Characteristics change at most monthly. PCA must track the
@@ -589,6 +598,11 @@ the rule does not trade. §8.2 shows what the filter actually selects.
   - The gap-vs-gap difference of −0.53 is about 1.9 of our SEs, so it is borderline, not clearly
     noise.
   - Excluding 2008-09 restores the paper's ranking: IPCA 0.60 > PCA 0.51 > FF 0.40.
+- **Measured for PCA-5** [ours]. With an approximate $\Phi$ rebuilt from the published files, the
+  leverage factor $c_t=\lVert w^\epsilon\rVert_1/\lVert\Phi'w^\epsilon\rVert_1$ averages 0.85
+  (1%-99%: 0.72-0.94) and is uncorrelated with the day's return (0.007). It scales mean and
+  volatility alike, so the stock-space SR is 0.93-0.94, the same as in residual space. The
+  missing $\Phi$ does not explain PCA 0.93 vs the paper's 0.73.
 
 ### 8.2 $R^2\approx\hat b^2$: the $R^2$ filter is a minimum-half-life filter
 
@@ -720,8 +734,8 @@ the rule does not trade. §8.2 shows what the filter actually selects.
 5. **APT gives $E[\epsilon]=0$, not mean reversion.** Level stationarity needs return
    autocorrelations summing to −1/2. The paper's support is empirical (p. 23), though presented as
    APT-motivated (p. 2, 9).
-6. **The shipped PCA residuals include day *t*** in the loadings, so they are in-sample (magnitude
-   being quantified). FF ($[t-60,t-1]$) and IPCA are out of sample.
+6. **The shipped PCA residuals include day *t*** in the loadings, so they are in-sample: about
+   +0.15 SR for OU, through lower volatility. FF ($[t-60,t-1]$) and IPCA are out of sample.
 7. **OU as AR(1):** $b=e^{-\kappa}$, $a=\mu(1-b)$, $\mathrm{Var}(e)=\sigma^2(1-b^2)/(2\kappa)$,
    $\sigma_{eq}=\sqrt{\mathrm{Var}(e)/(1-b^2)}$, half-life $\ln2/\kappa$.
 8. **Rule:** $E[\Delta X]=-(1-b)\sigma_{eq}s$, so short at $s>1.25$ and long at $s<-1.25$, if
@@ -738,7 +752,8 @@ the rule does not trade. §8.2 shows what the filter actually selects.
 
 ### Open points
 
-- **PCA look-ahead magnitude.** Not yet quantified. Nor is its effect on the paper's PCA rows.
+- **PCA look-ahead on the deep models.** Quantified for OU only (about +0.15 SR, about 1 SE).
+  Its effect on CNN+Transformer's PCA rows is not measured.
 - **Typo in $\theta^{OU}$.** The p. 13 formula writes $X_L$ as $\sum_{l=1}^L\epsilon_{n,t-1+l}$.
   From the $\mathrm{Int}(\cdot)$ definition (p. 12) it should be $\epsilon_{n,t-L-1+l}$, as in
   `preprocess.py` L78.
