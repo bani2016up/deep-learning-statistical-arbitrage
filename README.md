@@ -119,7 +119,8 @@ Results, the replication of Table I, and the theory are in `docs/OU_BASELINE.md`
 
 Read `docs/BASELINE_DESIGN.md` for the exact no-lookahead and tensor conventions,
 `docs/OFFICIAL_CODE_MAP.md` for the relationship to official code, `docs/OU_BASELINE.md`
-for the parametric OU benchmark, `docs/LIMITATIONS.md`
+for the parametric OU benchmark, `docs/THEORY.md` for the theory behind residuals, factor
+models and the OU baseline, `docs/LIMITATIONS.md`
 before interpreting any metric, `docs/STATISTICAL_ANALYSIS.md` for inference methodology,
 and `RUN_REPORT.md` for the validated run on this host.
 

@@ -6,7 +6,7 @@ The official repository ships only OU+FFN; OU+Threshold is implemented here.
 
 ## Model
 
-A cumulative residual `X_l = sum_{j<=l} eps_{t-L+j}` over the last `L = 30` days is treated
+A cumulative residual `X_l = sum_{j<=l} eps_{t-L-1+j}` over the last `L = 30` days `[t-30, t-1]` is treated
 as a discretely observed Ornstein-Uhlenbeck process
 
 ```text
@@ -37,6 +37,7 @@ the window are used; only `0 < b < 1` is valid; `R^2` is the squared centered co
 | `scripts/run_ou_baseline.py` | one run; writes predictions NPZ, daily CSV and metrics JSON |
 | `scripts/ou_experiments.py` | `all-k`, `grid`, `rules`, `by-year`, `example` |
 | `scripts/ou_synthetic.py` | controlled experiments on simulated residuals |
+| `scripts/ou_trend_sim.py` | does the rule trade with or against a deterministic trend |
 
 ## Running
 
@@ -183,9 +184,12 @@ independent assets inflate absolute SR, so read the shapes.
    OU sees mean reversion where there is none (small-sample AR(1) bias).
 3. **The rule is a contrarian bet on return autocorrelation** (c). Momentum of `phi ~ 0.05`
    removes the edge; at `phi = 0.3` the SR is about -9. This is the Fig. A.2 failure mode.
-4. **A deterministic linear trend does not break it.** On a trending window the AR(1) puts
-   `mu = a / (1 - b)` far ahead of `X_L`, so the rule trades with the trend. Persistence
-   (momentum), not slope, is what hurts.
+4. **A deterministic trend: with or against depends on the noise** (`scripts/ou_trend_sim.py`,
+   `docs/THEORY.md` section 8.5). Since `mu_hat = mean(X_1..X_{L-1}) + d_bar / (1 - b_hat)`,
+   `mu_hat` lands ahead of `X_L` only when `b_hat >~ 1 - 2/L ~ 0.93`. With stationary noise and a
+   moderate trend `b_hat` stays low and the rule shorts the up-trend; with persistent
+   (random-walk) noise, as in our synthetic design, `b_hat` is near 1 and the rule is net with
+   the trend (about 3:1). Persistence of returns (momentum) is what reliably hurts.
 5. **One frequency only** (d). Oscillations with a 3-5 day period are profitable; periods of
    8-60 days, i.e. inside the window, lose money. A flexible signal (CNN+Transformer, Fig. A.4)
    can learn several frequencies.
